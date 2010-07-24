@@ -1,0 +1,127 @@
+body#three-zero, body#three-zero-hybrid {padding-left:10px}
+body.HAT-narrowbg #header-home, body.HAT-narrowbg #header {background:url(pix/bg_header.gif) top left no-repeat}
+body.HAT-narrowbg-secure #header-home, body.HAT-narrowbg-secure #header {background:url(pix/bg_header.gif) top left no-repeat}
+body.HAT-narrowbg-rel #header-home, body.HAT-narrowbg-rel #header {background:url(pix/bg_header.gif) top left no-repeat}
+body.HAT-nobg {background:none}
+
+#wrapper{border-bottom:none !important}
+img.eng-icon{margin-left:4px !important}
+ 
+#HAT-globalheader *, #HAT-subheader *, #HAT-unifiedfooter *, #HAT-globalheader, #HAT-subheader, #HAT-unifiedfooter{padding:0;margin:0;text-align:left}
+.HAT-font1 *{font-family:Verdana, Sans-Serif}
+.HAT-font2 *{font-family:Tahoma}
+.HAT-font3 *{font-family:verdana,nsimsun,sans-serif}
+.HAT-font4 *{font-family:verdana, sans-serif}
+.HAT-font5 *{font-family:gulim,verdana,arial,helvetica}
+.HAT-font6 *{font-family:Tahoma}
+#HAT-subheader.HAT-font6 ul li a{letter-spacing:normal}
+
+#HAT-globalheader, #HAT-subheader, #HAT-unifiedfooter{font-size:16px}
+#HAT-globalheader.HAT-wide, #HAT-subheader.HAT-wide, #HAT-unifiedfooter.HAT-wide{margin:0 auto}
+#HAT-globalheader ul, #HAT-subheader ul, #HAT-unifiedfooter ul{float:left;list-style:none}
+#HAT-globalheader{width:985px;height:58px}
+.HAT-wrap{position:relative}
+#HAT-globalheader.HAT-wide{width:985px}
+#HAT-globalheader a{color:#8c96a0;text-decoration:none;font-size:83.8%;font-weight:bold}
+#HAT-globalheader.HAT-w800small a{font-size:63.8%;font-weight:bold}
+#HAT-globalheader.HAT-w1024small a{font-size:63.8%;font-weight:bold}
+#HAT-globalheader.HAT-w800large a{font-size:80%;font-weight:bold}
+#HAT-globalheader.HAT-w1024large a{font-size:80%;font-weight:bold} 
+
+#HAT-subheader{width:985px;height:49px;margin-bottom:0px;position:relative;z-index:2}
+#HAT-subheader.HAT-wide{width:985px}
+#HAT-subheader a{color:#0860a8;text-decoration:none;font-size:105%;letter-spacing:-0.04em}
+#HAT-subheader.HAT-w800small a{font-size:80%;font-weight:bold}
+#HAT-subheader.HAT-w800small ul ul a{font-size:100%;font-weight:normal}
+#HAT-subheader.HAT-w1024small a{font-size:80%;font-weight:bold}
+#HAT-subheader.HAT-w1024small ul ul a{font-size:100%;font-weight:normal}
+#HAT-subheader.HAT-w800large a{font-size:100%;font-weight:bold}
+#HAT-subheader.HAT-w800large ul ul a{font-size:100%;font-weight:normal}
+#HAT-subheader.HAT-w1024large a{font-size:100%;font-weight:bold}
+#HAT-subheader.HAT-w1024large ul ul a{font-size:100%;font-weight:normal}
+
+#HAT-subheader.HAT-subheader-empty{height:33px;width:300px;margin-bottom:0px}
+
+#HAT-unifiedfooter{width:955px;height:20px;color:#666;line-height:normal;font-size:11px !important;}
+.HAT-widebg #HAT-unifiedfooter{width:960px}
+#HAT-unifiedfooter a{color:#666;text-decoration:none}
+
+/*globalheader*/
+#HAT-globalheader a.logo{position:absolute;top:27px;left:15px;z-index:3}
+#HAT-globalheader a.logo img{}
+#HAT-globalheader.HAT-wide a.logo{position:absolute;top:40px;left:0px;z-index:3}
+
+#HAT-globalheader ul{margin-top:20px;float:right}
+#HAT-globalheader .navigation ul {margin-top:0;}
+#HAT-globalheader .navigation ul select {border:1px solid #7d9db9;}
+#HAT-globalheader ul li{float:left;padding:0px 0.1em}
+#HAT-globalheader ul li.search{float:right;padding:0;border:0;font-size:1em;height:auto;width:auto}
+#HAT-globalheader label{display:none}
+#HAT-globalheader form *{float:left}
+#HAT-globalheader .HAT-searchbox{display:block;font-size:60%;width:120px;border:1px solid #7d9db9;_height:100%;padding:2px 1px 4px;background:#fff;color:#666;font-family:Verdana, Sans-Serif}
+#HAT-globalheader span{margin:0 2px 0 2px}
+#HAT-globalheader a:hover, #HAT-subheader a:hover, #HAT-unifiedfooter a:hover{text-decoration:underline}
+
+/*subheader*/
+#HAT-subheader ul{float:right}
+#HAT-subheader ul a{display:block;padding:5px 0 0 1.2em}
+#HAT-subheader ul li{float:left;position:relative}
+#HAT-subheader ul li ul{position:absolute;width:180px;left:-9999px;top:-9999px;display:block;background:white;font-size:12px;background:url(pix/bg_dropdown.png) bottom right no-repeat;visibility:hidden}
+#HAT-subheader.HAT-secure ul li ul{background:url(pix/bg_dropdown.png) bottom right no-repeat}
+#HAT-subheader.HAT-rel ul li ul{background:url(pix/bg_dropdown.png) bottom right no-repeat}
+#HAT-subheader ul li li a{display:block;width:156px;padding:3px 5px 3px 17px;margin:5px 0}
+#HAT-subheader.HAT-quirks ul li li a{width:156px;_width:178px}
+#HAT-subheader ul li li a:hover{text-decoration:none;background:#fff}
+#HAT-subheader ul li.sfhover ul{left:4px;visibility:visible}
+
+/* highlight 'on' state */
+#HAT-globalheader a.on , #HAT-subheader a.on{color:#3399ff}
+
+/*subheader search filter*/
+#HAT-filter-menu{position:absolute;display:none;background:#666;font-size:13px;z-index:999;width:168px;border:solid 1px #82a1bc;background:#eceeed}
+.HAT-quirks #HAT-filter-menu{width:168px}
+#HAT-filter-menu.filterHover{display:block}
+#HAT-filter-menu.filterHidden{display:none} 
+ul#HAT-filter-menu li{padding:0;margin-bottom:2px}
+ul#HAT-filter-menu li#HAT-filterhead{display:block;padding:2px 5px 2px 18px;background:#7f9eba url(pix/bg_filterhead.gif) repeat-x;color:#fff;width:145px;font-size:95%}
+.HAT-secure ul#HAT-filter-menu li#HAT-filterhead{background:#7f9eba url(pix/bg_filterhead.gif) repeat-x}
+.HAT-rel ul#HAT-filter-menu li#HAT-filterhead{background:#7f9eba url(pix/bg_filterhead.gif) repeat-x}
+#HAT-globalheader ul#HAT-filter-menu li a{width:145px;padding:2px 5px 2px 18px;margin:2px 0;font-size:80%;font-weight:normal;color:#666;display:block}
+#HAT-globalheader ul#HAT-filter-menu li a:hover{background:white;text-decoration:none}
+.HAT-quirks #HAT-filter-menu li, 
+.HAT-quirks #HAT-filter-menu li#HAT-filterhead,
+.HAT-quirks #HAT-filter-menu li a{_width:168px}
+
+/* footer*/
+#HAT-unifiedfooter ul{padding:5px 0 0 0;width:99%;text-align:center}
+#HAT-unifiedfooter ul.HAT-footer-first-child{padding:10px 0 0 0;border-top:solid 2px #ccc}
+#HAT-unifiedfooter ul li{display:inline;padding:10px;white-space:nowrap}
+
+@media print{
+	#HAT-globalheader, #HAT-subheader{display:none;}
+}
+
+/* fixes */
+#three-zero #HAT-globalheader, #three-zero-hybrid #HAT-globalheader, #three-zero #HAT-subheader, #three-zero-hybrid #HAT-subheader,#three-zero #HAT-unifiedfooter, #three-zero-hybrid #HAT-unifiedfooter {padding-left:15px}
+#three-zero-hybrid #page-container #HAT-unifiedfooter {padding-left:0px}
+body.sitewide {padding-left:0px}
+div.v3contenthr {display:none}
+.v3container {top:auto}
+body.sitewide {padding-left:0px}
+body #page-container {padding-left:15px}
+#hp-container {width:960px}
+#three-zero-hybrid #page-container #wrapper {margin-left:0px}
+#nav-c {position:static}
+#footer-c li{float:none;margin:0}
+
+/* IE6 fixes*/
+#HAT-globalheader input, #HAT-globalheader select, #HAT-subheader input, #HAT-subheader select, #HAT-unifiedfooter input, #HAT-unifiedfooter select {width:auto}
+/* IE6 & IE7 */
+*:first-child+html div.main #HAT-subheader * {line-height:1.2em}
+div.main #HAT-subheader * {_line-height:1.2em}
+body #bigHolder {z-index:1}
+body #right {z-index:1}
+body div.v3container {_line-height:0}
+body {margin-top:0}
+
+

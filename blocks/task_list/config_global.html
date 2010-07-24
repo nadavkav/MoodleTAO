@@ -1,0 +1,23 @@
+<?php // $Id: config_global.html,v 1.2 2006/10/25 01:18:54 mark-nielsen Exp $
+/**
+ * Global configuration HTML template for task list block.
+ *
+ * @author Mark Nielsen
+ * @version $Id: config_global.html,v 1.2 2006/10/25 01:18:54 mark-nielsen Exp $
+ * @package block_task_list
+ **/
+
+    if (empty($CFG->block_task_list_title)) {
+        $CFG->block_task_list_title = '';
+    }
+?>
+
+<div style="text-align: center;">
+    <table cellpadding="5px">
+        <tr>
+            <td align="right" style="font-weight: bold;"><?php print_string('defaulttitle', 'block_task_list') ?>:</td>
+            <td align="left"><?php print_textfield('block_task_list_title', format_text($CFG->block_task_list_title), get_string('defaultname', 'block_task_list'), 30) ?></td>
+        </tr>
+    </table>
+  <p><span class="button"><input type="submit" value="<?php print_string('savechanges'); ?>" /></span></p>
+</div>

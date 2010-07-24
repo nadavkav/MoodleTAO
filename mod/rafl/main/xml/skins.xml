@@ -1,0 +1,574 @@
+<?xml version="1.0"?> 
+
+<skinList>
+
+	<skin name="AfL Default">
+		<colourHexValues>
+			<backGroundColour>0x333333</backGroundColour>
+			<mainPanelBkgrColour>0xbd2716</mainPanelBkgrColour>	
+			<generalTextColour>0xFFFFFF</generalTextColour>		
+			<subjectBoxOutlineColour>0xFFFFFF</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0xbaad9d</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0x333333</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0x333333</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+			<messageStarColour>0xbd2716</messageStarColour>
+			<titleBarFillColour>0xbaad9d</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0xFFFFFF</dockFillAndLinkingLinesColour>
+			<dockTextColour>0x333333</dockTextColour>
+			<allOtherBoxFillColour>0xbd2716</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0xFFFFFF</allOtherBoxOutlineColour>
+			<baseBarTextColour>0xbaad9d</baseBarTextColour>
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/AfL Default/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/AfL Default/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/AfL Default/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/AfL Default/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/AfL Default/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/AfL Default/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/AfL Default/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/AfL Default/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/AfL Default/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/AfL Default/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/AfL Default/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/AfL Default/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/AfL Default/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/AfL Default/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/AfL Default/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#0FA1B8</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/AfL Default/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/AfL Default/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/AfL Default/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/AfL Default/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef=""></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig fileRef="skins/AfL Default/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig fileRef="skins/AfL Default/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/AfL Default/swf/preLoader_default.swf"></component>
+		</preLoader>
+			
+	</skin>
+	
+	
+	<skin name="Skate">
+		<colourHexValues>
+			<backGroundColour>0x000000</backGroundColour>
+			<mainPanelBkgrColour>0xFFFFFF</mainPanelBkgrColour>	
+			<generalTextColour>0x333333</generalTextColour>		
+			<subjectBoxOutlineColour>0x333333</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0x333333</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0xff9900</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0xFF9900</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+			<messageStarColour>0xFF9900</messageStarColour>
+			<titleBarFillColour>0xCCCCCC</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0xFF9900</dockFillAndLinkingLinesColour>
+			<dockTextColour>0xFFFFFF</dockTextColour>
+			<allOtherBoxFillColour>0x333333</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0x000000</allOtherBoxOutlineColour>
+			<baseBarTextColour>0xffffff</baseBarTextColour>
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/Skate/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/Skate/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/Skate/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/Skate/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/Skate/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/Skate/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/Skate/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/Skate/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/Skate/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/Skate/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/Skate/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/Skate/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/Skate/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/Skate/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/Skate/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#0FA1B8</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/Skate/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/Skate/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/Skate/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/Skate/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef="skins/Skate/swf/skater.swf"></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig fileRef="skins/Skate/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig fileRef="skins/Skate/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/Skate/swf/preLoader_skate.swf"></component>
+		</preLoader>
+	</skin>
+	
+	<skin name="Disco">
+		<colourHexValues>
+			<backGroundColour>0xfdc3f8</backGroundColour>
+			<mainPanelBkgrColour>0xFFFFFF</mainPanelBkgrColour>	
+			<generalTextColour>0xeb56de</generalTextColour>		
+			<subjectBoxOutlineColour>0xeb56de</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0x99009a</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0x66FF00</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0x66FF00</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+			<messageStarColour>0x66FF00</messageStarColour>
+			<titleBarFillColour>0x99009a</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0x66FF00</dockFillAndLinkingLinesColour>
+			<dockTextColour>0xFFFFFF</dockTextColour>
+			<allOtherBoxFillColour>0xffabf8</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0xeb56de</allOtherBoxOutlineColour>
+			<baseBarTextColour>0xffffff</baseBarTextColour>
+			
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/Disco/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/Disco/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/Disco/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/Disco/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/Disco/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/Disco/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/Disco/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/Disco/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/Disco/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/Disco/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/Disco/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/Disco/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/Disco/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/Disco/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/Disco/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#0FA1B8</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/Disco/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/Disco/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/Disco/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/Disco/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef="skins/Disco/swf/dancer.swf"></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig imageFile="skins/Disco/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig imageFile="skins/Disco/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/Disco/swf/preLoader_disco.swf"></component>
+		</preLoader>
+	</skin>
+	
+	
+	<skin name="yst">
+		<colourHexValues>
+			<backGroundColour>0xCA003B</backGroundColour>
+			<mainPanelBkgrColour>0x256EB0</mainPanelBkgrColour>	
+			<generalTextColour>0xFFFFFF</generalTextColour>		
+			<subjectBoxOutlineColour>0xFFFFFF</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0xCA003B</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0xCA003B</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0xFFFFFF</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xFFFFFF</subjectBoxRollTextColour>
+			<messageStarColour>0xCA003B</messageStarColour>
+			<titleBarFillColour>0xBBD1E6</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0xFFFFFF</dockFillAndLinkingLinesColour>
+			<dockTextColour>0x256EBO</dockTextColour>
+			<allOtherBoxFillColour>0xCA003B</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0xFFFFFF</allOtherBoxOutlineColour>
+			<baseBarTextColour>0x256EBO</baseBarTextColour>
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/yst/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/yst/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/yst/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/yst/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/yst/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/yst/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/yst/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/yst/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/yst/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/yst/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/yst/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/yst/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/yst/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/yst/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/yst/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#FFFFFF</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/yst/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/yst/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/yst/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/yst/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef="skins/yst/swf/skater.swf"></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig fileRef="skins/yst/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig fileRef="skins/yst/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/yst/swf/preLoader_skate.swf"></component>
+		</preLoader>
+	</skin>
+	
+	
+
+	<skin name="getsetgo">
+		<colourHexValues>
+			<backGroundColour>0x74100C</backGroundColour>
+			<mainPanelBkgrColour>0xA62315</mainPanelBkgrColour>	
+			<generalTextColour>0xFFFFFF</generalTextColour>		
+			<subjectBoxOutlineColour>0xFFFFFF</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0xE72915</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0xee6658</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0xFFFFFF</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xFFFFFF</subjectBoxRollTextColour>
+			<messageStarColour>0xE72915</messageStarColour>
+			<titleBarFillColour>0xE72915</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0xFFFFFF</dockFillAndLinkingLinesColour>
+			<dockTextColour>0x999999</dockTextColour>
+			<allOtherBoxFillColour>0xE72915</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0xFFFFFF</allOtherBoxOutlineColour>
+			<baseBarTextColour>0x999999</baseBarTextColour>
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/getsetgo/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/getsetgo/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/getsetgo/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/getsetgo/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/getsetgo/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/getsetgo/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/getsetgo/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/getsetgo/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/getsetgo/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/getsetgo/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/getsetgo/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/getsetgo/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/getsetgo/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/getsetgo/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/getsetgo/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#FFFFFF</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/getsetgo/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/getsetgo/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/getsetgo/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/getsetgo/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef=""></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig fileRef="skins/getsetgo/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig fileRef="skins/getsetgo/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/getsetgo/swf/preLoader_gsg.swf"></component>
+		</preLoader>
+	</skin>
+	
+	
+<skin name="Snot">
+		<colourHexValues>
+			<backGroundColour>0xBEF51C</backGroundColour>
+			<mainPanelBkgrColour>0x9DCD23</mainPanelBkgrColour>	
+			<generalTextColour>0xFFFFFF</generalTextColour>		
+			<subjectBoxOutlineColour>0xBEF51C</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0x475D00</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0xBEF51C</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0xBEF51C</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xFFFFFF</subjectBoxRollTextColour>
+			<messageStarColour>0x475D00</messageStarColour>
+			<titleBarFillColour>0x475D00</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0xFFFFFF</dockFillAndLinkingLinesColour>
+			<dockTextColour>0x475D00</dockTextColour>
+			<allOtherBoxFillColour>0x475D00</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0xBEF51C</allOtherBoxOutlineColour>
+			<baseBarTextColour>0xBEF51C</baseBarTextColour>
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/Snot/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/Snot/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/Snot/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/Snot/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/Snot/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/Snot/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/Snot/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/Snot/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/Snot/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/Snot/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/Snot/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/Snot/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/Snot/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/Snot/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/Snot/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#FFFFFF</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/Snot/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/Snot/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/Snot/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/Snot/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef="skins/Snot/swf/snot_pies.swf"></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig fileRef="skins/Snot/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig fileRef="skins/Snot/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/Snot/swf/snot_preloader.swf"></component>
+		</preLoader>
+	</skin>
+	
+	
+
+<skin name="Purpleclub">
+		<colourHexValues>
+			<backGroundColour>0x3B1A3B</backGroundColour>
+			<mainPanelBkgrColour>0x844386</mainPanelBkgrColour>	
+			<generalTextColour>0xffffff</generalTextColour>		
+			<subjectBoxOutlineColour>0xB47FC3</subjectBoxOutlineColour>	
+			<subjectBoxFillColour>0x701471</subjectBoxFillColour>
+			<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+			<subjectBoxRollFillColour>0x3B1A3B</subjectBoxRollFillColour>
+			<subjectBoxRollOutlineColour>0xB47FC3</subjectBoxRollOutlineColour>
+			<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+			<messageStarColour>0x3b1a3b</messageStarColour>
+			<titleBarFillColour>0x701471</titleBarFillColour>
+			<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+			<dockFillAndLinkingLinesColour>0x3b1a3b</dockFillAndLinkingLinesColour>
+			<dockTextColour>0xFFFFFF</dockTextColour>
+			<allOtherBoxFillColour>0x701471</allOtherBoxFillColour>
+			<allOtherBoxOutlineColour>0xB47FC3</allOtherBoxOutlineColour>
+			<baseBarTextColour>0xffffff</baseBarTextColour>
+		</colourHexValues>
+		<topNav>
+			<bar imageFile="skins/Purpleclub/flashImages/topBar.png"></bar>
+			<smartLogo imageFile="skins/Purpleclub/flashImages/smartLogo.png"></smartLogo>
+			<realSmartLogo imageFile="skins/Purpleclub/flashImages/realSmartLogo.png"></realSmartLogo>
+			<myMessagesTextOff imageFile="skins/Purpleclub/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+			<myLearningTextOff imageFile="skins/Purpleclub/flashImages/myLearningTextOff.png"></myLearningTextOff>
+			<myProfileTextOff imageFile="skins/Purpleclub/flashImages/myProfileTextOff.png"></myProfileTextOff>
+			<myMessagesTextOn imageFile="skins/Purpleclub/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+			<myLearningTextOn imageFile="skins/Purpleclub/flashImages/myLearningTextOn.png"></myLearningTextOn>
+			<myProfileTextOn imageFile="skins/Purpleclub/flashImages/myProfileTextOn.png"></myProfileTextOn>
+			<myMessagesIconOff imageFile="skins/Purpleclub/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+			<myLearningIconOff imageFile="skins/Purpleclub/flashImages/myLearningIconOff.png"></myLearningIconOff>
+			<myProfileIconOff imageFile="skins/Purpleclub/flashImages/myProfileIconOff.png"></myProfileIconOff>
+			<myMessagesIconOn imageFile="skins/Purpleclub/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+			<myLearningIconOn imageFile="skins/Purpleclub/flashImages/myLearningIconOn.png"></myLearningIconOn>
+			<myProfileIconOn imageFile="skins/Purpleclub/flashImages/myProfileIconOn.png"></myProfileIconOn>
+		</topNav>
+		<mainPanel>
+			<backGroundColour>#0FA1B8</backGroundColour>
+		</mainPanel>
+		<lowerNav>
+			<lowerNavBar imageFile="skins/Purpleclub/flashImages/lowerNavBar.png"></lowerNavBar>
+			<lowerNavSlider imageFile="skins/Purpleclub/flashImages/lowerNavSlider.png"></lowerNavSlider>
+			<lowerNavChooseSubject imageFile="skins/Purpleclub/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+			<lowerNavChooseUnit imageFile="skins/Purpleclub/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+		</lowerNav>
+		<pieChart>
+			<pieChartFlashCompleteAnimation fileRef="skins/Purpleclub/swf/purpleclub_anim.swf"></pieChartFlashCompleteAnimation>
+			<pieChartCompleteImageBig imageFile="skins/Purpleclub/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+			<pieChartInCompleteImageBig imageFile="skins/Purpleclub/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+		</pieChart>
+		<preLoader>
+			<component flashFile="skins/Purpleclub/swf/preLoader_purpleclub.swf"></component>
+		</preLoader>
+	</skin>
+	<skin name="Football">
+			<colourHexValues>
+				<backGroundColour>0x2A4406</backGroundColour>
+				<mainPanelBkgrColour>0xFFFFFF</mainPanelBkgrColour>	
+				<generalTextColour>0x000000</generalTextColour>		
+				<subjectBoxOutlineColour>0x000000</subjectBoxOutlineColour>	
+				<subjectBoxFillColour>0x96D500</subjectBoxFillColour>
+				<subjectBoxTextColour>0x000000</subjectBoxTextColour>	
+				<subjectBoxRollFillColour>0x126D00</subjectBoxRollFillColour>
+				<subjectBoxRollOutlineColour>0x000000</subjectBoxRollOutlineColour>
+				<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+				<messageStarColour>0x3b1a3b</messageStarColour>
+				<titleBarFillColour>0x126D00</titleBarFillColour>
+				<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+				<dockFillAndLinkingLinesColour>0x126D00</dockFillAndLinkingLinesColour>
+				<dockTextColour>0xFFFFFF</dockTextColour>
+				<allOtherBoxFillColour>0x96D500</allOtherBoxFillColour>
+				<allOtherBoxOutlineColour>0x126D00</allOtherBoxOutlineColour>
+				<baseBarTextColour>0x000000</baseBarTextColour>
+
+			</colourHexValues>
+			<topNav>
+				<bar imageFile="skins/Football/flashImages/topBar.png"></bar>
+				<smartLogo imageFile="skins/Football/flashImages/smartLogo.png"></smartLogo>
+				<realSmartLogo imageFile="skins/Football/flashImages/realSmartLogo.png"></realSmartLogo>
+				<myMessagesTextOff imageFile="skins/Football/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+				<myLearningTextOff imageFile="skins/Football/flashImages/myLearningTextOff.png"></myLearningTextOff>
+				<myProfileTextOff imageFile="skins/Football/flashImages/myProfileTextOff.png"></myProfileTextOff>
+				<myMessagesTextOn imageFile="skins/Football/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+				<myLearningTextOn imageFile="skins/Football/flashImages/myLearningTextOn.png"></myLearningTextOn>
+				<myProfileTextOn imageFile="skins/Football/flashImages/myProfileTextOn.png"></myProfileTextOn>
+				<myMessagesIconOff imageFile="skins/Football/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+				<myLearningIconOff imageFile="skins/Football/flashImages/myLearningIconOff.png"></myLearningIconOff>
+				<myProfileIconOff imageFile="skins/Football/flashImages/myProfileIconOff.png"></myProfileIconOff>
+				<myMessagesIconOn imageFile="skins/Football/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+				<myLearningIconOn imageFile="skins/Football/flashImages/myLearningIconOn.png"></myLearningIconOn>
+				<myProfileIconOn imageFile="skins/Football/flashImages/myProfileIconOn.png"></myProfileIconOn>
+			</topNav>
+			<mainPanel>
+				<backGroundColour>#2A4406</backGroundColour>
+			</mainPanel>
+			<lowerNav>
+				<lowerNavBar imageFile="skins/Football/flashImages/lowerNavBar.png"></lowerNavBar>
+				<lowerNavSlider imageFile="skins/Football/flashImages/lowerNavSlider.png"></lowerNavSlider>
+				<lowerNavChooseSubject imageFile="skins/Football/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+				<lowerNavChooseUnit imageFile="skins/Football/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+			</lowerNav>
+			<pieChart>
+				<pieChartFlashCompleteAnimation fileRef="skins/Football/swf/football.swf"></pieChartFlashCompleteAnimation>
+				<pieChartCompleteImageBig imageFile="skins/Football/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+				<pieChartInCompleteImageBig imageFile="skins/Football/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+			</pieChart>
+			<preLoader>
+				<component flashFile="skins/Football/swf/preloader_football.swf"></component>
+			</preLoader>
+		</skin>
+		<skin name="Emo">
+				<colourHexValues>
+					<backGroundColour>0x000000</backGroundColour>
+					<mainPanelBkgrColour>0x29292E</mainPanelBkgrColour>	
+					<generalTextColour>0xFFFFFF</generalTextColour>		
+					<subjectBoxOutlineColour>0xffffff</subjectBoxOutlineColour>	
+					<subjectBoxFillColour>0x9F1112</subjectBoxFillColour>
+					<subjectBoxTextColour>0x000000</subjectBoxTextColour>	
+					<subjectBoxRollFillColour>0x000000</subjectBoxRollFillColour>
+					<subjectBoxRollOutlineColour>0xffffff</subjectBoxRollOutlineColour>
+					<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+					<messageStarColour>0xffffff</messageStarColour>
+					<titleBarFillColour>0x9F1112</titleBarFillColour>
+					<titleBarTextColour>0x000000</titleBarTextColour>
+					<dockFillAndLinkingLinesColour>0x9F1112</dockFillAndLinkingLinesColour>
+					<dockTextColour>0x000000</dockTextColour>
+					<allOtherBoxFillColour>0x9F1112</allOtherBoxFillColour>
+					<allOtherBoxOutlineColour>0xffffff</allOtherBoxOutlineColour>
+					<baseBarTextColour>0xffffff</baseBarTextColour>
+
+				</colourHexValues>
+				<topNav>
+					<bar imageFile="skins/Emo/flashImages/topBar.png"></bar>
+					<smartLogo imageFile="skins/Emo/flashImages/smartLogo.png"></smartLogo>
+					<realSmartLogo imageFile="skins/Emo/flashImages/realSmartLogo.png"></realSmartLogo>
+					<myMessagesTextOff imageFile="skins/Emo/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+					<myLearningTextOff imageFile="skins/Emo/flashImages/myLearningTextOff.png"></myLearningTextOff>
+					<myProfileTextOff imageFile="skins/Emo/flashImages/myProfileTextOff.png"></myProfileTextOff>
+					<myMessagesTextOn imageFile="skins/Emo/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+					<myLearningTextOn imageFile="skins/Emo/flashImages/myLearningTextOn.png"></myLearningTextOn>
+					<myProfileTextOn imageFile="skins/Emo/flashImages/myProfileTextOn.png"></myProfileTextOn>
+					<myMessagesIconOff imageFile="skins/Emo/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+					<myLearningIconOff imageFile="skins/Emo/flashImages/myLearningIconOff.png"></myLearningIconOff>
+					<myProfileIconOff imageFile="skins/Emo/flashImages/myProfileIconOff.png"></myProfileIconOff>
+					<myMessagesIconOn imageFile="skins/Emo/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+					<myLearningIconOn imageFile="skins/Emo/flashImages/myLearningIconOn.png"></myLearningIconOn>
+					<myProfileIconOn imageFile="skins/Emo/flashImages/myProfileIconOn.png"></myProfileIconOn>
+				</topNav>
+				<mainPanel>
+					<backGroundColour>#29292E</backGroundColour>
+				</mainPanel>
+				<lowerNav>
+					<lowerNavBar imageFile="skins/Emo/flashImages/lowerNavBar.png"></lowerNavBar>
+					<lowerNavSlider imageFile="skins/Emo/flashImages/lowerNavSlider.png"></lowerNavSlider>
+					<lowerNavChooseSubject imageFile="skins/Emo/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+					<lowerNavChooseUnit imageFile="skins/Emo/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+				</lowerNav>
+				<pieChart>
+					<pieChartFlashCompleteAnimation fileRef="skins/Emo/swf/emo.swf"></pieChartFlashCompleteAnimation>
+					<pieChartCompleteImageBig imageFile="skins/Emo/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+					<pieChartInCompleteImageBig imageFile="skins/Emo/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+				</pieChart>
+				<preLoader>
+					<component flashFile="skins/Emo/swf/preloader_emo.swf"></component>
+				</preLoader>
+			</skin>
+			<skin name="Cosmic">
+					<colourHexValues>
+						<backGroundColour>0x000033</backGroundColour>
+						<mainPanelBkgrColour>0x003366</mainPanelBkgrColour>	
+						<generalTextColour>0xffffff</generalTextColour>		
+						<subjectBoxOutlineColour>0xffffff</subjectBoxOutlineColour>	
+						<subjectBoxFillColour>0x000033</subjectBoxFillColour>
+						<subjectBoxTextColour>0xffffff</subjectBoxTextColour>	
+						<subjectBoxRollFillColour>0x9999FF</subjectBoxRollFillColour>
+						<subjectBoxRollOutlineColour>0x000033</subjectBoxRollOutlineColour>
+						<subjectBoxRollTextColour>0xffffff</subjectBoxRollTextColour>
+						<messageStarColour>0xffffff</messageStarColour>
+						<titleBarFillColour>0xCCFFFF</titleBarFillColour>
+						<titleBarTextColour>0x000000</titleBarTextColour>
+						<dockFillAndLinkingLinesColour>0x000033</dockFillAndLinkingLinesColour>
+						<dockTextColour>0xFFFFFF</dockTextColour>
+						<allOtherBoxFillColour>0x9999FF</allOtherBoxFillColour>
+						<allOtherBoxOutlineColour>0xffffff</allOtherBoxOutlineColour>
+						<baseBarTextColour>0xffffff</baseBarTextColour>
+
+					</colourHexValues>
+					<topNav>
+						<bar imageFile="skins/Cosmic/flashImages/topBar.png"></bar>
+						<smartLogo imageFile="skins/Cosmic/flashImages/smartLogo.png"></smartLogo>
+						<realSmartLogo imageFile="skins/Cosmic/flashImages/realSmartLogo.png"></realSmartLogo>
+						<myMessagesTextOff imageFile="skins/Cosmic/flashImages/myMessagesTextOff.png"></myMessagesTextOff>
+						<myLearningTextOff imageFile="skins/Cosmic/flashImages/myLearningTextOff.png"></myLearningTextOff>
+						<myProfileTextOff imageFile="skins/Cosmic/flashImages/myProfileTextOff.png"></myProfileTextOff>
+						<myMessagesTextOn imageFile="skins/Cosmic/flashImages/myMessagesTextOn.png"></myMessagesTextOn>
+						<myLearningTextOn imageFile="skins/Cosmic/flashImages/myLearningTextOn.png"></myLearningTextOn>
+						<myProfileTextOn imageFile="skins/Cosmic/flashImages/myProfileTextOn.png"></myProfileTextOn>
+						<myMessagesIconOff imageFile="skins/Cosmic/flashImages/myMessagesIconOff.png"></myMessagesIconOff>
+						<myLearningIconOff imageFile="skins/Cosmic/flashImages/myLearningIconOff.png"></myLearningIconOff>
+						<myProfileIconOff imageFile="skins/Cosmic/flashImages/myProfileIconOff.png"></myProfileIconOff>
+						<myMessagesIconOn imageFile="skins/Cosmic/flashImages/myMessagesIconOn.png"></myMessagesIconOn>
+						<myLearningIconOn imageFile="skins/Cosmic/flashImages/myLearningIconOn.png"></myLearningIconOn>
+						<myProfileIconOn imageFile="skins/Cosmic/flashImages/myProfileIconOn.png"></myProfileIconOn>
+					</topNav>
+					<mainPanel>
+						<backGroundColour>#000033</backGroundColour>
+					</mainPanel>
+					<lowerNav>
+						<lowerNavBar imageFile="skins/Cosmic/flashImages/lowerNavBar.png"></lowerNavBar>
+						<lowerNavSlider imageFile="skins/Cosmic/flashImages/lowerNavSlider.png"></lowerNavSlider>
+						<lowerNavChooseSubject imageFile="skins/Cosmic/flashImages/lowerNavChooseSubject.png"></lowerNavChooseSubject>
+						<lowerNavChooseUnit imageFile="skins/Cosmic/flashImages/lowerNavChooseUnit.png"></lowerNavChooseUnit>
+					</lowerNav>
+					<pieChart>
+						<pieChartFlashCompleteAnimation fileRef="skins/Cosmic/swf/cosmic.swf"></pieChartFlashCompleteAnimation>
+						<pieChartCompleteImageBig imageFile="skins/Cosmic/flashImages/pieCompleteImage.png"></pieChartCompleteImageBig>
+						<pieChartInCompleteImageBig imageFile="skins/Cosmic/flashImages/pieInCompleteImage.png"></pieChartInCompleteImageBig>
+					</pieChart>
+					<preLoader>
+						<component flashFile="skins/Cosmic/swf/cosmic_preloader.swf"></component>
+					</preLoader>
+				</skin>
+
+</skinList>

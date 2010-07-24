@@ -1,0 +1,54 @@
+<form method="post" action="module.php" name="form">
+<input type="hidden" name="sesskey" value="<?php echo $USER->sesskey ?>" />
+
+<?php
+$classes = customlabel_get_classes();
+?>
+<script>
+function setupparm(listname, parmfieldname){
+    var listobj = document.forms['form'].elements[listname];
+    var fieldobj = document.forms['form'].elements[parmfieldname];
+    var selection = new Array();
+    for (var i=0; i< listobj.options.length; i++) {
+        if (listobj.options[i].selected) {
+            selection.push(listobj.options[i].value);
+        }
+    }
+    if (selection.length > 0){
+        fieldobj.value = selection;
+    } else {
+        fieldobj.value = "";
+    }
+}
+</script>
+
+<table cellpadding="9" cellspacing="0" >
+<?php
+foreach($classes as $labelclass){
+?>
+<tr valign="top">
+    <td align="right">customlabel_<?php echo $labelclass->id ?>_hiddenfor</td>
+    <td>
+    <?php
+        $parmname = "customlabel_{$labelclass->id}_hiddenfor";
+        $selection = split(',', @$CFG->$parmname);
+        $roles = get_records_menu ('role', '', '', 'name', 'id,name') ;
+        choose_from_menu_multiple($roles, "list_$parmname", $selection, 5, '', "setupparm('list_$parmname', '$parmname')");
+    ?>
+    <input type="hidden" name="<?php echo $parmname ?>" value="<?php echo @$CFG->$parmname ?>" />
+    </td>
+    <td>
+    <?php print_string('hiddenrolesfor', 'customlabel') ?>
+    <?php print_string($labelclass->id, 'customlabel') ?>
+    </td>
+</tr>
+<?php
+}
+?>
+<tr>
+    <td colspan="3" align="center">
+        <input type="submit" value="<?php print_string('savechanges') ?>" /></td>
+</tr>
+</table>
+
+</form>

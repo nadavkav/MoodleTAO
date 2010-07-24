@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html<?php echo $direction ?>>
+<head>
+    <?php echo $meta ?>
+    <meta name="keywords" content="moodle, <?php echo $title ?> " />
+    <title><?php echo $title ?></title>
+    <link rel="shortcut icon" href="<?php echo $CFG->httpsthemewww .'/'. current_theme() ?>/favicon.ico" />
+
+    <?php 
+        include("$CFG->javascript");
+        include($CFG->themedir.'/intel/js/js.php');
+
+        
+        // check if page is opened within a popup window
+        if (function_exists('local_is_in_popup')) {
+            $inpopup = local_is_in_popup();
+        } elseif (function_exists('is_in_popup')) {
+            $inpopup = is_in_popup();
+        } else {
+            $inpopup = false;
+        }
+        
+        // get class list
+        preg_match('/class="([^"]*)"/i', $bodytags, $classes);
+        $classlist = explode (' ', $classes[1]);
+
+        array_push($classlist, "HAT-narrowbg");
+        
+        
+        // add "inpopup" or "notinpopup" to class list
+        if ($inpopup) {
+            array_push($classlist, 'inpopup');
+        } else {
+            array_push($classlist, 'notinpopup');
+        }
+        
+        //replace classlist with new one
+        $bodytags = str_replace($classes[0], 'class="'.implode(' ', $classlist).'"', $bodytags);
+
+        // find the site wide FAQ if exists
+        $faq = null;
+        if ($glossaries = get_records_select('glossary', 'course = ' . SITEID . ' AND displayformat=\'faq\'')) {
+            $glossary = array_shift($glossaries);
+            $faq = $CFG->wwwroot.'/mod/glossary/view.php?g='.$glossary->id;
+        }
+    ?>
+
+</head>
+
+<body <?php
+    echo $bodytags;
+    if ($focus) {
+        echo " onload=\"setfocus()\"";
+    };
+    ?>>
+
+    <?php if(!empty($infooutput)) { ?>
+        <div id="infowrapper"><div id="infooverlay"><?php echo $infooutput; ?></div></div>
+    <?php } ?>
+<div id="page">
+
+<?php if (!$inpopup) { 
+    if ($home) {  // This is what gets printed on the home page only
+?>
+    <?php print_container_start(true, '', 'header-home'); ?>
+
+
+<div class="HAT-quirks HAT-font1" id="HAT-globalheader">
+  <a class="logo" href="<?php echo $CFG->wwwroot.'/' ?>"><img alt="<?php print_string('intellogo', 'local'); ?>" src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/pix/intlogo.gif" /></a>
+  <ul>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>	
+    <?php if ($faq) { ?>
+       <li><a href="<?php echo $faq ?>"><?php print_string('faq','local'); ?></a></li>
+    <?php } ?>    
+    <li>&nbsp;</li>	
+    <li class="search">
+      <form method="get" name="FORMSearchHeader" action="<?php echo $CFG->wwwroot ?>/tag/search.php">
+        <label for="q"><?php print_string('search');?></label>
+        <span>
+          <input id="searchform_search" name="query" size="10" maxlength="255" class="HAT-searchbox" autocomplete="off" type="text">
+        </span>
+        <input class="submitbutton" name="searchsubmit" id="searchsubmit" type="submit" value="<?php print_string('searchtags', 'tag'); ?>"/></form>
+       </li>
+  </ul>
+<ul id="HAT-filter-menu"><li id="HAT-filterhead">Filter Your Results</li><li><a href="#">Products</a></li><li><a href="#">Support &amp; Downloads</a></li><li><a href="#">Blogs &amp; Communities</a></li><li><a href="#">Reseller</a></li><li><a href="#">Software</a></li><li><a href="#">About Intel</a></li><li><a href="#">Advanced Search</a></li></ul></div>
+<div class="HAT-clear"> </div>
+<div id="HAT-subheader" class="subheaderId-HAT-gh0 HAT-quirks HAT-font1">
+   <ul>
+      <li id="HAT-sh1">
+      </li>
+   </ul>
+</div>
+<div class="HAT-clear"> </div>
+<div id="header-story-wrapper"> 
+   <div class="header-story"><img src="<?php echo tao_header_image(); ?>" alt="<?php print_string('intelheadergraphic', 'local'); ?>" />
+   <div class="navbar">
+        <div class="breadcrumb"><?php print_navigation($navigation); ?></div>
+   </div>    
+   </div>  
+   <div class="clearer"></div>   
+</div>    
+
+
+<?php print_container_end(); ?>
+<?php } else if ($heading) {  // This is what gets printed on any other page with a heading
+?>
+    <?php print_container_start(true, '', 'header'); ?>     
+        
+<div class="HAT-quirks HAT-font1" id="HAT-globalheader">
+  <a class="logo" href="<?php echo $CFG->wwwroot.'/' ?>"><img alt="<?php print_string('intellogo', 'local'); ?>" src="<?php echo $CFG->wwwroot.'/theme/'.current_theme() ?>/pix/intlogo.gif" /></a>
+  <ul>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>
+    <li>&nbsp;</li>	
+    <?php if ($faq) { ?>
+       <li><a href="<?php echo $faq ?>"><?php print_string('faq','local'); ?></a></li>
+    <?php } ?>    
+    <li>&nbsp;</li>	
+    <li class="search">
+      <form method="get" name="FORMSearchHeader" action="<?php echo $CFG->wwwroot ?>/tag/search.php">
+        <label for="q"><?php print_string('search');?></label>
+        <span>
+          <input id="searchform_search" name="query" size="10" maxlength="255" class="HAT-searchbox" autocomplete="off" type="text">
+        </span>
+        <input class="submitbutton" name="searchsubmit" id="searchsubmit" type="submit" value="<?php print_string('searchtags', 'tag'); ?>"/></form>
+       </li>
+  </ul>
+<ul id="HAT-filter-menu"><li id="HAT-filterhead">Filter Your Results</li><li><a href="#">Products</a></li><li><a href="#">Support &amp; Downloads</a></li><li><a href="#">Blogs &amp; Communities</a></li><li><a href="#">Reseller</a></li><li><a href="#">Software</a></li><li><a href="#">About Intel</a></li><li><a href="#">Advanced Search</a></li></ul></div>
+<div class="HAT-clear"> </div>
+<div id="HAT-subheader" class="subheaderId-HAT-gh0 HAT-quirks HAT-font1">
+   <ul>
+      <li id="HAT-sh1">
+      </li>
+   </ul>
+</div>
+<div class="HAT-clear"> </div>
+<div id="header-story-wrapper"> 
+   <div class="header-nav-top">
+     <div id="main-menu" class="sideblock">
+     <div class="title"><h2><?php print_string('mainmenu'); ?></h2></div>
+     <?php tao_print_static_nav(); ?>
+     </div> 
+   </div>
+   <div class="header-story"><img src="<?php echo tao_header_image(); ?>" alt="<?php print_string('intelheadergraphic', 'local'); ?>" />
+   <div class="navbar global">
+        <div class="breadcrumb"><?php print_navigation($navigation); ?></div>
+        <div class="navbutton"><?php echo $button; ?></div>
+   </div> 
+</div>  
+   <div class="clearer"></div>   
+</div>     
+
+<?php print_container_end(); ?>
+<?php }
+    }
+?>
+
+    <!-- END OF HEADER -->
+<?php print_container_start(false, '', 'content'); ?>
+<?php tao_local_header_hook();  ?>

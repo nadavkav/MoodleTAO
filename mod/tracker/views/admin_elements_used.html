@@ -1,0 +1,98 @@
+<?php 
+
+/**
+* @package mod-tracker
+* @category mod
+* @author Clifford Tham, Valery Fremaux > 1.8
+* @date 02/12/2007
+*
+* From for showing used element list
+*/
+
+if (!defined('MOODLE_INTERNAL')) {
+    die('Direct access to this script is forbidden.');    ///  It must be included from view.php in mod/tracker
+}
+
+print_simple_box_start('center', '100%', '', '', 'generalbox', 'description');
+?>
+<center>
+<!-- Print Used Element List -->
+<table border="0" width="400" height="50">
+	<tr>
+		<td valign="top">
+			
+		</td>
+	</tr>
+</table>
+
+<?php
+print_simple_box_end(); 
+print_simple_box_start('center', '100%', '', '', 'generalbox', 'description');
+tracker_loadelementsused($tracker->id, $used);
+print_heading(get_string('elementsused', 'tracker'));
+?>
+
+<table border="0" width="400" height="300">
+	<tr>
+		<td valign="top"> <!-- elements used -->
+            <table>
+            	<tr>
+            		<td align="left" height="30" width="20">
+            			<b><?php print_string('order', 'tracker') ?></b>
+            		</td>            	
+            		<td align="center" height="30" width="250">
+            			<b><?php print_string('name') ?></b>
+            		</td>
+            		<td align="center" width="50">
+            			<b><?php print_string('type', 'tracker') ?></b>
+            		</td>            		
+            		<td align="center" width="100">
+            			<b><?php print_string('action', 'tracker') ?></b>
+            		</td>
+            	</tr>
+<?php
+if (!empty($used)){
+	foreach ($used as $element){
+?>
+            	<tr>
+            		<td valign="top" align="center" >
+            			<?php echo $element->sortorder ?>
+            		</td>
+            		<td valign="top" align="center">
+            			<?php echo format_string($element->description) ?>
+            		</td>
+            		<td valign="top" align="center">
+            			<img src="<?php p($CFG->wwwroot) ?>/mod/tracker/pix/types/<?php p($element->type) ?>.gif" />
+            		</td>
+            		<td valign="top" align="center">
+            			<input title="select" type="checkbox" name="c1" value="1" />
+            			<img src="<?php p($CFG->pixpath) ?>/t/preview.gif">
+            			<a href="view.php?id=<?php p($cm->id) ?>&amp;what=editelement&amp;elementid=<?php echo $element->id ?>"><img src="<?php p($CFG->pixpath) ?>/t/edit.gif" /></a>
+            			<a href="view.php?id=<?php p($cm->id) ?>&amp;what=viewelementoptions&amp;elementid=<?php p($element->id) ?>" title="<?php print_string('editoptions', 'tracker') ?>"><img src="<?php p($CFG->wwwroot) ?>/mod/tracker/pix/editoptions.gif" /></a>
+            					<!--<img src="<?php p($CFG->pixpath) ?>/t/delete.gif">-->
+            			<a href="view.php?id=<?php p($cm->id) ?>&amp;what=removeelement&amp;usedid=<?php echo $element->id ?>"><img src="<?php p($CFG->pixpath) ?>/t/removeright.gif" /></a>	
+            		</td>
+            	</tr>
+<?php
+	}			
+}
+else{
+?>
+            	<tr>
+            		<td valign="top" align="center" colspan="4">
+            			<?php print_string('noelements', 'tracker') ?><br />
+            		</td>
+            	</tr>
+<?php
+}
+?>
+            </table>
+		</td>
+	</tr>
+
+</table>
+
+<?php
+	print_simple_box_end(); 
+?>
+</center>

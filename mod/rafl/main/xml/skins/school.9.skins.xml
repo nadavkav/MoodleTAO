@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file describes the locations of each skin folder -->
+
+<!-- WARNING: Make sure there always is a skin id="1", doesn't matter what exact skin it refers to -->
+
+<realsmart_skin_config>
+	
+	<skin id="1" name="AFL Default">
+		<title>realsmart</title>
+		<description>The default realsmart skin</description>
+		<path>skins/AfL Default/</path>
+	</skin>
+	
+	<skin id="2" name="Skate">
+		<title>Skate</title>
+		<description>Cowabunga dude!</description>
+		<path>skins/Skate/</path>
+	</skin>
+	
+	<skin id="3" name="Disco">
+		<title>Disco</title>
+		<description>Play that funky music!</description>
+		<path>skins/Disco/</path>
+	</skin>
+
+	<skin id="4" name="Snot">
+		<title>Snot</title>
+		<description>Bogies!</description>
+		<path>skins/Snot/</path>
+	</skin>	
+	
+	<skin id="5" name="getsetgo">
+		<title>get set go</title>
+		<description>The get set go programme</description>
+		<path>skins/getsetgo/</path>
+	</skin>
+	
+	<skin id="6" name="Purpleclub">
+		<title>The Purple Club</title>
+		<description>The Purple Club</description>
+		<path>skins/Purpleclub/</path>
+	</skin>
+	
+	<skin id="7" name="YST">
+		<title>YST</title>
+		<description>Youth Sports Trust</description>
+		<path>skins/yst/</path>
+	</skin>
+	
+	<skin id="8" name="Badger">
+		<title>Badger</title>
+		<description>A Badger Skin</description>
+		<path>skins/badger/</path>
+	</skin>
+	
+	<skin id="9" name="Alite">
+		<title>Alite</title>
+		<description>Alites Skin</description>
+		<path>skins/alite/</path>
+	</skin>
+	
+	<skin id="10" name="Army">
+		<title>Army</title>
+		<description>Army Skin</description>
+		<path>skins/army/</path>
+	</skin>
+
+	<skin id="11" name="Football">
+		<title>Football</title>
+		<description>Football Skin</description>
+		<path>skins/football/</path>
+	</skin>
+
+	<skin id="12" name="Circus">
+		<title>Circus</title>
+		<description>Circus Skin</description>
+		<path>skins/circus/</path>
+	</skin>
+
+	<skin id="13" name="l2smart">
+		<title>L2smart</title>
+		<description>L2smart Skin</description>
+		<path>skins/l2smart/</path>
+	</skin>
+
+	<skin id="14" name="olympic">
+		<title>Athletics</title>
+		<description>Olympic Skin</description>
+		<path>skins/olympic/</path>
+	</skin>
+
+	<skin id="15" name="Twenty Twelve">
+		<title>2012 Olympics</title>
+		<description>2012 Olympic Skin</description>
+		<path>skins/twentytwelve/</path>
+	</skin>
+
+</realsmart_skin_config>

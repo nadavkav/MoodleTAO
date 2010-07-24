@@ -1,0 +1,405 @@
+div#content,
+#header-story-wrapper,
+#login-index #content {
+  margin-left:0;
+  margin-right:10px;
+}
+h2, h2.main, h2.headingblock, .taoviewtagcloud-name {
+  text-align:right !important;
+}
+.notifyproblem {
+  line-height:inherit;
+}
+#notice p, .loginerrors, .errorbox, .notifyproblem {
+  background-position: right;
+  padding-left: 5px;
+  padding-right: 30px;
+  text-align: right !important;
+}
+#HAT-globalheader a.logo {
+  left:auto;
+  right:-28px;
+}
+#HAT-globalheader ul {
+  float:left;
+}
+#HAT-globalheader ul li {
+  float:right;
+}
+#HAT-globalheader form * {
+  float:right;
+}
+#header-story-wrapper,
+#content .course-content,
+body#course-view #content,
+body#blog-index #content,
+body#tag-index #content {
+  background-position: right top;
+}
+#content .course-content h2.main,
+body#course-view #content h2.main,
+body#blog-index #content h2.main,
+body#tag-index #content h2.main,
+#content .course-content .tabtree,
+body#course-view #content .tabtree,
+body#blog-index #content .tabtree,
+body#tag-index #content .tabtree,
+#content .course-content #layout-table,
+body#course-view #content #layout-table,
+body#blog-index #content #layout-table,
+body#tag-index #content #layout-table {
+  margin-left: 0;
+  margin-right: 195px;
+}
+body#tag-index #content #middle-column {
+  padding-left: 0;
+  padding-right: 177px;  
+}
+.header-nav-top {
+  float:right;
+  margin-top:0;
+}
+.header-nav-top #tao-nav {
+  margin:0 10px 0 0 !important;
+}
+.navbar {
+  padding-left:0;
+  padding-right:12px;
+  margin-left:0;
+  margin-right: 5px;
+}
+.navbar div.navbutton {
+  float:left;
+}
+td#left-column {
+  padding-right: 0;
+  padding-left: 5px;
+  background-position:right top;
+}
+td#right-column {
+  padding-right: 5px;
+  padding-left: 0;
+}
+div.coursebox {
+  float: right;
+}
+div.sideblock div.content * {
+  text-align: right;
+}
+div.calendar-controls a.next {
+  text-align: left;
+}
+div.bt {
+  text-align: right;
+}
+div.bb {
+  text-align: right;
+}
+div.sideblock div.header div.bt div {
+  background-position: 100% 0;
+  right: 167px;
+}
+#left-column div.sideblock div.header div.bt div {
+  right:162px;
+}
+div.sideblock div.header div.bt {
+  background-position: 0 0;
+  left: -13px;
+  margin: 0 13px 0 0;
+  text-align: right;
+}
+div.sideblock div.header div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+div.sideblock div.header div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+div.sideblock div.header div.i3 {
+  /*background: transparent;*/
+}
+div.sideblock div.bt div {
+  background-position: 100% 0;
+  right: -13px;
+}
+div.sideblock div.bt {
+  background-position: 0 0;
+  left: 0;
+  margin: 0 13px 0 0;
+  text-align: right;
+}
+div.sideblock div.bt div {
+  right: 175px;
+  background-position: 0 0;
+}
+#left-column div.sideblock div.bt div {
+  right: 170px;
+}
+div.sideblock div.bb div {
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  left: 0;
+  right: 175px;
+}
+div.sideblock div.header div.commands {
+  text-align:right;
+}
+#left-column div.sideblock div.bb div {
+  right: 170px;
+}
+div.sideblock div.bb {
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  margin: 0 13px 0 0;
+}
+div.sideblock div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+div.sideblock div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+div.sideblock div.i3 {
+  /*background: transparent;*/
+  border: 1px solid #f1ece6;
+}
+div.sideblock .content, 
+div.sideblock .content p,
+div.block_messages div.content div.info, 
+div.block_online_users div.content div.info, 
+div.block_news_items div.content div.name {
+  text-align:right !important;
+}
+div.sideblock .list li, 
+div.sideblock #tao-nav li {
+  padding: 0 12px 5px 5px !important;
+  background: url(pix/caret_double_rtl.gif) no-repeat 154px 2px;
+}
+#site-index #left-column div.sideblock div.header h2 {
+  padding-left: 0;
+  padding-right:5px !important;
+}
+.block_admin_tree .admintree div.depth1 {
+   background: url(pix/caret_single_rtl.gif) no-repeat 140px 2px; 
+}
+.block_admin_tree .admintree div div {
+  padding-left:0 !important;
+  padding-right:12px !important;
+}
+.header-nav-top div.sideblock #tao-nav li {
+  background-position: 161px 4px;
+}
+div.block_online_users .list li, 
+div.header-nav-top div.sideblock #tao-nav li {
+  padding: 0 10px 5px 0 !important;
+}
+div.sideblock .footer {
+  text-align: right !important; 
+}
+div.header-nav-top div.sideblock div.title h2 {
+  padding: 5px 12px 5px 5px !important;  
+}
+.block_tags .footer a, 
+.block_messages .footer a {
+  padding-left:0;
+  padding-right: 12px;
+   background: url(pix/caret_single_rtl.gif) no-repeat 130px 2px !important; 
+}  
+td#middle-column div.bt div {
+  background-position: 100% 0;
+  right: -13px;
+}
+td#middle-column div.bt {
+  background-position: 0 0;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+td#middle-column div.bb div {
+  background-position: 100% 100%;
+  right: -13px;
+}
+td#middle-column div.bb {
+  background-position: 0 100%;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+td#middle-column div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+td#middle-column div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+td#middle-column div.i3 {
+  /*background: transparent;*/
+}
+div#footer {
+ padding: 20px 25px 15px 0 !important;
+}
+div#footer div.bt div {
+  background-position: 100% 0;
+  right: -13px;
+}
+div#footer div.bt {
+  background-position: 0 0;
+  left: -13px;
+  margin: 0 13px 0 0;
+  text-align: right;
+}
+div#footer div.bb div {
+  background-position: 100% 100%;
+  right: -13px;
+}
+div#footer div.bb {
+  background-position: 0 100%;
+  left: -13px;
+  margin: 0 13px 0 0;
+  text-align: right;
+}
+div#footer div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+div#footer div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+div#footer div.i3 {
+  /*background: transparent;*/
+}
+body.HAT-narrowbg #header-home, 
+body.HAT-narrowbg #header {
+  background: transparent url(pix/bg_header_rtl.gif) no-repeat right top;
+}
+div#header div.bt div {
+  background-position: 100% 0;
+  right: -13px;
+}
+div#header div.bt {
+  background-position: 0 0;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+div#header div.bb div {
+  background-position: 100% 100%;
+  right: -13px;
+}
+div#header div.bb {
+  background-position: 0 100%;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+div#header div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+div#header div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+div#header div.i3 {
+  /*background: transparent;*/
+}
+div#header-home div.bt div {
+  background-position: 100% 0;
+  right: -13px;
+}
+div#header-home div.bt {
+  background-position: 0 0;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+div#header-home div.bb div {
+  background-position: 100% 100%;
+  right: -13px;
+}
+div#header-home div.bb {
+  background-position: 0 100%;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+div#header-home div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+div#header-home div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+div#header-home div.i3 {
+  /*background: transparent;*/
+}
+body.nolayouttable div#content div.bt div {
+  background-position: 100% 0;
+  right: -13px;
+}
+body.nolayouttable div#content div.bt {
+  background-position: 0 0;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+body.nolayouttable div#content div.bb div {
+  background-position: 100% 100%;
+  right: -13px;
+}
+body.nolayouttable div#content div.bb {
+  background-position: 0 100%;
+  left: -13px;
+  margin: 0 13px 0 0;
+}
+body.nolayouttable div#content div.i1 {
+  background-position: 100% 0;
+  padding: 0;
+}
+body.nolayouttable div#content div.i2 {
+  background-position: 0 0;
+  padding: 0 12px;
+}
+body.nolayouttable div#content div.i3 {
+  /*background: transparent;*/
+}
+div#content div.ccbox div.i1 {
+  background-image: url(pix/mask_borders_re.gif);
+}
+div#content div.ccbox div.i2 {
+  background-image: url(pix/mask_borders_le.gif);
+}
+#login-index .loginbox .loginform .form-input {
+  float:right;
+}
+#login-index .loginbox h2, 
+#login-index .loginbox div {
+  text-align: right !important;
+}
+#login-index div.loginbox {
+  padding-right:10px;
+}
+.tabrow0 {
+}
+.tabrow0 li {
+  width:auto;
+  float:none;
+  background:none !important;
+}  
+ul.tabrow1 {
+  width: auto !important;
+}
+form.mform div.felement, 
+form.mform fieldset.felement {
+  width:95% !important;
+  padding-left:0;
+  padding-right:10px;
+}
+form.mform input {
+  margin-right:0px !important;
+}
+form.mform span {
+  float:right;
+}
+form.mform .fitemtitle,
+form.mform .fdescription.required {
+  text-align:right;
+}

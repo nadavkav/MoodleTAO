@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="cms/db" VERSION="20061118" COMMENT="XMLDB file for Moodle cms"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="cms" COMMENT="Default comment for cms, please edit me" NEXT="cmsnavi">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" COMMENT="id of the table, please edit me" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="100" NOTNULL="true" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="value"/>
+        <FIELD NAME="value" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="name"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for cms"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="cms_name_idx" UNIQUE="true" FIELDS="name"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="cmsnavi" COMMENT="cmsnavi table retrofitted from MySQL" PREVIOUS="cms" NEXT="cmsnavi_data">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="course"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="name"/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="course" NEXT="intro"/>
+        <FIELD NAME="intro" TYPE="binary" LENGTH="small" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="name" NEXT="created"/>
+        <FIELD NAME="created" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="intro" NEXT="modified"/>
+        <FIELD NAME="modified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="created" NEXT="requirelogin"/>
+        <FIELD NAME="requirelogin" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="false" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="modified" NEXT="allowguest"/>
+        <FIELD NAME="allowguest" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="requirelogin" NEXT="printdate"/>
+        <FIELD NAME="printdate" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="allowguest"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for cmsnavi"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="cmsnavi_idx" UNIQUE="false" FIELDS="course"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="cmsnavi_data" COMMENT="cmsnavi_data table retrofitted from MySQL" PREVIOUS="cmsnavi" NEXT="cmspages">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="naviid"/>
+        <FIELD NAME="naviid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="pageid"/>
+        <FIELD NAME="pageid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="naviid" NEXT="pagename"/>
+        <FIELD NAME="pagename" TYPE="char" LENGTH="40" NOTNULL="false" UNSIGNED="false" DEFAULT="" SEQUENCE="false" ENUM="false" PREVIOUS="pageid" NEXT="title"/>
+        <FIELD NAME="title" TYPE="char" LENGTH="100" NOTNULL="true" DEFAULT="No title" SEQUENCE="false" ENUM="false" PREVIOUS="pagename" NEXT="showblocks"/>
+        <FIELD NAME="showblocks" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="title" NEXT="showinmenu"/>
+        <FIELD NAME="showinmenu" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="showblocks" NEXT="isfp"/>
+        <FIELD NAME="isfp" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="showinmenu" NEXT="sortorder"/>
+        <FIELD NAME="sortorder" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="isfp" NEXT="parentid"/>
+        <FIELD NAME="parentid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="sortorder" NEXT="url"/>
+        <FIELD NAME="url" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="parentid" NEXT="target"/>
+        <FIELD NAME="target" TYPE="char" LENGTH="10" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="url"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for cmsnavi_data"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="navi_data_idx" UNIQUE="false" FIELDS="naviid, pageid, isfp" NEXT="navi_pagename_idx"/>
+        <INDEX NAME="navi_pagename_idx" UNIQUE="false" FIELDS="pagename" PREVIOUS="navi_data_idx" NEXT="navi_parent_idx"/>
+        <INDEX NAME="navi_parent_idx" UNIQUE="false" FIELDS="parentid" PREVIOUS="navi_pagename_idx"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="cmspages" COMMENT="cmspages table retrofitted from MySQL" PREVIOUS="cmsnavi_data" NEXT="cmspages_history">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="body"/>
+        <FIELD NAME="body" TYPE="binary" LENGTH="medium" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="created"/>
+        <FIELD NAME="created" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="body" NEXT="modified"/>
+        <FIELD NAME="modified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="created" NEXT="publish"/>
+        <FIELD NAME="publish" TYPE="int" LENGTH="1" NOTNULL="true" UNSIGNED="true" DEFAULT="1" SEQUENCE="false" ENUM="false" PREVIOUS="modified"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for cmspages"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="id" UNIQUE="false" FIELDS="id"/>
+      </INDEXES>
+    </TABLE>
+    <TABLE NAME="cmspages_history" COMMENT="cmspages_history table retrofitted from MySQL" PREVIOUS="cmspages">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" SEQUENCE="true" ENUM="false" NEXT="pageid"/>
+        <FIELD NAME="pageid" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="id" NEXT="modified"/>
+        <FIELD NAME="modified" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="pageid" NEXT="version"/>
+        <FIELD NAME="version" TYPE="char" LENGTH="10" NOTNULL="true" DEFAULT="1.0" SEQUENCE="false" ENUM="false" PREVIOUS="modified" NEXT="content"/>
+        <FIELD NAME="content" TYPE="binary" LENGTH="medium" NOTNULL="false" SEQUENCE="false" ENUM="false" PREVIOUS="version" NEXT="author"/>
+        <FIELD NAME="author" TYPE="int" LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" ENUM="false" PREVIOUS="content"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="Primary key for cmspages_history"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="mdl_cmspages_history_idx" UNIQUE="false" FIELDS="pageid, modified, version"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

@@ -1,0 +1,69 @@
+<?php tao_local_footer_hook(); ?>
+<?php print_container_end(); ?><!-- end container Content -->
+<!-- START OF FOOTER -->
+
+<?php 
+
+global $CFG, $COURSE; 
+if (function_exists('is_in_popup')) {
+    $inpopup = is_in_popup();
+} else {
+    $inpopup = false;
+}
+
+if (!$inpopup) { 
+    print_container_start(false, '', 'footer');
+ 
+    echo '<div id="HAT-unifiedfooter">'; 
+    echo '<ul class="HAT-footer-first-child">';
+    echo '<li><a href="mailto:teacher.training@intel.com?subject=Essentials Online Course Inquiry">Contact Customer Support</a></li>';
+    echo '<li><a href="http://www.intel.com/sites/corporate/tradmarx.htm?iid=ftr+trademark">*Legal Information</a></li>';
+    echo '<li><a href="http://www.intel.com/sites/corporate/privacy.htm?iid=HMPAGE+Footer_privacy">Privacy Policy</a></li>';
+    echo '<li>&copy;Intel Corporation</li>';
+    echo '</ul>';
+    echo '</div>'; 
+       
+    echo '<!--<p class="helplink">';
+    echo page_doc_link(get_string('moodledocslink'));
+    echo '</p>-->';
+    
+    echo $loggedinas;
+
+    if (isloggedin() && $CFG->mnet_dispatcher_mode=='strict' && has_capability('moodle/site:mnetlogintoremote', get_context_instance(CONTEXT_SYSTEM))) {
+        global $USER;
+        $now = time();
+        // Nasty: Should not hard code 'localmahara' here!
+        $host = get_record('mnet_host','name', 'localmahara');
+        if (!empty($host)) {
+            if (empty($USER->mahara_login) || $USER->mahara_login < 2) {
+                echo '<iframe style="width:1px;height:1px;visibility:hidden;" src="' . $CFG->wwwroot . '/auth/mnet/jump.php?hostid=' . $host->id . '&wantsurl=/ping.php&setwu=0"></iframe>';
+                $USER->mahara_login += 1;
+            } else {
+                echo '<img src="' . $host->wwwroot . '/ping.php" />';
+            }
+        }
+    }
+
+    $useridarray = array(2 // MD
+                          );
+    
+    if (!empty($performanceinfo) && isloggedin() && in_array($USER->id, $useridarray)) {
+        echo $performanceinfo;
+    }
+
+    print_container_end();
+
+} // end if inpopup
+
+?>
+
+</div> <!-- end page div -->
+<!--
+<script type="text/javascript">
+/* <![CDATA[ */
+    script.init();
+/* ]]> */
+</script>
+-->
+</body>
+</html>

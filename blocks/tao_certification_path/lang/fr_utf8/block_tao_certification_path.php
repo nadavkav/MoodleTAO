@@ -1,0 +1,37 @@
+<?php
+
+$string['certification'] = 'Certification';
+$string['currentcertifications'] = 'Certifications en cours';
+$string['requestcertification'] = 'Demander la certification';
+$string['nocertifications'] = 'Vous n\'avez aucune demande de certification enc cours';
+$string['requestcertificationdesc'] = 'Si vous pensez avoir accompli les critères pour obtenir la certification, lancez une demande en cliquant sur le bouton ci-dessous.';
+$string['requestedcertification'] = 'Votre demande de certification a été reçue.';
+$string['certrequestexists'] = 'Une demande de certification a été reçue et attend un examen.';
+$string['viewcertificationrequests'] = 'Voir les demandes';
+$string['viewcertificationrequest'] = 'Voir la demande';
+$string['viewcertificationstatus'] = 'Voir l\'état';
+$string['certemailrequesttext'] = '$a->user a demandé sa certification, cliquez sur le lien ci-dessous pour examiner la demande';
+$string['certemailapprovesubject'] = 'Demande de certification approuvée';
+$string['certemailapprovetext'] = 'Bravo! - vous venez d\'être certifiés';
+$string['certificationapproved'] = 'Cette certification a été approuvée';
+$string['certemaildeclinetext'] = 'Votre demande de certification a été rejetée pour les raisons suivantes :';
+$string['certemaildeclinesubject'] = 'Demande de certification rejetée';
+$string['approvecertification'] = 'Approuver la certification';
+$string['denycertification'] = 'Rejetter la certification';
+$string['previousrequests'] = 'Demande de certifications précédentes';
+$string['changedby'] = 'Modifié par';
+$string['descriptionrequired'] = 'Vous devez entrer une description à joindre au courriel de l\'utilisateur';
+$string['approveordeny'] = 'Approuvez ou rejettez la demande';
+$string['certified_pt'] = $GLOBSTRING['taopt'].' certifié';
+$string['certified_mt'] = $GLOBSTRING['taomt'].' certifié';
+$string['certified_st'] = $GLOBSTRING['taost'].' certifié';
+$string['pendingcertification'] = 'Certification en attente';
+$string['certificationtasks'] = 'Tâches pour certification';
+$string['mustcompletetasks'] = 'Vous devez achever les tâches suivantes pour obtenir la certification';
+$string['nomentor'] = 'Pour etre certifié, vous devez être attaché à un '.$GLOBSTRING['taomt'];
+$string['requestcertificationhasbeensubmitted'] = 'La demande de certification a été envoyée';
+$string['requestcertificationhasbeenachieved'] = 'La demande de certification a été traitée';
+$string['reviewstatus'] = 'Etat de la demance';
+$string['thisptnotinlp'] = 'Ce participant ne s\'est inscrit à aucun '.$GLOBSTRING['taolp'];
+$string['youarenotinlp'] = 'Vous ne vous êtes inscrits à aucun '.$GLOBSTRING['taolp'];
+$string['userhasrequestedcertification'] = '$a->user à demandé une certification à travers le '.$GLOBSTRING['taolp'].' $a->courselink';

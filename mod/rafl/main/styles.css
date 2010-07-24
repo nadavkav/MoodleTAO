@@ -1,0 +1,46 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #00000;
+	font-size: small;
+}
+ul {
+padding-left:24px;
+}
+
+#content p, #content ul, #content h1, #content h2, #content h3, #content h4, #content h5, #content h6, #content ol, #content hr {
+padding-bottom:6px;
+}
+
+h5 {
+	font-weight: bold;
+	color: #000000;
+	font-size: small;
+}
+h3 {
+	color: #000000;
+}
+h2 {
+	color: #6E604D;
+}
+div.quote {
+	width:660px;
+	padding-left:15px;
+	margin-bottom:15px;
+	color: #000000;
+	background:#EEEEEE;
+	border: thin solid #FF0000;
+}
+.mceContentBody h2.quote2 {
+	color: #6D604D;
+}
+
+.left {
+	float:left;
+	padding-right:10px;
+	padding-bottom:10px;
+}
+.right {
+	float:right;
+	padding-left:10px;
+	padding-bottom:10px;
+}

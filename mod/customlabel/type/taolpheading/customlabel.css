@@ -1,0 +1,14 @@
+.lpheadinglabelcontent {
+   width: 100%;
+}
+
+.lptitle {
+    font-size: 24px;
+    color: blue ;
+}
+
+.lpsubtitle {
+    font-size: 15px;
+    color: gray ;
+    padding-left: 25px;
+}

@@ -1,0 +1,28 @@
+.labelcontent {
+   width: 100%;
+}
+
+.taodata {
+   width: 100%;
+}
+
+.taodata .title {
+   background-color: transparent;
+   color: #6A6A6A;
+   font-size: 15px;
+   text-align: left;
+   padding: 5px;
+}
+
+.taodata .param {
+   background-color: #A2A2A2;
+   color: #515151;
+   font-weight: bold;
+   padding: 5px;
+}
+
+.taodata .value {
+   background-color: #E1E1E1;
+   color: #4B4B4B;
+   padding: 5px;
+}

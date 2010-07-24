@@ -1,0 +1,33 @@
+table.important {
+   width: 100%;
+   border: 2px solid #FEC760;
+   border-collapse:separate;
+}
+
+td.custombox-header-thumb.important {
+   background-color: #FEC760;
+   width:40px;
+}
+
+td.custombox-header-caption.important {
+    background-color: #FEC760;
+    color:#C66B22;
+    font-weight:bolder;
+}
+
+td.custombox-content.important {
+    padding:5px;
+}
+
+.importanthelper{
+   font-size:0.8em;
+}
+
+td.custombox-content.important h1,
+td.custombox-content.important h2,
+td.custombox-content.important h3{
+    background-image:none !important;
+    padding-left:0px !important;
+    color:#742610 !important;
+    font-weight:bolder !important;
+}

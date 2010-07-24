@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin name="Snot">
+	<colourHexValues>	
+		<!-- Background & panel colours -->
+		<backGroundColour>0xBEF51C</backGroundColour>
+		<mainPanelBkgrColour>0x9DCD23</mainPanelBkgrColour>	
+		<generalTextColour>0xFFFFFF</generalTextColour>
+		<baseBarTextColour>0xBEF51C</baseBarTextColour>
+		<!-- Subject boxes -->
+		<subjectBoxOutlineColour>0xFFFFFF</subjectBoxOutlineColour>	
+		<subjectBoxFillColour>0x475D00</subjectBoxFillColour>
+		<subjectBoxTextColour>0xFFFFFF</subjectBoxTextColour>	
+		<subjectBoxRollFillColour>0xBEF51C</subjectBoxRollFillColour>
+		<subjectBoxRollOutlineColour>0xBEF51C</subjectBoxRollOutlineColour>
+		<subjectBoxRollTextColour>0x475D00</subjectBoxRollTextColour>
+		<!-- Item box and container -->
+		<itemContainerOutlineColour>0xBEF51C</itemContainerOutlineColour>	
+		<itemContainerFillColour>0x475D00</itemContainerFillColour>
+		<itemContainerTextColour>0xFFFFFF</itemContainerTextColour>	
+		<itemContainerSelectOutlineColour>0xBEF51C</itemContainerSelectOutlineColour>
+		<itemContainerSelectFillColour>0xBEF51C</itemContainerSelectFillColour>
+		<itemContainerSelectTextColour>0xFFFFFF</itemContainerSelectTextColour>
+		<!-- Tooltip -->
+		<tooltipOutlineColour>0xBEF51C</tooltipOutlineColour>	
+		<tooltipFillColour>0xBEF51C</tooltipFillColour>
+		<tooltipTextColour>0xFFFFFF</tooltipTextColour>	
+		<!-- Alert box -->
+		<alertOutlineColour>0xFFFFFF</alertOutlineColour>	
+		<alertFillColour>0xBEF51C</alertFillColour>
+		<alertTextColour>0x475D00</alertTextColour>	
+		<alertButtonOutlineColour>0xBEF51C</alertButtonOutlineColour>	
+		<alertButtonFillColour>0x475D00</alertButtonFillColour>
+		<alertButtonTextColour>0xFFFFFF</alertButtonTextColour>	
+		<!-- Title bar -->
+		<messageStarColour>0x475D00</messageStarColour>
+		<titleBarFillColour>0x475D00</titleBarFillColour>
+		<titleBarTextColour>0xFFFFFF</titleBarTextColour>
+		<!-- Dock -->
+		<dockFillAndLinkingLinesColour>0xFFFFFF</dockFillAndLinkingLinesColour>
+		<dockTextColour>0x475D00</dockTextColour>
+		<dockIconsColour>0x475D00</dockIconsColour>
+		<!-- Scroll bars -->
+		<scrollOutlineColour>0x475D00</scrollOutlineColour>
+		<scrollFillColour>0x475D00</scrollFillColour>
+		<scrollButtonColour>0xFFFFFF</scrollButtonColour>
+		<!-- Drop down boxes -->
+		<dropOutlineColour>0xBEF51C</dropOutlineColour>
+		<dropFillColour>0xFFFFFF</dropFillColour>
+		<dropTextColour>0x475D00</dropTextColour>
+		<dropRollOutlineColour>0xBEF51C</dropRollOutlineColour>
+		<dropRollFillColour>0xBEF51C</dropRollFillColour>
+		<dropRollTextColour>0x475D00</dropRollTextColour>
+		<!-- Context Menu -->
+		<contextOutlineColour>0xBEF51C</contextOutlineColour>
+		<contextFillColour>0x475D00</contextFillColour>
+		<contextTextColour>0xFFFFFF</contextTextColour>
+		<contextRollOutlineColour>0xFFFFFF</contextRollOutlineColour>
+		<contextRollFillColour>0xBEF51C</contextRollFillColour>
+		<contextRollTextColour>0x000000</contextRollTextColour>
+		<!-- Pies -->
+		<pieChartBackgroundColour>0x475D00</pieChartBackgroundColour>
+		<pieChartCompleteColour>0xBEF51C</pieChartCompleteColour>
+		<pieChartTextColour>0xFFFFFF</pieChartTextColour>
+		<pieChartTextRollColour>0x9DCD23</pieChartTextRollColour>
+	</colourHexValues>
+	<topNav>
+		<bar>flashImages/topBar.png</bar>
+		<smartLogo>flashImages/smartLogo.png</smartLogo>
+		<realSmartLogo>flashImages/realSmartLogo.png</realSmartLogo>
+		<myMessagesTextOff>flashImages/myMessagesTextOff.png</myMessagesTextOff>
+		<myLearningTextOff>flashImages/myLearningTextOff.png</myLearningTextOff>
+		<myContentTextOff>flashImages/myContentTextOff.png</myContentTextOff>
+		<myProfileTextOff>flashImages/myProfileTextOff.png</myProfileTextOff>
+		<myMessagesTextOn>flashImages/myMessagesTextOn.png</myMessagesTextOn>
+		<myLearningTextOn>flashImages/myLearningTextOn.png</myLearningTextOn>
+		<myContentTextOn>flashImages/myContentTextOn.png</myContentTextOn>
+		<myProfileTextOn>flashImages/myProfileTextOn.png</myProfileTextOn>
+		<myMessagesIconOff>flashImages/myMessagesIconOff.png</myMessagesIconOff>
+		<myLearningIconOff>flashImages/myLearningIconOff.png</myLearningIconOff>
+		<myContentIconOff>flashImages/myLearningIconOff.png</myContentIconOff>
+		<myProfileIconOff>flashImages/myProfileIconOff.png</myProfileIconOff>
+		<myMessagesIconOn>flashImages/myMessagesIconOn.png</myMessagesIconOn>
+		<myLearningIconOn>flashImages/myLearningIconOn.png</myLearningIconOn>
+		<myContentIconOn>flashImages/myLearningIconOn.png</myContentIconOn>
+		<myProfileIconOn>flashImages/myProfileIconOn.png</myProfileIconOn>
+		<refreshButton>flashImages/refreshButton.png</refreshButton>
+		<helpButton>flashImages/helpButton.png</helpButton>
+		<logoutButton>flashImages/logoutButton.png</logoutButton>
+		<toolsButton>flashImages/toolsButton.png</toolsButton>
+		<passportButton>flashImages/passportButton.png</passportButton>
+	</topNav>
+	<mainPanel>
+		<backGroundColour>0x0FA1B8</backGroundColour>
+	</mainPanel>
+	<lowerNav>
+		<lowerNavBar>flashImages/lowerNavBar.png</lowerNavBar>
+		<lowerNavSlider>flashImages/lowerNavSlider.png</lowerNavSlider>
+		<lowerNavChooseSubject>flashImages/lowerNavChooseSubject.png</lowerNavChooseSubject>
+		<lowerNavChooseUnit>flashImages/lowerNavChooseUnit.png</lowerNavChooseUnit>
+	</lowerNav>
+	<pieChart>
+		<pieChartFlashCompleteAnimation></pieChartFlashCompleteAnimation>
+		<!--<pieChartCompleteImageBig>flashImages/pieCompleteImage.png</pieChartCompleteImageBig>
+		<pieChartInCompleteImageBig>flashImages/pieInCompleteImage.png</pieChartInCompleteImageBig>-->
+	</pieChart>
+	<preLoader>
+		<component></component>
+	</preLoader>
+</skin>

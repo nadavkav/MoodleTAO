@@ -1,0 +1,115 @@
+div.comment_add a,
+div.comment_content a {
+    font-size: 9pt;
+}
+
+div.comment_head {
+  margin-top: 20px;
+  padding-top: 15px;
+  margin-bottom: 0px;
+  border-top: 1px dotted #000000;
+}
+
+#comment_options {
+  position: absolute;
+  right: 5px;
+  top: 28px;
+}
+
+#comment_options p {
+  margin: 0;
+  color: #bbad9d;
+}
+
+#comment_options a {
+  font-size: 11px;
+  text-decoration: none;
+  color: #bbad9d;
+  outline: none;
+}
+
+#comment_options a:hover {
+  color: #66553b;
+}
+
+#comment_options a.droparrow {
+  padding-right: 15px;
+  background: url(../images/down_arrow.gif) center right no-repeat;
+}
+
+div.profile {
+  float: left;
+  width: 62px;
+  margin-top: 15px;
+  margin-right: 26px;
+  clear: left;
+}
+
+div.profile p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+div.profile a {
+  text-decoration: none;
+  color: #bbad9d;
+}
+
+div.profile a:hover {
+  color: #cacaca;
+}
+
+div.comment_title {
+  margin: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div.hover {
+  background-color: #f2f2f2;
+}
+
+div.comment_review {
+  float: right;
+}
+
+div.comment_webcell {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+div.comment_webcell a,
+body.tinyMceEditor a {
+  text-decoration: underline;
+  color:#0000ff;
+}
+
+p.view_comment {
+  padding-top: 4px;
+  clear: both;
+  margin-left: 88px;
+}
+
+div.comment_tools {
+  height: 12px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+div.comment_tools a {
+  font-weight: bold;
+}
+
+div.comment_add {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+div.comment_tools a:hover {
+  color: #66553b;
+}
+
+div.comment_tools span {
+  margin: 0 5px;
+}

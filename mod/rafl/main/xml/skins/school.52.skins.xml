@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- YOUTH SPORTS TRUST SKINS -->
+
+<!-- WARNING: Make sure there always is a skin id="1", doesn't matter what exact skin it refers to -->
+
+<realsmart_skin_config>
+	
+	<skin id="1" name="YST">
+		<title>YST</title>
+		<description>Youth Sports Trust</description>
+		<path>skins/yst/</path>
+	</skin>
+	
+</realsmart_skin_config>

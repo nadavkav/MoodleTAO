@@ -1,0 +1,50 @@
+SECTION SUPPORT IN CMS PAGES.
+======================================================================
+
+CAUTION!!! As this is a third-party addon to Moodle, use it at your
+           own risk. Remember to backup your database and Moodle
+           installation files, so you can return back if something
+           is not working correctly.
+
+Abstract
+======================================================================
+
+Moodle already has section based course formats ( topics and weekly ).
+CMS pages uses this to support section module links within cms pages.
+
+RESTRICTIONS!
+======================================================================
+At the moment you should use section support only in course level not
+site level. Site level still contains some unsolved problems.
+You should not use section number 0. This is reserved for 
+site_main_menu ( social activities ) block if used. If you use 
+section 0 within cms page and site_main_menu you'll face problems.
+
+**********************************************************************
+ATTENTION!!! SECTION0 RESTRICTION DOENS'T APPLY ANYMORE!!!
+**********************************************************************
+
+section number at course settings must be bigger than zero obviously.
+
+Section summary is not included in cms pages. Only module links.
+
+How to add section witin cms page.
+======================================================================
+Create a cms page or use existing page. Choose a location within your
+page where you'd like to add section data and write:
+
+{#section1}
+
+meaning {#section<sectionnumber>}. This will show in editor as it is.
+Save the page and return to course. Turn editing on and select the
+page you just edited. If section already contained module links they
+should appear at the place you chose. You should also see dropdown
+menus which allows you to add more links into this section ( which
+you must use if there isn't any data available in that section ).
+
+You can add one or more section within one page or spread other 
+sections to other pages.
+
+To get more control about positioning your section data surround
+{#section<nro>} strings with proper ( usually div ) xhtml and control 
+it in your stylesheet.

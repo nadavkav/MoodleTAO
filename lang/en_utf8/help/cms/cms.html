@@ -1,0 +1,85 @@
+<h3>CMS addon for Moodle</h3>
+<p>(Draft! Any help is appreciated. Changes can be sent to janne dot mikkonen at julmajanne dot com).</p>
+<p>The CMS addon allows for the site admin or course teacher to create hierarchical web page
+structure on their Moodle site. The benefit here is that those who have simplistic websites can
+now merge them as part of a single moodle installation which allows for easier maintenance
+and better visual integration.</p>
+<h3>Index</h3>
+<ul>
+    <li><a href="#menus">Menus</a>
+    <ul>
+        <li><a href="#newmenu">Create new menu</a></li>
+    </ul></li>
+    <li><a href="#pages">Pages</a>
+    <ul>
+        <li><a href="#addnewpage">Adding a new page</a></li>
+        <li><a href="#defaultpage">Setting default page</a></li>
+        <li><a href="#childpages">Creating a child page</a></li>
+    </ul></li>
+    <li><a href="#naviblocks">Navigation blocks</a></li>
+</ul>
+<a name="menus"></a>
+<h3>Menus</h3>
+<p>CMS can handle multiple menus per site or course. At least one menu is required per site or course,
+although this menu doesn't have to be visible.</p>
+
+<a name="newmenu"></a>
+<h4>Create new menu</h4>
+<p>To create new menu, choose <em>Manage menus</em> at the CMS administration frontpage.</p>
+<p>Choose add new menu link and fill in the form and save changes.</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addmenu1.gif" width="445" height="316" alt="" title="" /></p>
+<ul>
+    <li><strong>Title</strong> - Title is for CMS internal usage only.</li>
+    <li><strong>Description</strong> - Description for CMS internal usage only.</li>
+    <li><strong>Print modified</strong> - Choose whether "modified" information is printed
+    in every page you create or not.</li>
+    <li><strong>Require login</strong> - If enabled every pages that'll be created under this menu,
+    requires users to login before pages are viewable.</li>
+    <li><strong>Allow guests</strong> - If menu requires login, you can choose whether this menu viewable for guest logins or not.</li>
+</ul>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addmenu2.gif" width="400" height="75" alt="" title="" /><br />
+<span style="font-size: x-small">( menu listing )</span></p>
+
+<a name="pages"></a>
+<h3>Pages</h3>
+<p>Each menu can contain multiple pages in hiararcical form. Meaning each page can have unlimited amount of child pages.</p>
+<p>Site- or course level must have one ( and only one ) default page. It is recommended that site level default page is in a menu
+that does not require login.</p>
+
+<a name="addnewpage"></a>
+<h4>Adding a page</h4>
+<p>Choose <em>Manage pages</em> at CMS administration frontpage.</p>
+<p>Press "add" button at the page listing page.</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addpage1.gif" width="445" height="306" alt="" title="" /></p>
+<ul>
+    <li><strong>Choose menu</strong> - You can change the page's menu if there are multible menus present.</li>
+    <li><strong>Page title</strong> - Should be "link name" since this field set the link name that is printed in CMS navigation block.</li>
+    <li><strong>Page content</strong> - The actual page content goes here.</li>
+    <li><strong>Publish</strong> - Choose whether the page is visible or not.</li>
+</ul>
+
+<a name="deafaultpage"></a>
+<h4>Set default page</h4>
+<p>After adding a new page you can choose your default page ( for the site or a course ).</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addpage2.gif" width="400" height="87" alt="" title="" /></p>
+<p>Press "Set as default" link at the right side of that page which you wish to set as a default page for your site.</p>
+
+<a name="childpages"></a>
+<h4>Creating child pages</h4>
+<p>To create child page first choose parent page by activating the checkbox at the left side of page title.
+Then press "Add" button.</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addpage3.gif" width="294" height="132" alt="" title="" /></p>
+
+<a name="naviblocks"></a>
+<h3>Navigation blocks</h3>
+<p>Once you've created page or pages, you can add navigation block or blocks into your site or course frontpage.</p>
+<p>To add new navigation block onto your site frontpage. Firstly turn editing on.</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addnavi1.gif" width="211" height="304" alt="" title="" /></p>
+<p>Choose <em>CMS navigation</em> from "Blocks" dropdown menu.</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addnavi2.gif" width="216" height="71" alt="" title="" /></p>
+<p>A new empty block will appear into your frontpage. Press "edit icon" on that block's heading part to configure this blocks content.</p>
+<p><img src="<?php echo $CFG->wwwroot ?>/lang/en/help/cms/addnavi3.gif" width="384" height="144" alt="" title="" /></p>
+<ul>
+    <li><strong>Choose menu</strong> - Choose menu to show on this block.</li>
+    <li><strong>Menu name</strong> - String to print out in block's heading</li>
+</ul>

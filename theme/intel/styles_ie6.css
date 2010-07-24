@@ -1,0 +1,144 @@
+/*
+ * These styles are ONLY included for IE 6 (via meta.php)
+ */
+ 
+*html .sep.arrow {
+    padding-left: 0.5em;
+}
+*html div.navbar {
+    height: 2em;
+	margin: 0 0 0 0 !important;
+	padding: 0 0 0 15px !important;
+}
+*html div.navbar {
+	width:780px !important;
+}	
+*html div.i1 {
+    min-width: 0;
+}
+*html div#header div.i3 {
+    min-width: 0;
+}
+*html .skip-block-to {
+  font-size: 1%;
+  line-height: 1%;
+}
+*html span.arrow {
+  font-family: Arial, sans-serif;
+}
+*html div.clearer {
+  font-size: 1%;
+  line-height: 1%;
+}
+*html body {
+  background-image: none;
+  background-color: #F1ECE6;
+}
+*html th.header {
+  background-image: url(pix/header.gif);
+}
+*html table.forumpost tr.header {
+  background-image: url(pix/header.gif);
+}
+*html .loginbox h2 {
+  font-size: 1.5em;
+}
+*html div.sideblock .list li .icon {
+  display:none;
+}
+*html div.sideblock ul.list li {
+  clear: left;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+*html #right-column div.sideblock ul.list li {
+  padding-left: 15px !important;
+}
+*html div.block_rss_client ul.list li {
+  padding-left: 0;
+  margin-left: 0;
+}
+*html div.block_admin div.column.c0 {
+  margin-left: -18px;
+}
+*html .block_admin_tree .footer {
+  margin-top:0px !important; /* IE7 Specific */
+}
+*html #notes-index #content-i3 .ccbox,
+*html #mod-chat-view #content-i3 .ccbox {
+  margin-bottom: 0;
+}
+*html #header div.bt,
+*html #header div.bb {
+  position: relative;
+}
+*html div.block_adminblock {
+  width: 100%;
+}
+*html a.next .accesshide {
+  display:none;
+}
+*html .tabrow0 div,
+*html .tabrow0 ul {
+  top: 4.3em !important;
+}
+*html body#message-index .tabrow0 ul,
+*html body#message-index .tabrow0 div,
+*html body#help-index .tabrow0 ul,
+*html body#help-index .tabrow0 div {
+   top: 4.3em !important;
+}
+*html .htmlarea iframe {
+  border:1px solid #666666;
+}
+*html input#searchsubmit,
+*html adminsearchform input {
+  margin:0 !important;  
+  padding:0 !important;
+}
+*html .tabrow0 div,
+*html .tabrow0 ul {
+    top: 4.2em;
+}
+*html .tabrow0 li {
+   padding:0 !important;
+   margin-right:0px !important;
+}
+*html .tabrow0 li.selected {
+   margin-right: 4px !important;
+}
+*html .tabrow0 a,
+*html .tabrow0 a:hover {
+  padding:0px 8px 0px 0 !important; 
+}
+*html .tabrow0 a span,
+*html .tabrow0 a:hover span {
+  padding:6px 0 6px 8px !important;  
+}
+*html .mform div.felement, 
+*html .mform fieldset.felement {
+  width:270px !important;
+}
+*html .mform div.fitem div.felement, 
+*html .mform div.fitem fieldset.felement {
+  padding:0 0 0 10px;
+}
+*html .sideblock .header .i1,
+*html .sideblock .header .i2,
+*html .sideblock .header .i3,
+*html .wraplevel1 .wrap, 
+*html .wraplevel1 .i1, 
+*html .wraplevel1 .i2, 
+*html .wraplevel1 .i3 {
+  background:none !important;
+}
+*html #site-index #left-column div.sideblock .i1,
+*html #site-index #left-column div.sideblock .i2,
+*html #site-index #left-column div.sideblock div.bb {
+  position: relative;
+}
+*html #site-index  #left-column div.sideblock {
+  width: 170px;
+}
+  
+  

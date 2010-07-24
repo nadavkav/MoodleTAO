@@ -1,0 +1,135 @@
+<?php 
+
+/**
+* @package mod-tracker
+* @category mod
+* @author Clifford Tham, Valery Fremaux > 1.8
+* @date 02/12/2007
+*
+* From for showing element list
+*/
+
+if (!defined('MOODLE_INTERNAL')) {
+    die('Direct access to this script is forbidden.');    ///  It must be included from view.php in mod/tracker
+}
+
+$id = optional_param('id', 0, PARAM_INT); // Course Module ID, or
+$a  = optional_param('a', 0, PARAM_INT);  // course ID	
+print_simple_box_start('center', '100%', '', '', 'generalbox', 'description');
+?>
+<center>
+<!-- Print Bug Categories -->
+<table border="0" width="400" height="50">
+	<tr>
+		<td valign="top">
+			<b><?php print_string('createnewelement', 'tracker') ?>:</b>
+		</td>
+		<td valign="top">
+			<form method="post" action="view.php">
+				<?php
+					echo "<input type=\"hidden\" name=\"id\" value=\"{$cm->id}\" />";
+					echo "<input type=\"hidden\" name=\"what\" value=\"createelement\" />";
+		            $types = tracker_getelementtypes();
+		            foreach($types as $type){
+		                $elementtypesmenu[$type] = get_string($type, 'tracker');
+		            }
+		            choose_from_menu($elementtypesmenu, 'type', '');
+				?>
+		</td>
+		<td valign="top">
+				<input type="submit" name="Go" value="<?php print_string('add') ?>" />
+			</form>
+		</td>
+	</tr>
+</table>
+
+<?php
+print_simple_box_end(); 
+print_simple_box_start('center', '100%', '', '', 'generalbox', 'description');
+tracker_loadelements($elements);	
+print_heading(get_string('elements', 'tracker'));
+?>
+
+<table border="0" width="400" height="300">
+	<tr>
+		<td valign="top">
+            <table>
+            	<tr>
+            		<td align="center" width="130">
+            			<b><?php print_string('action', 'tracker') ?></b>
+            		</td>            	
+            		<td align="center" height="30" width="250">
+            			<b><?php print_string('name') ?></b>
+            		</td>
+            		<td align="center" width="50">
+            			<b><?php print_string('local', 'tracker') ?></b>
+            		</td>
+            		<td align="center" width="50">
+            			<b><?php print_string('type', 'tracker') ?></b>
+            		</td>
+            	</tr>
+<?php
+if (!empty($elements)){
+    /// clean list from used elements
+    foreach($elements as $id => $element){
+        if (in_array($element->id, array_keys($used))){
+            unset($elements[$id]);
+        }
+    }
+    
+    /// make list
+	foreach ($elements as $element){
+?>
+            	<tr>
+            		<td valign="top" align="center">
+            			<a href="view.php?id=<?php p($cm->id) ?>&amp;what=addelement&amp;elementid=<?php p($element->id) ?>" title="<?php print_string('addtothetracker', 'tracker') ?>" ><img src="<?php p($CFG->pixpath) ?>/t/moveleft.gif" /></a>
+            				<img src="<?php p($CFG->pixpath) ?>/t/preview.gif" />
+            			<a href="view.php?id=<?php p($cm->id) ?>&amp;what=viewelementoptions&amp;elementid=<?php p($element->id) ?>" title="<?php print_string('editoptions', 'tracker') ?>"><img src="<?php p($CFG->wwwroot) ?>/mod/tracker/pix/editoptions.gif" /></a>
+            			<a href="view.php?id=<?php p($cm->id) ?>&amp;what=editelement&amp;elementid=<?php echo p($element->id) ?>" title="<?php print_string('editproperties', 'tracker') ?>"><img src="<?php p($CFG->pixpath) ?>/t/edit.gif" /></a>
+            		    <a href="view.php?id=<?php p($cm->id) ?>&amp;what=deleteelement&amp;elementid=<?php p($element->id) ?>" title="<?php print_string('delete') ?>"><img src="<?php p($CFG->pixpath) ?>/t/delete.gif" /></a>
+            			<input title="select" type="checkbox" name="c1" value="1" />
+            		</td>
+            		<td valign="top" align="left">
+            			<?php 
+            			echo format_string($element->description);
+            			echo '<br />';
+            			echo '<span style="font-size:70%">';
+            			echo $element->name;
+            			echo '</span>';
+            			if ($element->hasoptions() && empty($element->options)){
+            			    echo ' <span class="error">('.get_string('nooptions', 'tracker').')</span>';
+            			}
+            			?>
+            		</td>
+            		<td valign="top" align="center">
+            		    <?php if($element->course == $COURSE->id){ ?>
+            			<img src="<?php p($CFG->pixpath) ?>/i/course.gif" />
+            			<?php } ?>
+            		</td>
+            		<td valign="top" align="center">
+            			<img src="<?php p($CFG->wwwroot) ?>/mod/tracker/pix/types/<?php p($element->type) ?>.gif" />
+            		</td>
+            	</tr>
+<?php	
+	}
+}
+else{
+?>
+        		<tr>
+        			<td valign="top" align="center" colspan="3">
+        				<?print_string('noelements', 'tracker') ?><br />
+        			</td>
+        		</tr>
+<?php
+}
+?>
+            </table>
+		</td>		
+	</tr>
+</table>	
+	
+
+<?php
+	print_simple_box_end(); 
+?>
+</center>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<realsmart_dock_config>
+	
+	<login_asset_path>dock/login_assets.swf</login_asset_path>
+	<main_asset_path>dock/main_assets.swf</main_asset_path>
+	<font_asset_path>dock/font_assets.swf</font_asset_path>
+	<alite_asset_path>dock/alite_assets.swf</alite_asset_path>
+	
+	<profile>
+		
+	</profile>
+	
+	</realsmart_dock_config>

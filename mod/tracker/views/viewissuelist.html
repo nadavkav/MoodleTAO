@@ -1,0 +1,91 @@
+<?php
+// Obsolete file.
+// TODO : check for removal.
+//
+// 
+	print_simple_box_start('center', '100%', '', '', 'generalbox', 'description');
+// Display List of Issues
+	echo '<table border="1">' . "\r\n";
+		
+	if (isset($moodle_tracker_searchquery)){
+		echo '<tr>' . "\r\n";
+		echo '<td colspan="2">' . "\r\n";
+			//echo 'Search Results: ' . $numrecords . '<br>';
+		echo '</td>' . "\r\n";
+		
+		echo '<td colspan="2" align="right">' . "\r\n";
+	    echo '<a href="view.php?id=' . $this->tracker_getcoursemodule() . '&amp;action=clearsearch">Clear search</a>' . "\r\n";
+		echo '</td>' . "\r\n";
+		echo '</tr>' . "\r\n";
+	}
+	if ($numrecords > $limit){
+		echo '<tr>' . "\r\n";
+		echo '<td>&nbsp;</td>' . "\r\n";
+		echo '<td colspan="3"><b>Pages:</b>' . "\r\n";
+		
+		for ($i = 1; $i <= ceil($numrecords / $limit); $i++){
+			if ($i == $page){
+				echo '&nbsp;' . $i . '&nbsp;' . "\r\n";
+			} else {
+				echo '<a href="view.php?id=' . $this->id . '&action=listissues&page=' . $i . '">&nbsp;' . $i . '&nbsp;</a>' . "\r\n"; 
+			}
+		}
+				
+		echo '</td>' . "\r\n";
+		echo '</tr>' . "\r\n";			
+	}
+		
+	echo '<tr>' . "\r\n";
+	
+	echo '<td width="50" align="center">' . "\r\n";
+	echo '<b>Issue Number</b>' . "\r\n";
+	echo '</td>' . "\r\n";
+	
+	echo '<td width="400" align="center">' . "\r\n";
+	echo '<b>Summary</b>' . "\r\n";
+	echo '</td>' . "\r\n";
+	
+	echo '<td width="200" align="center">' . "\r\n";
+	echo '<b>Date Reported</b>' . "\r\n";
+	echo '</td>' . "\r\n";
+	
+	echo '<td width="200" align="center">' . "\r\n";
+	echo '<b>Reported By</b>' . "\r\n";
+	echo '</td>' . "\r\n";
+	
+	echo '</tr>' . "\r\n";		
+		
+	if (!empty($this->issuerecords))
+	{
+		foreach ($this->issuerecords as $issuerecord)
+		{
+			echo '<tr>' . "\r\n";
+		
+			echo '<td width="50" align="center">' . "\r\n";
+			echo '<a href="view.php?issue=' . $issuerecord->id . '">' . $issuerecord->id . '</a>' . "\r\n";
+			echo '</td>' . "\r\n";
+			
+			echo '<td width="400" align="left">' . "\r\n";
+			echo '<a href="view.php?issue=' . $issuerecord->id . '">' . $issuerecord->summary . '</a>' . "\r\n";
+			echo '</td>' . "\r\n";
+			
+			echo '<td width="200" align="center">' . "\r\n";
+			echo $this->tracker_getformattedtime($issuerecord->date) . "\r\n";
+			echo '</td>' . "\r\n";
+			
+			echo '<td width="200" align="center">' . "\r\n";
+			echo $issuerecord->firstname . ' ' . $issuerecord->lastname .  "\r\n";
+			echo '</td>' . "\r\n";
+			
+			echo '</tr>' . "\r\n";		
+		}
+	} else {
+		echo '<tr>' . "\r\n";
+		echo '<td colspan="5" align="center">' . "\r\n";
+		echo 'No issues reported' . "\r\n";
+		echo '</td>' . "\r\n";
+		echo '</tr>' . "\r\n";
+	}
+	echo '</table>' . "\r\n";
+	print_simple_box_end();
+?>

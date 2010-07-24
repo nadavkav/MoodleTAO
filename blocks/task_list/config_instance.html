@@ -1,0 +1,39 @@
+<?php // $Id: config_instance.html,v 1.2 2006/10/25 01:18:54 mark-nielsen Exp $
+/**
+ * Instance configuration HTML template for task list block.
+ *
+ * @author Mark Nielsen
+ * @version $Id: config_instance.html,v 1.2 2006/10/25 01:18:54 mark-nielsen Exp $
+ * @package block_task_list
+ **/
+
+    // Display options
+    $options = array();
+    $options['normal']   = get_string('normal', 'block_task_list');
+    $options['expanded'] = get_string('expanded', 'block_task_list');
+
+    if ($this->course->format == 'page') {
+        $disabled = false;
+    } else {
+        $disabled = true;
+    }
+?>
+
+<div style="text-align: center;">
+    <input type="hidden" name="taskorder" value="<?php echo $this->config->taskorder; ?>" />
+    <table cellpadding="5px">
+        <tr>
+            <td align="right" style="font-weight: bold;"><?php print_string('title', 'block_task_list') ?>:&nbsp;</td>
+            <td align="left"><?php print_textfield('title', format_text($this->title, FORMAT_HTML), get_string('title', 'block_task_list'), 30) ?></td>
+        </tr>
+        <tr>
+            <td align="right" style="font-weight: bold;"><?php print_string('blockdisplay', 'block_task_list') ?>:&nbsp;</td>
+            <td align="left"><?php choose_from_menu($options, 'display', format_text($this->config->display, FORMAT_PLAIN), '', '', '', false, $disabled); ?></td>
+        </tr>
+        <tr>
+            <td align="right" style="font-weight: bold;"><?php print_string('categorywordwrap', 'block_task_list') ?>:&nbsp;</td>
+            <td align="left"><?php print_textfield('categorywordwrap', format_text($this->config->categorywordwrap, FORMAT_PLAIN), 150, 4); ?></td>
+        </tr>
+    </table>
+  <p><span class="button"><input type="submit" value="<?php print_string('savechanges'); ?>" /></span></p>
+</div>

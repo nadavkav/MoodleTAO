@@ -1,0 +1,51 @@
+<?php // $Id: config_instance.html,v 1.5 2006/10/03 09:39:15 julmis Exp $
+global $USER, $COURSE;
+$courseid = !empty($COURSE->id) ? $COURSE->id : optional_param('id', 1, PARAM_INT);
+$menus = get_records("cmsnavi", "course", $courseid);
+
+$strmanagepages = get_string('managepages','cms');
+$strmanagemenus = get_string('managemenus','cms');
+$managemenuslink = $CFG->wwwroot.'/cms/menus.php?course='.$courseid.'&sesskey='.$USER->sesskey;
+$managepageslink = $CFG->wwwroot.'/cms/pages.php?course='.$courseid.'&sesskey='.$USER->sesskey;
+?>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+    <td valign="top" align="right"><?php print_string('choosemenu','cms'); ?>:</td>
+    <td><select name="menu">
+    <?php
+    if (! empty($menus) ) {
+        foreach ($menus as $menu) {
+            echo "<option value=\"$menu->id\"";
+            print(!empty($this->config->menu) && $this->config->menu != $menu->id) ? "" : " selected=\"true\"";
+            echo ">$menu->name</option>\n";
+        }
+    }
+    ?>
+    </select></td>
+</tr>
+
+<tr>
+    <td valign="top" align="right"><?php print_string('menuname','cms');?>:</td>
+    <td><input type="text" name="title" value="<?php echo (!empty($this->config->title) ?
+                                                           strip_tags(stripslashes($this->config->title)) :
+                                                           ''); ?>" /></td>
+</tr>
+<tr>
+    <td colspan="2" align="center">
+    <?php if (! empty($menus) ) {
+        echo '<input type="submit" value="' . get_string('savechanges') .'" />';
+
+    } ?></td>
+
+</tr>
+        <tr>
+            <td align="center"><a href="<?php p($managemenuslink) ?>">
+                <img src="<?php echo $CFG->wwwroot ?>/cms/pix/menus.gif" width="50" height="50" alt="<?php echo $strmanagemenus ?>"
+                title="<?php echo $strmanagemenus; ?>" border="0" /></a><br />
+                <a href="<?php p($managemenuslink) ?>"><?php echo $strmanagemenus ?></a></td>
+            <td align="center"><a href="<?php p($managepageslink) ?>">
+                <img src="<?php echo $CFG->wwwroot ?>/cms/pix/pages.gif" width="50" height="50" alt="<?php echo $strmanagepages ?>"
+                title="<?php echo $strmanagepages ?>" /></a><br />
+                <a href="<?php p($managepageslink) ?>"><?php echo $strmanagepages ?></a></td>
+        </tr>
+</table>

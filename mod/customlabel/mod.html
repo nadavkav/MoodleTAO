@@ -1,0 +1,183 @@
+<!-- This page defines the form to create or edit an instance of this module -->
+<!-- It is used from /course/mod.php.  The whole instance is available as $form. -->
+<?php
+
+    /**
+    * form for edting label configuration and data. 
+    * DO NOT TRY TO USE mod_form HERE.
+    * @package mod-customlabel
+    * @category mod
+    * @author Valery Fremaux for Pairformance/TAO
+    * @date 15/07/2008
+    */
+
+
+    require("$CFG->dirroot/mod/customlabel/lib.php");
+    require_once($CFG->libdir.'/pear/HTML/AJAX/JSON.php');
+
+    $context = get_context_instance(CONTEXT_COURSE, $COURSE->id);
+    
+    $what = optional_param('what', null, PARAM_ALPHA);
+    $to = optional_param('to', null, PARAM_TEXT);
+    
+    if ($what == "changetype"){
+        $form->labelclass = $to;
+    }
+    
+    if (!isset($form->name)) {
+        $form->name = '';
+    }
+    if (!isset($form->labelclass)) {
+        $form->labelclass = 'text';
+    }
+
+    if (!isset($form->title)) {
+        $form->title = '';
+    }
+
+    if (!isset($form->content)) {
+        $form->content = null;
+    } else {
+        $customlabel = json_decode($form->content);
+    }
+
+    // mounts dynamically the label's form
+    if ($form->labelclass == 'text'){
+        $content = @$customlabel->textcontent;
+    } else {
+        $customclass = customlabel_load_class($form);
+    }
+
+    // get classes for custom label        
+    $labelclasses = customlabel_get_classes($context);
+
+    foreach($labelclasses as $labelclass){
+        $qoptions[$labelclass->id] = $labelclass->name;
+    }
+?>
+
+<form name="changetype" method="post" action="#">
+<input type="hidden" name="what" value="changetype" />
+<input type="hidden" name="to" value="" />
+</form>
+
+<form name="form" method="post" action="mod.php" >
+<table style="margin:auto; ">
+<?php
+    if (has_capability('mod/customlabel:fullaccess', $context)){
+?>
+<tr valign="top">
+    <td align="right"><b><?php print_string('title', 'customlabel') ?>:</b></td>
+    <td align="left">
+        <input type="text" name="title" size="80" value="<?php p($form->title) ?>" />
+    </td>
+</tr>
+<?php
+    } else {
+?>
+<tr valign="top">
+    <td align="right"><b><?php print_string('title', 'customlabel') ?>:</b></td>
+    <td align="left">
+        <?php p($form->title) ?> <input type="hidden" name="title" size="80" value="<?php p($form->title) ?>" />
+    </td>
+</tr>
+<?php
+    }
+?>
+<tr>
+    <td align="right"><b><?php print_string('labelclass', 'customlabel') ?>:</b></td>
+    <td>
+        <?php choose_from_menu($qoptions, 'labelclass', $form->labelclass, '', 'document.forms[\'changetype\'].to.value = this.options[this.selectedIndex].value;document.forms[\'changetype\'].submit();'); ?>
+    </td>
+</tr>
+
+<!-- More rows go in here... -->
+<?php
+    if ($form->labelclass == 'text'){
+?>
+<tr valign="top">
+    <td align="right"><b><?php print_string('content', 'customlabel') ?>:</b></td>
+    <td>
+        <?php 
+           print_textarea($usehtmleditor, 10, 50, 680, 400, 'textcontent', $content);
+        ?>
+    </td>
+</tr>
+<?php
+    } else {
+        if (!$customclass){
+            error("Custom label class lacks of definition");
+        }
+        foreach($customclass->fields as $field){
+            if (!has_capability('mod/customlabel:fullaccess', $context) && !empty($field->admin)) continue ; // no capable users cannot edit lock fields
+            $name = str_replace("[]", "", $field->name);
+?>
+<tr valign="top">
+    <td align="right"><b><?php print_string($name, 'customlabel') ?>:</b></td>
+    <td>
+        <?php 
+            $fieldname = str_replace('[]', '', $field->name); // must take care it is a multiple field
+            $value = (isset($customlabel->{$fieldname})) ? $customlabel->{$fieldname} : @$field->default ;
+            if ($field->type == 'textfield') {
+                $value = str_replace("\\'", "'", $value); 
+                $size = (isset($field->size)) ? $field->size : 40 ; 
+                $maxlength = (isset($field->maxlength)) ? $field->maxlength : 255 ; 
+                echo "<input type=\"text\" size=\"{$size}\" maxlength=\"{$maxlength}\" name=\"{$field->name}\" value=\"{$value}\" />";
+            } elseif ($field->type == 'textarea') {
+                $value = str_replace("\\'", "'", $value); 
+                $size = (isset($field->size)) ? $field->size : 40 ; 
+                $rows = (isset($field->rows)) ? $field->rows : 10 ; 
+                $cols = (isset($field->cols)) ? $field->cols : 50 ; 
+                print_textarea($usehtmleditor, $rows, $cols, 680, 400, $field->name, $value);
+            } elseif ($field->type == 'list') {
+                $multiple = (isset($field->multiple)) ? $field->multiple : '' ; 
+                $options = $customclass->get_options($fieldname);
+                if (empty($multiple)){
+                    choose_from_menu($options, $field->name, $value, '');
+                } else {
+                    // $values = explode(', ', $value);
+                    choose_from_menu_multiple($options, "{$field->name}[]", $value, '');
+                }
+            }
+        ?>
+    </td>
+<?php 
+        }
+    }
+?>
+
+<tr>
+    <td></td>
+    <td>
+        <!-- These hidden variables are always the same -->
+        <input type="hidden" name="course"        value="<?php  p($form->course) ?>" />
+        <input type="hidden" name="coursemodule"  value="<?php  p($form->coursemodule) ?>" />
+        <input type="hidden" name="section"       value="<?php  p($form->section) ?>" />
+        <input type="hidden" name="module"        value="<?php  p($form->module) ?>" />
+        <input type="hidden" name="modulename"    value="<?php  p($form->modulename) ?>" />
+        <input type="hidden" name="instance"      value="<?php  p($form->instance) ?>" />
+        <input type="hidden" name="mode"          value="<?php  p($form->mode) ?>" />
+        <input type="hidden" name="cid"        value="<?php  p($form->course) ?>" />
+        <input type="hidden" name="sesskey"    value="<?php  p($form->sesskey) ?>" />
+        <input type="submit" value="<?php print_string("savechanges") ?>" />
+        <input type="submit" name="cancel" value="<?php  print_string("cancel") ?>" />
+    </td>
+</tr>
+<?php
+if (!empty($form->id)){
+	$options = "menubar=0,toolbar=0,status=1,location=1,scrollbars,resizable,width=300,height=400,top=20,left=20";
+	$urlpopup = "/mod/customlabel/view.php?what=xml&amp;l={$form->id}&amp;id={$cm->id}";
+	$onclick = "onClick=\"this.target = 'xmldata'; return window.open('$CFG->wwwroot/$urlpopup','xmldata','$options');\" ";
+?>
+<tr>
+    <td>
+    </td>
+    <td>
+        <a href="#" <?php echo $onclick ?> ><?php print_string('exportdata', 'customlabel') ?></a>
+    </td>
+</tr>
+<?php
+}
+?>
+</table>
+</form>

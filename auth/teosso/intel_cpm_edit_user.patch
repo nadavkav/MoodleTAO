@@ -1,0 +1,38 @@
+Index: user/edit_form.php
+===================================================================
+RCS file: /cvsroot/moodle/moodle/user/edit_form.php,v
+retrieving revision 1.24.2.9
+diff -u -r1.24.2.9 edit_form.php
+--- user/edit_form.php	8 Dec 2008 20:15:39 -0000	1.24.2.9
++++ user/edit_form.php	11 Dec 2008 23:28:07 -0000
+@@ -21,6 +21,21 @@
+         /// Print the required moodle fields first
+         $mform->addElement('header', 'moodle', $strgeneral);
+ 
++        /**
++         * *******************************************************
++         * TEOSSO auth patch to give the CPM profile link for users
++         * should be added after the 'header' element and before
++         * useredit_shared_definition($mform);
++         */
++        // add link to joump to CPM user profile editing
++        global $USER;
++        if ($USER->auth == 'teosso') {
++            $profilestr = get_string('profile','auth_teosso');
++            $teosso_config =  get_config('auth/teosso');
++            $link =  "<a href=\"". $teosso_config->cpm_edit_url."\" target=\"_blank\">".$profilestr."</a>";
++            $mform->addElement('static', 'jump_to_cpm', get_string('profileedit', 'auth_teosso'), $link);
++        }
++
+         /// shared fields
+         useredit_shared_definition($mform);
+ 
+@@ -96,7 +111,7 @@
+                     }
+                 }
+             }
+-            
++
+         }
+ 
+         /// Next the customisable profile fields

@@ -1,0 +1,18 @@
+/***
+ *** Submit Button IE6 Fixes
+ ***/
+
+span.button {
+  padding-top: 8px;
+}
+
+span.button a {
+  padding-top: 6px;
+  padding-bottom: 7px;
+}
+
+.mod-pagemenu li.current,
+.mod-pagemenu .menutree a.current,
+.mod-pagemenu .menutree a.current:hover {
+  background: none;
+}

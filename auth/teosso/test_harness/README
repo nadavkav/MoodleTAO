@@ -1,0 +1,57 @@
+Test Harness for TEO SSO Auth Plugin
+------------------------------------
+
+This test harness is more of a test environment.
+It is written as a set of modperl2 handlers so:
+apt-get install libapache2-mod-perl2
+
+The basic function of it is to give:
+
+* a service to mimic login
+* a service to mimic logout
+* handler to insert an SM_USER header
+emulating  what CA Federation Manager will do.
+
+The config is as follows:
+
+    perlModule MyApache::FixupInputHTTPHeaders
+    perlInputFilterHandler MyApache::FixupInputHTTPHeaders
+
+    perlModule MyApache::Logout
+    <Location /logout>
+       SetHandler perl-script
+       PerlResponseHandler MyApache::Logout
+    </Location>
+
+    perlModule MyApache::Login
+    <Location /login>
+       SetHandler perl-script
+       PerlResponseHandler MyApache::Login
+    </Location>
+
+
+This corresponds to auth module config in Moodle for 
+TEOSSO:
+
+TEO Signin URL: https://seagull.local.net/login
+        URL for site to redirect to when a User does not have a valid session
+        eg. https://federation.intel.com/federation . This will have the
+        target querystring parameter appended to it eg: https://federation.intel.com?target=http://teachonline.intel.com/auth/teosso/.
+Log out from CA Federation Manager: X
+        Check to have the module log out from CA Federation Manager when user
+        log out from Moodle
+TEO Sign Out URL: https://seagull.local.net/logout
+       URL for site to redirect to when a User is to be completely logged out 
+       eg. https://federation.intel.com/federation . This will have the RESUMEPATH
+       querystring parameter appended to it which is always wwwroot of the 
+       current Moodle.
+Do not show username: X
+       Check to have Moodle not show the username for users logging in by TEO SSO
+HTTP Header name passed from CA FM: SM_USER
+       Name of the HTTP Header that CA federation Manager uses to pass the User
+       attribute declartions of a logged in user.
+
+The perl modules need to be found in the Perl library search path - for simplicity
+sake this can be copied into place and Apache restarted:
+ sudo cp -r lib/MyApache   /usr/local/lib/site_perl/
+ sudo /etc/init.d/apache2 restart

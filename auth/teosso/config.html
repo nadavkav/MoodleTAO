@@ -1,0 +1,76 @@
+<?php
+/**
+ *
+ * @author  Piers Harding  piers@catalyst.net.nz
+ * @version 0.0.1
+ * @license http://www.gnu.org/copyleft/gpl.html GNU Public License
+ * @package auth
+ * @subpackage teosso
+ *
+ * Provide Single Sign On integration with Intel CA Federation Manager
+ *
+ */
+?>
+
+<table cellspacing="0" cellpadding="5" border="0">
+
+<tr valign="top" class="required">
+    <td align="right"><?php print_string("auth_teosso_signin_url", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="signin_url" type="text" size="35" value="<?php echo $config->signin_url; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_signin_url_description", "auth_teosso"); ?></td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><?php print_string("auth_teosso_signin_error_url", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="signin_error_url" type="text" size="35" value="<?php echo $config->signin_error_url; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_signin_error_url_description", "auth_teosso"); ?></td>
+</tr>
+
+<tr valign="top">
+    <td align="right"><?php print_string("auth_teosso_dologout", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="dologout" type="checkbox" <?php if($config->dologout) echo "CHECKED"; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_dologout_description", "auth_teosso"); ?></td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><?php print_string("auth_teosso_signout_url", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="signout_url" type="text" size="35" value="<?php echo $config->signout_url; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_signout_url_description", "auth_teosso"); ?></td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><?php print_string("auth_teosso_cpm_edit_url", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="cpm_edit_url" type="text" size="35" value="<?php echo $config->cpm_edit_url; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_cpm_edit_url_description", "auth_teosso"); ?></td>
+</tr>
+
+<tr valign="top">
+    <td align="right"><?php print_string("auth_teosso_notshowusername", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="notshowusername" type="checkbox" <?php if($config->notshowusername) echo "CHECKED"; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_notshowusername_description", "auth_teosso"); ?></td>
+</tr>
+
+<tr valign="top">
+    <td align="right"><?php print_string("auth_teosso_field_map_username", "auth_teosso"); ?>:</td>
+    <td>
+        <input name="field_map_username" type="text"  size="35" value="<?php echo $config->field_map_username; ?>" />
+    </td>
+    <td><?php print_string("auth_teosso_field_map_username_description", "auth_teosso"); ?></td>
+</tr>
+
+<?php
+print_auth_lock_options('teosso', $user_fields, get_string('auth_fieldlocks_help', 'auth'), true, false);
+?>
+</table>

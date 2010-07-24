@@ -1,0 +1,52 @@
+<?php
+    $usehtmleditor = can_use_html_editor();
+
+    $text = isset($this->config->text) ? $this->config->text : '';
+    if (empty($this->instance->pinned) and $this->instance->pagetype !== 'course-view') {
+        $text = clean_text($text, FORMAT_HTML);
+    }
+    global $COURSE;
+    $coursecontext = get_context_instance(CONTEXT_COURSE, $COURSE->id);
+?>
+<table cellpadding="9" cellspacing="0">
+<?php
+    if (has_capability('block/tao_lp_qa:editquestion', $coursecontext)) {
+?>
+<tr valign="top">
+    <td align="right"><?php print_string('question', 'block_tao_lp_qa'); ?>:</td>
+    <td><input type="text" name="title" size="30" value="<?php echo isset($this->config->title)?p($this->config->title):''; ?>" /></td>
+</tr>
+<?php 
+    } else {
+?>
+<tr valign="top">
+    <td align="right"><?php print_string('question', 'block_tao_lp_qa'); ?>:</td>
+    <td><input type="hidden" name="title" value="<?php echo isset($this->config->title)?p($this->config->title):''; ?>" /><?php echo isset($this->config->title)?p($this->config->title):''; ?></td>
+</tr>
+<?php
+    }
+    if (has_capability('block/tao_lp_qa:editanswer', $coursecontext)) {
+?>
+<tr valign="top">
+    <td align="right"><?php print_string('answer', 'block_tao_lp_qa'); ?>:</td>
+    <td><?php print_textarea($usehtmleditor, 25, 50, 0, 0, 'text', $text) ?></td>
+</tr>
+<?php 
+    } else {
+?>
+<tr valign="top">
+    <td align="right"><?php print_string('answer', 'block_tao_lp_qa'); ?>:</td>
+    <td><input type="hidden" name="title" value="<?php echo $text; ?>"/><?php echo $text; ?></td>
+</tr>
+<?php
+    } 
+?>
+<tr>
+    <td colspan="3" align="center">
+    <input type="submit" value="<?php print_string('savechanges') ?>" /></td>
+</tr>
+</table>
+<?php if ($usehtmleditor) {
+          use_html_editor(); 
+      }
+?>

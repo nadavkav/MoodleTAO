@@ -1,0 +1,58 @@
+<?php
+    // Define default values for config vars
+    if(!isset($config->appkey)) {
+        $config->appkey = '';
+    }
+    if(!isset($config->wsdlurl)) {
+        $config->wsdlurl = '';
+    }
+    if(!isset($config->autologin)) {
+        $config->autologin = 0;
+    }
+    if (isset($err['connectiontest'])) {
+        formerr($err['connectiontest']);
+    }
+?>
+<table cellspacing="0" cellpadding="5" border="0">
+    <tr valign="top" class="required">
+        <td align="right"><label for="appkey"><?php print_string("auth_ssatsso_appkey", "auth_ssatsso") ?></label></td>
+        <td>
+            <input id="appkey" name="appkey" type="text" size="30" value="<?= $config->appkey ?>" />
+            <?php
+
+                if (isset($err["appkey"])) {
+                    formerr($err["appkey"]);
+                }
+
+            ?>
+        </td>
+        <td><?php print_string("auth_ssatsso_appkey_example", "auth_ssatsso") ?></td>
+    </tr>
+    <tr valign="top" class="required">
+        <td align="right"><label for="wsdlurl"><?php print_string("auth_ssatsso_wsdlurl", "auth_ssatsso") ?></label></td>
+        <td>
+            <input id="appkey" name="wsdlurl" type="text" size="30" value="<?= $config->wsdlurl ?>" />
+            <?php
+
+                if (isset($err["wsdlurl"])) {
+                    formerr($err["wsdlurl"]);
+                }
+
+            ?>
+        </td>
+        <td><?php print_string("auth_ssatsso_wsdlurl_example", "auth_ssatsso") ?></td>
+    </tr>
+    <tr valign="top" class="required">
+        <td align="right"><label for="autologin"><?php print_string("auth_ssatsso_autologin", "auth_ssatsso") ?></label></td>
+        <td>
+            <input id="appkey" name="autologin" type="checkbox" value="1" <?= empty($config->autologin)?'':'checked="checked"' ?> />
+        </td>
+        <td><?php print_string("auth_ssatsso_autologin_warning", "auth_ssatsso") ?></td>
+    </tr>
+
+<?php
+
+print_auth_lock_options('ssatsso', $user_fields, get_string('auth_extrafields', 'auth_ssatsso'), true, true);
+
+?>
+</table>

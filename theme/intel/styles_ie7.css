@@ -1,0 +1,113 @@
+
+/*
+ * These styles are ONLY included for IE 7 (via meta.php)
+ */
+
+.sep.arrow {
+  *padding-left: 0.5em;
+}
+div.navbar {
+  *height: 2em;
+}
+div.navbar {
+  *margin-top:0px;
+  *margin-left:-10px;
+}
+div.i1 {
+  *min-width: 0;
+}
+div#header div.i3,
+div#header-home div.i3 {
+  *min-width: 0;
+}
+div.sideblock #tao-nav li {
+  *margin-bottom: -3px; /* IE7 Specific */
+}
+div.block_online_users .list li,
+div.header-nav-top div.sideblock #tao-nav li {
+  *padding-bottom: 0 !important;   
+}
+#left-column div.sideblock .list li {
+  *padding: 0 5px 2px 0 !important; /* IE7 Specific */
+} 
+#right-column div.sideblock .list li {
+  *padding-bottom: 2px !important; /* IE7 Specific */
+}
+.loginbox h2 {
+  *font-size: 1.5em;
+}
+div.block_calendar_month div.calendar-controls span.hide {
+  *display: none
+}
+div.block_calendar_month div.calendar-controls span.clearer {
+  *display: none;
+}
+div.block_calendar_month div.calendar-controls span.current {
+  *display: inline;
+}
+div.block_calendar_month div.calendar-controls a.previous {
+  *float: left;
+}
+div.block_calendar_month div.calendar-controls a.next {
+  *float: right;
+}
+body.dir-rtl div.block_calendar_month div.calendar-controls a.previous {
+  *float: right;
+}
+body.dir-rtl div.block_calendar_month div.calendar-controls a.next {
+  *float: left;
+}
+div.coursebox div.summary {
+  *padding-bottom: 0px;
+}
+.tabtree {
+  *margin-top:0 !important;
+}
+.tabrow0 div,
+.tabrow0 ul {
+  *top: 3.6em !important;   /* IE7 Specific */
+}
+.tabrow0 li {
+  *margin-right:0px !important;
+}
+.tabrow0 li.selected {
+  *margin-right: 4px !important;
+}
+.tabrow0 a,
+.tabrow0 a:hover {
+  *padding:4px 8px 4px 0 !important; 
+}
+.tabrow0 a span,
+.tabrow0 a:hover span {
+  *padding:6px 0 7px 8px !important;  
+}
+body#local-admin-lpclassify div.fitem {
+  *margin:0; /* IE7 Specific */
+}
+body#local-admin-lpclassify div.fitem input {
+  *margin:1px 0;   /* IE7 Specific */
+}
+body#user-edit .tabrow0 ul,
+body#user-edit .tabrow0 div,
+body.message .tabrow0 ul,
+body.message .tabrow0 div,
+body#help-index .tabrow0 ul,
+body#help-index .tabrow0 div {
+   *top: 2.5em !important; /* IE7 Specific */
+}
+#site-index #left-column #tao-nav li {
+  *padding-bottom:8px !important; /* IE7 Specific */
+}
+#site-index .block_admin_tree .footer {
+  *margin-top:-25px !important; /* IE7 Specific */
+}
+#login-index .navbar,
+#login-logout .navbar,
+#site-index .navbar {
+  *margin-bottom:-10px; /* IE7 Specific */
+}
+#login-index #header-story-wrapper,
+#login-logout #header-story-wrapper,
+#site-index #header-story-wrapper {
+  *height:auto; /* IE7 Specific */
+}
