@@ -66,12 +66,12 @@ $returnurl = $CFG->wwwroot.'/'.$CFG->admin.'/uploaduser.php';
 $bulknurl  = $CFG->wwwroot.'/'.$CFG->admin.'/user/user_bulk.php';
 
 // array of all valid fields for validation
-$STD_FIELDS = array('id', 'firstname', 'lastname', 'username', 'email', 
-        'city', 'country', 'lang', 'auth', 'timezone', 'mailformat', 
-        'maildisplay', 'maildigest', 'htmleditor', 'ajax', 'autosubscribe', 
-        'mnethostid', 'institution', 'department', 'idnumber', 'skype', 
-        'msn', 'aim', 'yahoo', 'icq', 'phone1', 'phone2', 'address', 
-        'url', 'description', 'oldusername', 'emailstop', 'deleted',  
+$STD_FIELDS = array('id', 'firstname', 'lastname', 'username', 'email',
+        'city', 'country', 'lang', 'auth', 'timezone', 'mailformat',
+        'maildisplay', 'maildigest', 'htmleditor', 'ajax', 'autosubscribe',
+        'mnethostid', 'institution', 'department', 'idnumber', 'skype',
+        'msn', 'aim', 'yahoo', 'icq', 'phone1', 'phone2', 'address',
+        'url', 'description', 'oldusername', 'emailstop', 'deleted',
         'password');
 
 $PRF_FIELDS = array();
@@ -551,6 +551,16 @@ if ($formdata = $mform->is_cancelled()) {
                 if ($forcechangepassword) {
                     set_user_preference('auth_forcepasswordchange', 1, $user->id);
                 }
+
+                // enable auto assign role LPC #2 in "Yesumy lemida" category #7 (nadavkav)
+                if ($CFG->autoassignlpctocategory) {
+                    // moved outside of the loop to save some cpu power ;-) (nadavkav)
+                    $catcontext = get_context_instance(CONTEXT_COURSECAT,7);
+                    $rareturn = role_assign(2 , $user->id , 0 , $catcontext ->id );
+                    add_to_log(1, 'admin', 'role assign', '/roles/assign.php?contextid=414', 'catid=7 , roleid=2 , rstatus='.$rareturn );
+                    //$upt->track('status', 'catid=7 , roleid=2 , rstatus='.$rareturn );
+                }
+
             } else {
                 // Record not added -- possibly some other error
                 $upt->track('status', $strusernotaddederror, 'error');
