@@ -106,6 +106,8 @@
          $context->id.'">'.get_string('assignroles','role').'</a></div>';
     }
 
+	if ($editingon==1) { // (nadavkav)
+	// print category picker if in editing mode. only!
 /// Print the category selector
     $displaylist = array();
     $notused = array();
@@ -114,6 +116,7 @@
     echo '<div class="categorypicker">';
     popup_form('category.php?id=', $displaylist, 'switchcategory', $category->id, '', '', '', false, 'self', $strcategories.':');
     echo '</div>';
+}
 
 /// Print current category description
     if (!$editingon && $category->description) {
