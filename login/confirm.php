@@ -35,7 +35,8 @@
             print_box_start('generalbox centerpara boxwidthnormal boxaligncenter');
             echo "<h3>".get_string("thanks").", ". fullname($user) . "</h3>\n";
             echo "<p>".get_string("alreadyconfirmed")."</p>\n";
-            print_single_button("$CFG->wwwroot/course/", null, get_string('courses'));
+            //print_single_button("$CFG->wwwroot/course/", null, get_string('courses')); // (nadavkav)
+			print_single_button("$CFG->wwwroot/", null, get_string('home'));
             print_box_end();
             print_footer();
             exit;
@@ -60,7 +61,8 @@
             print_box_start('generalbox centerpara boxwidthnormal boxaligncenter');
             echo "<h3>".get_string("thanks").", ". fullname($USER) . "</h3>\n";
             echo "<p>".get_string("confirmed")."</p>\n";
-            print_single_button("$CFG->wwwroot/course/", null, get_string('courses'));
+            //print_single_button("$CFG->wwwroot/course/", null, get_string('courses')); // (nadavkav)
+			print_single_button("$CFG->wwwroot/", null, get_string('home'));
             print_box_end();
             print_footer();
             exit;
