@@ -152,6 +152,13 @@
         // trigger events
         if ($usercreated) {
             events_trigger('user_created', $usernew);
+
+            // enable auto assign role LPC #2 in "Yesumy lemida" category #7 (nadavkav)
+            if ($CFG->autoassignlpctocategory) {
+                $catcontext = get_context_instance(CONTEXT_COURSECAT,7);
+                $rareturn = role_assign(2 , $usernew->id , 0 , $catcontext ->id );
+                add_to_log(1, 'admin', 'role assign', '/roles/assign.php?contextid=414', 'catid=7 , roleid=2 , rstatus='.$rareturn );
+            }
         } else {
             events_trigger('user_updated', $usernew);
         }
