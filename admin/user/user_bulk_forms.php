@@ -27,6 +27,10 @@ class user_bulk_action_form extends moodleform {
         if (has_capability('moodle/user:update', $syscontext)) {
             $actions[6] = get_string('forcepasswordchange');
         }
+        // bulk user enrole_into_category 7 as roleid 2 (nadavkav)
+        if (has_capability('moodle/user:update', $syscontext)) {
+            $actions[7] = 'הצבת משתמש בתפקיד LPC בסיווג ישומי למידה';//get_string('enroleintocategory');
+        }
 
         $objs = array();
         $objs[] =& $mform->createElement('select', 'action', null, $actions);

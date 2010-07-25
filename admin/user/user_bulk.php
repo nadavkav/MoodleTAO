@@ -25,6 +25,8 @@ if ($data = $action_form->get_data(false)) {
         case 4: redirect($CFG->wwwroot.'/'.$CFG->admin.'/user/user_bulk_display.php');
         case 5: redirect($CFG->wwwroot.'/'.$CFG->admin.'/user/user_bulk_download.php');
         case 6: redirect($CFG->wwwroot.'/'.$CFG->admin.'/user/user_bulk_forcepasswordchange.php');
+        case 7: redirect($CFG->wwwroot.'/'.$CFG->admin.'/user/user_bulk_enrole_into_category.php'); // bulk user enrole_into_category 7 as roleid 2 (nadavkav)
+
     }
 }
 
