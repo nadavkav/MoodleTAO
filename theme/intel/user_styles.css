@@ -61,7 +61,7 @@ h1, h1.headermain {
   color: #000000;
   margin: 0 0 10px 0;
   font-size: 19px !important;
-  font-weight:normal; ; 
+  font-weight:normal; ;
   text-align:left;
 }
 h2,
@@ -76,20 +76,20 @@ h2.headingblock,
   margin-top:5px;
   margin-bottom:10px;
   padding:0 0 5px !important;
-  text-align:left !important;  
+  text-align:left !important;
 }
 
 h3,h3.eventskey {
   font-size:105%;
   font-weight:bold;
-  color: #000000 !important;  
-  text-align:left;  
+  color: #000000 !important;
+  text-align:left;
   margin-bottom:5px
 }
 h4, h5, h6 {
   font-size: 105%;
-  font-weight:bold; 
-  text-align:left;  
+  font-weight:bold;
+  text-align:left;
 }
 hr {
   color: #E0E0E0;
@@ -234,13 +234,13 @@ div#header {
   margin:0 0 0 10px;
   padding:0;
   background: url(pix/bg_nav.gif) repeat-y top left;
-  border-top:1px solid #BABABA;	
+  border-top:1px solid #BABABA;
 }
 .header-nav-top {
   float:left;
   width: 177px;
-  margin-top: 8px; 
-  background: url(pix/bg_nav.gif) repeat-y top left;   
+  margin-top: 8px;
+  background: url(pix/bg_nav.gif) repeat-y top left;
 }
 .header-story {
   float:left;
@@ -332,7 +332,7 @@ div.breadcrumb li {
 }
 div.breadcrumb a {
   color:#666666;
-  font-weight:normal;  
+  font-weight:normal;
 }
 div.breadcrumb li.first {
   padding-right: 2px;
@@ -364,13 +364,13 @@ table#layout-table {
 }
 td#left-column {
   width:175px !important;
-  background: url(pix/bg_nav.gif) repeat-y top left;  
+  background: url(pix/bg_nav.gif) repeat-y top left;
 }
 td#left-column .wraplevel2 {
-  background: #e6e6e6; 
+  background: #e6e6e6;
   padding: 0 0 10px 0;
   position:relative;
-  width:175px;  
+  width:175px;
 }
 td#right-column {
   width:180px !important;
@@ -393,7 +393,7 @@ body.nolayouttable #content {
 div.sideblock .content,
 div.sideblock .content p {
   font-size:11px;
-  text-align:left !important;  
+  text-align:left !important;
   display:block !important;
 }
 div.sideblock div.header {
@@ -414,7 +414,7 @@ div.sideblock div.content div.message {
   text-align: left;
 }
 div.sideblock .header .hide-show-image {
-  margin-top: 7px; 
+  margin-top: 7px;
   margin-right:3px;
   display:none;
 }
@@ -437,7 +437,7 @@ div.sideblock .list li,
 div.sideblock #tao-nav li {
   clear:left;
   margin:0;
-  padding: 0 5px 5px 12px !important;  
+  padding: 0 5px 5px 12px !important;
   background: url(pix/caret_double.gif) no-repeat -1px 1px;
 }
 div.sideblock #tao-nav li {
@@ -447,7 +447,7 @@ div.sideblock #tao-nav li {
 div.block_online_users .list li,
 div.header-nav-top div.sideblock #tao-nav li {
   margin:0;
-  padding: 0 5px 5px 0 !important;  
+  padding: 0 5px 5px 0 !important;
 }
 div.header-nav-top div.sideblock div.title h2 {
   font-size: 12px;
@@ -470,7 +470,7 @@ div.header-nav-top div.sideblock div.title h2 {
   margin-bottom:12px;
 }
 #left-column div.sideblock .content  {
-  padding: 0 0 0 0;  
+  padding: 0 0 0 0;
   border-style: none;
   background: transparent;
 }
@@ -483,7 +483,7 @@ div.header-nav-top div.sideblock div.title h2 {
 }
 #right-column div.sideblock {
   width:180px;
-  margin-bottom:12px;  
+  margin-bottom:12px;
 }
 #right-column div.sideblock div.title h2 {
   font-size: 1em;
@@ -497,7 +497,7 @@ div.header-nav-top div.sideblock div.title h2 {
   background: #ffffff url(pix/modulebg.jpg) repeat-x top left;
 }
 #middle-column div.sideblock {
-  margin-bottom:10px;  
+  margin-bottom:10px;
 }
 #middle-column div.sideblock .content,
 #middle-column div.sideblock .content * {
@@ -523,7 +523,7 @@ div.sideblock .content li.post {
   padding-bottom: 10px;
 }
 div.sideblock .footer {
-  text-align:left !important; 
+  text-align:left !important;
 }
 
 /***
@@ -561,10 +561,10 @@ div.block_login div.content div.c2.fld input {
    color:#666666;
    font-family:Verdana,Sans-Serif;
    font-size:10px;
-   padding:2px 1px 4px;  
+   padding:2px 1px 4px;
    margin-left:5px;
 }
-.block_online_users .listentry div.user, 
+.block_online_users .listentry div.user,
 .block_messages .listentry div.use {
   float:left;
   margin: 2px 0;
@@ -576,16 +576,26 @@ div.block_messages div.content div.info,
 div.block_online_users div.content div.info,
 div.block_news_items div.content div.name {
   text-align: left;
-  margin-bottom: 3px;  
+  margin-bottom: 3px;
 }
 .block_tags .footer {
   margin-top: 15px;
 }
-.block_tags .footer a,
-.block_messages .footer a {
+
+/*  fix image alignment for bullets html tag (nadavkav)*/
+.dir-ltr .block_tags .footer a,
+.dir-ltr .block_messages .footer a {
    padding-left: 12px;
-   background: url(pix/caret_single.gif) no-repeat -3px 2px !important;
+   background: url(pix/caret_single_ltr.gif) no-repeat -3px 2px !important;
 }
+
+/*  fix image alignment for bullets html tag (nadavkav)*/
+.dir-rtl .block_tags .footer a,
+.dir-rtl .block_messages .footer a {
+   padding-left: 12px;
+   background: url(pix/caret_single_rtl.gif) no-repeat -3px 2px !important;
+}
+
 div.block_tao_team_groups input {
   margin: 3px 0 2px 0;
 }
@@ -608,23 +618,31 @@ div.block_page_module ul.menutree li {
 }
 .block_admin_tree .admintree div {
   padding: 0 5px 5px 0 !important;
-}  
+}
 .block_admin_tree .admintree div div {
   padding-left: 12px !important;
   background: transparent;
 }
 .block_admin_tree .admintree div div {
   padding-bottom:3px !important;
-  background: transparent;  
+  background: transparent;
 }
 .block_admin_tree .admintree div div div {
   padding-top:2px !important;
   padding-bottom:2px !important;
-  background: transparent;  
+  background: transparent;
 }
-.block_admin_tree .admintree div.depth1 { 
-   background: url(pix/caret_single.gif) no-repeat -3px 2px;
+
+/*  fix image alignment for bullets html tag (nadavkav)*/
+.dir-ltr .block_admin_tree .admintree div.depth1 {
+   background: url(pix/caret_single_ltr.gif) no-repeat -3px 2px;
 }
+/*  fix image alignment for bullets html tag (nadavkav)*/
+.dir-rtl .block_admin_tree .admintree div.depth1 {
+   background: url(pix/caret_single_rtl.gif) no-repeat right;
+}
+
+
 .block_recent_activity .activitydate {
   margin-bottom:10px;
 }
@@ -645,9 +663,9 @@ div.block_dummy_block span {
 #left-column div.sideblock .list li,
 #left-column div.sideblock #tao-nav li {
   background: transparent;
-  padding: 0 5px 5px 0 !important; 
+  padding: 0 5px 5px 0 !important;
 }
-   
+
 #right-column .block_html .header .i1,
 #right-column .block_html .header .i3,
 #right-column .block_html .header .hide-show-image {
@@ -664,7 +682,7 @@ div.block_dummy_block span {
   width:162px;
 }
 #middle-column .block_html .activity {
- list-style-type: none; 
+ list-style-type: none;
 }
 
 /***
@@ -672,7 +690,7 @@ div.block_dummy_block span {
 ***/
 
 div.sideblock .content table.minicalendar th {
-  text-align: center !important;  
+  text-align: center !important;
 }
 div.sideblock table.minicalendar td.day {
   text-align: center !important;
@@ -1010,7 +1028,7 @@ form#adminsettings .form-label {
 }
 form#adminsettings .form-setting {
   padding: 0.3em;
-  margin-left:15em;  
+  margin-left:15em;
 }
 form#adminsettings div.form-htmlarea {
   width: 630px;
@@ -1107,12 +1125,21 @@ div.coursebox div.summary {
   padding:0px;
   background: transparent;
 }
-div.coursebox div.info .name {
+/*  fix image alignment for bullets html tag (nadavkav)*/
+.dir-ltr div.coursebox div.info .name {
   width:auto;
   font-weight:bold;
   padding-left:15px;
-  background: url(pix/caret_single.gif) no-repeat 0 3px;
+  background: url(pix/caret_single_ltr.gif) no-repeat 0 3px;
 }
+/*  fix image alignment for bullets html tag (nadavkav)*/
+.dir-rtl div.coursebox div.info .name {
+  width:auto;
+  font-weight:bold;
+  padding-left:15px;
+  background: url(pix/caret_single_rtl.gif) no-repeat right center;
+}
+
 div.coursebox div.info .accessiconlink {
    display:none;
 }
@@ -1341,8 +1368,8 @@ body.grade-report-grader table#user-grades td.course {
 .plugincompattable td.error {
   color: #DF0000;
 }
-#admin-report .plugin, 
-#course-report .plugin, 
+#admin-report .plugin,
+#course-report .plugin,
 #course-import .plugin {
   border:none;
   margin:0;
@@ -1503,11 +1530,11 @@ div.i2 {
 }
 #right-column div.sideblock div.i1 {
   padding: 0 0 0 1px;
-  border-left:1px solid #c6c6c6;  
+  border-left:1px solid #c6c6c6;
 }
 #right-column div.sideblock div.i2 {
   padding: 0 1px 0 0;
-  border-right:1px solid #c6c6c6;   
+  border-right:1px solid #c6c6c6;
 }
 #right-column div.sideblock div.i3 {
   background-color: transparent;
@@ -1552,7 +1579,7 @@ td#middle-column div.bt {
 }
 td#middle-column div.i1 {
   padding: 0 0 0 5px;
-  border-left:1px solid #c6c6c6;  
+  border-left:1px solid #c6c6c6;
 }
 td#middle-column div.i2 {
   background-position: 100% 0;
@@ -1608,11 +1635,11 @@ body.nolayouttable div#content div.bt {
 }
 body.nolayouttable div#content div.i1 {
   padding: 0 0 0 5px;
-  border-left:1px solid #c6c6c6;  
+  border-left:1px solid #c6c6c6;
 }
 body.nolayouttable div#content div.i2 {
   padding: 0 5px 0 0;
-  border-right:1px solid #c6c6c6;  
+  border-right:1px solid #c6c6c6;
 }
 body.nolayouttable div#content div.i3 {
   background-color: #FFFFFF;
@@ -1641,7 +1668,7 @@ body.nolayouttable div#content div.bb {
 }
 .wraplevel1 .bt, .wraplevel1 .bt, .wraplevel1 .bb, .wraplevel1 .bb {
   height:0;
-  background:transparent; 
+  background:transparent;
 }
 #header .bt, #header .bb,
 #footer .bt, #footer .bb,
@@ -1707,7 +1734,7 @@ input#searchsubmit {
   font-weight: normal;
   color: #0860a8;
   text-align:center !important;
-  margin:0 2px;  
+  margin:0 2px;
   padding:0 4px 4px 4px !important;
   border:1px solid #97b1c7;
   cursor: pointer;
@@ -1751,11 +1778,11 @@ form.mform .fitemtitle  {
   width:200px;
   text-align:left;
 }
-form.mform div.felement, 
+form.mform div.felement,
 form.mform fieldset.felement {
   width:98%;
   margin:2px 0 0 0 !important;
-  padding-left:10px;  
+  padding-left:10px;
 }
 form.mform fieldset {
   margin-top:0;
@@ -1776,7 +1803,7 @@ form.mform span.helplink {
   display:inline;
 }
 .helplink img {
-  width:auto;  
+  width:auto;
 }
 form.mform .textareaicons span.helplink {
   float:none;
@@ -1796,7 +1823,7 @@ form.mform textarea {
 form.mform .fdescription.required {
   padding-top:10px;
   padding-left:13px;
-  text-align:left; 
+  text-align:left;
 }
 #local-lp-list .popupform select {
   margin-right: 3px;
@@ -1837,7 +1864,7 @@ div.tabtree {
   background: transparent url(pix/tab/on_right.gif) no-repeat right top !important;
 }
 
-.tabrow0 a.nolink span, 
+.tabrow0 a.nolink span,
 .tabrow0 a.nolink:hover span {
   background: transparent url(pix/tab/on_left.gif) no-repeat left top !important;
 }
@@ -1857,7 +1884,7 @@ ul.tabrow td.selected {
   display:inline;
   margin:0;
   padding:0;
- 
+
 }
 .tabrow0 a,
 .tabrow0 a:hover {
@@ -1882,7 +1909,7 @@ ul.tabrow td.selected {
 }
 .tabrow0 a:hover {
   text-decoration:underline !important;
-} 
+}
 .tabrow1 {
   padding:5px !important;
 }
@@ -1900,7 +1927,7 @@ ul.tabrow td.selected {
 .tabrow1 .selected  a:hover {
   margin:0 !important;
   padding-left:0 !important;
-  background:transparent !important; 
+  background:transparent !important;
 }
 
 
@@ -1909,18 +1936,18 @@ ul.tabrow td.selected {
 ***/
 
 body#course-view tr.section td.side {
-  border-top: 1px solid #F5F5F5;  
+  border-top: 1px solid #F5F5F5;
   border-bottom: 0px solid #F5F5F5;
-  background: #F5F5F5;  
+  background: #F5F5F5;
 }
 body#course-view tr.current td.side {
   background: #E5E5E5;
   border-top: 1px solid #E5E5E5 !important;
-  border-bottom: 1px solid #E5E5E5 !important;  
+  border-bottom: 1px solid #E5E5E5 !important;
 }
 body#course-view tr.section td.content {
   padding-bottom: 1.5em;
-  border-top: 1px solid #F5F5F5;  
+  border-top: 1px solid #F5F5F5;
   border-bottom: 0px solid #F5F5F5;
 }
 body#course-view tr.current td.content {
@@ -1965,7 +1992,7 @@ body#course-view #layout-table #left-column .spacer  {
 body#course-view #content #layout-table #middle-column  {
   padding-top:5px !important;
   /*padding-left:195px !important;*/
-  padding-left:15px; !important;  
+  padding-left:15px; !important;
   padding-right:12px; !important
 }
 body#course-view #content table.format-page {
@@ -1974,7 +2001,7 @@ body#course-view #content table.format-page {
 }
 #course-view .section td.content {
   padding-top:0px !important;
-}  
+}
 #learning-path-header {
   width:785px;
   float:right;
@@ -2019,7 +2046,7 @@ body#course-view .course-content #editpagesettings select {
 body#course-view .course-content #editpagesettings .fitemtitle,
 body#course-view .course-content #editpagesettings select {
   width:auto;
-} 
+}
 body#course-view .course-content #editpagesettings .felement {
   padding-left:11px;
 }
@@ -2052,7 +2079,7 @@ div.coursebox {
   margin-bottom:10px;
   background:transparent;
   border:none;
-  border-bottom:none !important;  
+  border-bottom:none !important;
 }
 div.courseboxcontent {
   background-color: #EEEEEE;
@@ -2110,7 +2137,7 @@ body#local-admin-lpclassify .mform div.fitem div.felement.fcheckbox {
 }
 body#local-admin-lpclassify .mform div.fitem div.felement.fcheckbox input {
   border:none;
-  margin-bottom:-1px;  
+  margin-bottom:-1px;
 }
 body#local-admin-lpclassify .mform div.fitem div.felement.fcheckbox label {
   padding-bottom:1px;
@@ -2266,18 +2293,18 @@ body#message-user .commands span {
 #login-index div.loginbox {
   margin:0;
   border:none;
-  padding-top:10px !important;   
+  padding-top:10px !important;
 }
 #login-index .loginbox .loginform {
-  width:400px;  
+  width:400px;
 }
 #login-index  .loginbox .loginform .form-input {
   float:left;
 }
 .loginbox .loginform .form-label  {
-  width:80px !important; 
+  width:80px !important;
   text-align:right !important;
-} 
+}
 .loginbox .loginform .form-input input  {
   width:100px !important;
 }
@@ -2337,7 +2364,7 @@ body#message-user .commands span {
 #site-index #left-column,
 #site-index #left-column .wraplevel2 {
   background:transparent;
-} 
+}
 #site-index #left-column .bt,
 #site-index #left-column .bb {
   display:block;
@@ -2399,11 +2426,11 @@ body#message-user .commands span {
 }
 #site-index #left-column div.sideblock div.i1 {
   padding: 0 0 0 1px !important;
-  border-left:1px solid #c6c6c6 !important;  
+  border-left:1px solid #c6c6c6 !important;
 }
 #site-index #left-column div.sideblock div.i2 {
   padding: 0 1px 0 0 !important;
-  border-right:1px solid #c6c6c6 !important;   
+  border-right:1px solid #c6c6c6 !important;
 }
 #site-index #left-column div.sideblock div.i3 {
   background-color: transparent;
@@ -2466,7 +2493,7 @@ body#message-user .commands span {
 
 /* in-page navigation */
 .backtotop{float:right;background:url(pix/caret_up.gif) no-repeat right;padding:3px 8px 0 1px}
-body#site-index .anchor-links ul li{background:url(pix/caret_down.gif) no-repeat 0 0.5em} 
+body#site-index .anchor-links ul li{background:url(pix/caret_down.gif) no-repeat 0 0.5em}
 body#site-index .anchor-links .half{margin:0 0 0 8px}
 .last{float:none}
 
@@ -2483,7 +2510,7 @@ body.tag .managelink {
 }
 body#blog-index #content,
 body#tag-index #content {
-  background: url(pix/bg_nav.gif) repeat-y 10px 0px; 
+  background: url(pix/bg_nav.gif) repeat-y 10px 0px;
 }
 body#tag-index #content #middle-column {
   padding-left: 177px;
@@ -2519,7 +2546,7 @@ ul#tagblogentries li a {
 }
 
 /**
-*** Roles UI 
+*** Roles UI
 **/
 
 #admin-roles-usersroles p {
@@ -2543,10 +2570,10 @@ table.rolecap tr.rolecap th {
 }
 table.rolecap tr.rolecap th span a {
   margin-right:5px;
-}  
+}
 table.rolecap tr.rolecap td {
   text-align:center;
-  padding: 3px;  
+  padding: 3px;
 }
 table.rolecap td.header {
   padding: 10px 0 3px 0;
@@ -2588,7 +2615,7 @@ select#reportuser,
 }
 
 /**
-*** My Learning tables 
+*** My Learning tables
 **/
 
 #browse_learning_paths table,
@@ -2619,8 +2646,8 @@ select#reportuser,
   margin: 10px 0 5px 0;
 }
 #my_learning_paths_raflmode table td {
-  width:50%;  
-  border:none; 
+  width:50%;
+  border:none;
   padding: 3px 5px;
   background: transparent;
 }
@@ -2653,7 +2680,7 @@ div.taoview .taoview-thumb {
   width: 20px;
   height:20px;
   border: 3px solid #dddddd;
-  margin-right:8px;  
+  margin-right:8px;
   margin-bottom:5px;
 }
 div.taoview .taoview-download {
@@ -2676,7 +2703,7 @@ div.taoview .taoviewratingtext {
   margin-right:5px;
 }
 div.taoview .taoviewratingstars {
-  font-size: 1.4em; 
+  font-size: 1.4em;
   color: #0860A8;
 }
 div.taoviewtagcloud {
@@ -2711,40 +2738,40 @@ div.my_collaboration_group_box p {
 div.my_collaboration_friends_box {
  margin-top: 15px;
 }
-.neighbour-image{ 
-  width: 50px; 
+.neighbour-image{
+  width: 50px;
   height: 50px;
-} 
-.tao_friend_box{ 
-  float: left; 
-  border: dotted 1px #AAA; 
-  width: 180px;
-  padding: 3px; 
-  margin-left: 5px; 
-  margin-bottom: 5px 
-} 
-.friend-image { 
-  width: 70px; 
-  height: 70px; 
-  float: left; 
-  margin-right: 3px 
-} 
-.tao_friend_name{ 
-  margin-bottom: 3px; 
-  font-weight: bold 
-} 
-.my_collaboration_group_tools{
-  float: right; 
 }
-.tao_neighbour_box { 
-  float: left; 
-  border: none; 
-  margin-right: 3px; 
-  margin-bottom: 5px;  
-  width:75px; 
-  font-size: 0.8em; 
-  text-align: center 
-} 
+.tao_friend_box{
+  float: left;
+  border: dotted 1px #AAA;
+  width: 180px;
+  padding: 3px;
+  margin-left: 5px;
+  margin-bottom: 5px
+}
+.friend-image {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 3px
+}
+.tao_friend_name{
+  margin-bottom: 3px;
+  font-weight: bold
+}
+.my_collaboration_group_tools{
+  float: right;
+}
+.tao_neighbour_box {
+  float: left;
+  border: none;
+  margin-right: 3px;
+  margin-bottom: 5px;
+  width:75px;
+  font-size: 0.8em;
+  text-align: center
+}
 .local-lp-certification #middle-column div.cert-task-complete {
   margin-top: 5px;
 }

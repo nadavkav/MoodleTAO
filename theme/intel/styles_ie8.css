@@ -1,0 +1,19 @@
+#course-edit .i3 {
+float:right !important;
+}
+
+#course-edit #HAT-globalheader {
+display:none;
+}
+
+#course-edit #HAT-globalheader A.logo {
+position:static;
+}
+
+#course-edit #HAT-globalheader ul {
+float:left;
+}
+
+body {
+  background-color:white !important;
+}

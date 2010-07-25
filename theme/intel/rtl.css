@@ -18,7 +18,7 @@ h2, h2.main, h2.headingblock, .taoviewtagcloud-name {
 }
 #HAT-globalheader a.logo {
   left:auto;
-  right:-28px;
+  right:28px;
 }
 #HAT-globalheader ul {
   float:left;
@@ -53,7 +53,7 @@ body#tag-index #content #layout-table {
 }
 body#tag-index #content #middle-column {
   padding-left: 0;
-  padding-right: 177px;  
+  padding-right: 177px;
 }
 .header-nav-top {
   float:right;
@@ -165,14 +165,14 @@ div.sideblock div.i3 {
   /*background: transparent;*/
   border: 1px solid #f1ece6;
 }
-div.sideblock .content, 
+div.sideblock .content,
 div.sideblock .content p,
-div.block_messages div.content div.info, 
-div.block_online_users div.content div.info, 
+div.block_messages div.content div.info,
+div.block_online_users div.content div.info,
 div.block_news_items div.content div.name {
   text-align:right !important;
 }
-div.sideblock .list li, 
+div.sideblock .list li,
 div.sideblock #tao-nav li {
   padding: 0 12px 5px 5px !important;
   background: url(pix/caret_double_rtl.gif) no-repeat 154px 2px;
@@ -182,7 +182,7 @@ div.sideblock #tao-nav li {
   padding-right:5px !important;
 }
 .block_admin_tree .admintree div.depth1 {
-   background: url(pix/caret_single_rtl.gif) no-repeat 140px 2px; 
+   background: url(pix/caret_single_rtl.gif) no-repeat 140px 2px;
 }
 .block_admin_tree .admintree div div {
   padding-left:0 !important;
@@ -191,22 +191,22 @@ div.sideblock #tao-nav li {
 .header-nav-top div.sideblock #tao-nav li {
   background-position: 161px 4px;
 }
-div.block_online_users .list li, 
+div.block_online_users .list li,
 div.header-nav-top div.sideblock #tao-nav li {
   padding: 0 10px 5px 0 !important;
 }
 div.sideblock .footer {
-  text-align: right !important; 
+  text-align: right !important;
 }
 div.header-nav-top div.sideblock div.title h2 {
-  padding: 5px 12px 5px 5px !important;  
+  padding: 5px 12px 5px 5px !important;
 }
-.block_tags .footer a, 
+.block_tags .footer a,
 .block_messages .footer a {
   padding-left:0;
   padding-right: 12px;
-   background: url(pix/caret_single_rtl.gif) no-repeat 130px 2px !important; 
-}  
+   background: url(pix/caret_single_rtl.gif) no-repeat 130px 2px !important;
+}
 td#middle-column div.bt div {
   background-position: 100% 0;
   right: -13px;
@@ -270,7 +270,7 @@ div#footer div.i2 {
 div#footer div.i3 {
   /*background: transparent;*/
 }
-body.HAT-narrowbg #header-home, 
+body.HAT-narrowbg #header-home,
 body.HAT-narrowbg #header {
   background: transparent url(pix/bg_header_rtl.gif) no-repeat right top;
 }
@@ -370,7 +370,7 @@ div#content div.ccbox div.i2 {
 #login-index .loginbox .loginform .form-input {
   float:right;
 }
-#login-index .loginbox h2, 
+#login-index .loginbox h2,
 #login-index .loginbox div {
   text-align: right !important;
 }
@@ -383,11 +383,11 @@ div#content div.ccbox div.i2 {
   width:auto;
   float:none;
   background:none !important;
-}  
+}
 ul.tabrow1 {
   width: auto !important;
 }
-form.mform div.felement, 
+form.mform div.felement,
 form.mform fieldset.felement {
   width:95% !important;
   padding-left:0;
@@ -402,4 +402,72 @@ form.mform span {
 form.mform .fitemtitle,
 form.mform .fdescription.required {
   text-align:right;
+}
+
+/* fix main course alignment (nadavkav) */
+#content .course-content h2.main,
+body#course-view #content h2.main,
+body#blog-index #content h2.main,
+body#tag-index #content h2.main,
+#content .course-content .tabtree,
+body#course-view #content .tabtree,
+body#blog-index #content .tabtree,
+body#tag-index #content .tabtree,
+#content .course-content #layout-table,
+body#course-view #content #layout-table,
+body#blog-index #content #layout-table,
+body#tag-index #content #layout-table  {
+margin-right:0px;
+}
+
+.format-page .nextpage {
+float:left;
+}
+
+.format-page .prevpage {
+float:right;
+}
+
+#middle-column div.sideblock .content,
+#middle-column div.sideblock .content * {
+text-align:right !important;
+}
+
+#learning-path-header  {
+float:left;
+}
+body#course-view #content #html,
+body#course-view #content .block-config,
+body#course-view #content #page-format-action {
+margin-right:195px;
+}
+
+div.coursebox div.info .name {
+-moz-background-clip:border;
+-moz-background-inline-policy:continuous;
+-moz-background-origin:padding;
+background:transparent url(pix/caret_single.gif) no-repeat scroll right bottom;
+font-weight:bold;
+padding-right:15px;
+width:auto;
+font-size:15px; /* titles for LP searches now bigger (avigaspan) */
+}
+
+#coursesearch, #coursesearch2 {
+display:none;
+margin-top:1em;
+text-align:center;
+}
+
+/* hide un need fields from the course creating form */
+#course-edit #enrolhdr , #course-edit #expirynotifyhdr , #course-edit #availability
+, #course-edit #groups , #course-edit #language , #course-edit #rolerenaming
+{
+display:none;
+}
+
+/* fix sub-tab when editing "pages" (nadavkav) */
+ul.tabrow1 {
+min-width:76%;
+right:175px;
 }
