@@ -1,15 +1,15 @@
 <?php
 /**
    Format control for the Learning Path course format.
-   Recycles a lot of the flex page format functionality. 
-   
+   Recycles a lot of the flex page format functionality.
+
    Important Concepts:
-      - Difference between $PAGE and $page.  
-            $PAGE is the 'moodle core' representation of the web page as a whole. being displayed. can be 
+      - Difference between $PAGE and $page.
+            $PAGE is the 'moodle core' representation of the web page as a whole. being displayed. can be
               of types e.g. course page, blog page, activity page.
             $page is the specific flexpage being asked for and is an actual database entity (format_page).  when referring to 'page'
               in the comments, this is what is meant.
-  
+
 */
 
     // include the page format functions
@@ -82,7 +82,7 @@
     //     we need to reset various things that have been previously set by moodle core
     page_import_types('course/format/learning');  // note hat this includes /course/format/page/pagelib.php
 
-    $PAGE = page_create_object(PAGE_COURSE_VIEW, $course->id);  
+    $PAGE = page_create_object(PAGE_COURSE_VIEW, $course->id);
     $PAGE->set_formatpage($page);
 
     $editing = $PAGE->user_is_editing();
@@ -114,12 +114,12 @@
     $overview_page = page_get_default_page($course->id);
     $overview_link = "";
     if ( $overview_page->id != $page->id) {
-       $overview_link = '<a href="'.course_page_uri($overview_page,$course).'">Overview Page</a>';
+       $overview_link = '<a href="'.course_page_uri($overview_page,$course).'">דף מבוא</a>'; // should be get_string('overviewpage','format_learning'); // (nadavkav)
     }
 
     // create the 'my learning path' specific links
     $mypaths_link = "";
-    if (!tao_is_my_learning_path($course->id) && !isguest()) {
+    if (!tao_is_my_learning_path($course->id) && !isguest() && !($course->category == '7') ) { // && !($course->category == '7')  added to make sure it is not displayed when in Yesumiy Lemida course (nadavkav)
         $mypaths_link  = '<a href="'.course_enrol_uri($overview_page,$course).'">'.get_string('addtomylearningpaths', 'format_learning').'</a>';
     }
     $completion_page = '/local/lp/completion.php?id='.$course->id;
@@ -142,7 +142,7 @@
 
          $canviewrafl = false;
          $notifymessage = '';
-         
+
 
          if (has_capability('moodle/local:canviewraflmod', $context, NULL, false)) {
 
@@ -163,12 +163,12 @@
                 $canviewrafl = true;
             }
          }
- 
+
          if ($canviewrafl) {
 
-             require_once($CFG->dirroot . '/mod/rafl/locallib.php'); 
+             require_once($CFG->dirroot . '/mod/rafl/locallib.php');
              $rafl = new localLibRafl();
-         
+
              // get the right module id
              $moduleid = $rafl->get_course_module_id($course->id);
              $country_item_id = $rafl->get_rafl_item_id_by_country('uk');
