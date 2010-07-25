@@ -30,7 +30,7 @@ if ($hassiteconfig
     $temp->add(new admin_setting_configtext('allowemailaddresses', get_string('allowemailaddresses', 'admin'), get_string('configallowemailaddresses', 'admin'), '', PARAM_NOTAGS));
     $temp->add(new admin_setting_configtext('denyemailaddresses', get_string('denyemailaddresses', 'admin'), get_string('configdenyemailaddresses', 'admin'), '', PARAM_NOTAGS));
     $temp->add(new admin_setting_configcheckbox('verifychangedemail', get_string('verifychangedemail', 'admin'), get_string('configverifychangedemail', 'admin'), 1));
-    
+
     $temp->add(new admin_setting_configtext('recaptchapublickey', get_string('recaptchapublickey', 'admin'), get_string('configrecaptchapublickey', 'admin'), '', PARAM_NOTAGS));
     $temp->add(new admin_setting_configtext('recaptchaprivatekey', get_string('recaptchaprivatekey', 'admin'), get_string('configrecaptchaprivatekey', 'admin'), '', PARAM_NOTAGS));
     $ADMIN->add('authsettings', $temp);
@@ -113,7 +113,7 @@ if ($hassiteconfig
                 $defaultguestid = reset($guestroles);
                 $defaultguestid = $defaultguestid->id;
             }
-            
+
             // we must not use assignable roles here:
             //   1/ unsetting roles as assignable for admin might bork the settings!
             //   2/ default user role should not be assignable anyway
@@ -136,6 +136,9 @@ if ($hassiteconfig
             $temp->add(new admin_setting_configselect('defaultuserroleid', get_string('defaultuserroleid', 'admin'),
                           get_string('configdefaultuserroleid', 'admin'), $userrole->id, $nonguestroles)); // guest role here breaks a lot of stuff
         }
+
+    // enable auto assign role LPC #2 in "Yesumy lemida" category #7 (nadavkav)
+    $temp->add(new admin_setting_configcheckbox('autoassignlpctocategory', get_string('autoassignlpctocategory', 'admin'), get_string('configautoassignlpctocategory', 'admin'), 1));
 
         $temp->add(new admin_setting_configcheckbox('nodefaultuserrolelists', get_string('nodefaultuserrolelists', 'admin'), get_string('confignodefaultuserrolelists', 'admin'), 0));
 
