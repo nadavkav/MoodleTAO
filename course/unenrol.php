@@ -77,7 +77,7 @@
             add_to_log($course->id, 'course', 'unenrol',
                     "view.php?id=$course->id", $course->id);
 
-            redirect($CFG->wwwroot . $returnuri);
+            redirect($CFG->wwwroot );//. $returnuri); // (nadavkav)
         }
     }
 
