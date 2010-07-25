@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Moodle - Modular Object-Oriented Dynamic Learning Environment
  *          http://moodle.org
@@ -70,14 +70,14 @@ define('ROLE_CERTIFIEDPT', 'certifiedpt');
  *   note: you should use a constant when passing in a shortname,  so if you
  *         need to use this function define a constant for the role
  *         you're assigning.
- * 
+ *
  *   usage example: tao_role_assign_by_shortname(ROLE_LPEDITOR, $USER->id, $context->id);
  *
- * @param string $shortname  
- * @param integer $userid  
- * @param integer $contextid  
+ * @param string $shortname
+ * @param integer $userid
+ * @param integer $contextid
  *
- * @return bool 
+ * @return bool
 */
 function tao_role_assign_by_shortname ($shortname, $userid, $contextid) {
     // look up roleid based on shortname
@@ -93,14 +93,14 @@ function tao_role_assign_by_shortname ($shortname, $userid, $contextid) {
 /**
  *
  * takes a role shortname and unassigns it to the given user and context.
- * 
+ *
  *   usage example: tao_role_unassign_by_shortname(ROLE_LPEDITOR, $USER->id, $context->id);
  *
- * @param string $shortname  
- * @param integer $userid  
- * @param integer $contextid  
+ * @param string $shortname
+ * @param integer $userid
+ * @param integer $contextid
  *
- * @return bool 
+ * @return bool
 */
 function tao_role_unassign_by_shortname ($shortname, $userid, $contextid) {
     // look up roleid based on shortname
@@ -115,13 +115,13 @@ function tao_role_unassign_by_shortname ($shortname, $userid, $contextid) {
 
 /**
  *
- * returns an array of users with the learning path author role for the given context. 
- * 
- * usage example: $authors = tao_get_lpauthors($context);  
+ * returns an array of users with the learning path author role for the given context.
  *
- * @param object $context  
+ * usage example: $authors = tao_get_lpauthors($context);
  *
- * @return array 
+ * @param object $context
+ *
+ * @return array
 */
 
 function tao_get_lpauthors($context) {
@@ -132,12 +132,12 @@ function tao_get_lpauthors($context) {
 /**
 
  * helper function to get head editors for the given context
- * 
- * usage example: $editors = tao_get_headeditors($context);  
  *
- * @param object $context  
+ * usage example: $editors = tao_get_headeditors($context);
  *
- * @return array 
+ * @param object $context
+ *
+ * @return array
 */
 
 function tao_get_headeditors($context) {
@@ -148,12 +148,12 @@ function tao_get_headeditors($context) {
 /**
 
  * helper function to get template editors for the given context
- * 
- * usage example: $editors = tao_get_templateeditors($context);  
  *
- * @param object $context  
+ * usage example: $editors = tao_get_templateeditors($context);
  *
- * @return array 
+ * @param object $context
+ *
+ * @return array
 */
 
 function tao_get_templateeditors($context) {
@@ -164,12 +164,12 @@ function tao_get_templateeditors($context) {
 /**
 
  * helper function to get the learning path contributors for the given context
- * 
- * usage example: $editors = tao_get_lpcontributors($context);  
  *
- * @param object $context  
+ * usage example: $editors = tao_get_lpcontributors($context);
  *
- * @return array 
+ * @param object $context
+ *
+ * @return array
 */
 
 function tao_get_lpcontributors($context) {
@@ -195,7 +195,7 @@ function tao_handle_learning_path_submission_event($eventdata) {
         mtrace("Invalid user");
         return;
     }
-    
+
     // load our course
     $course = get_record('course', 'id', $eventdata['courseid']);
 
@@ -204,7 +204,7 @@ function tao_handle_learning_path_submission_event($eventdata) {
         return;
     }
 
-    $format = FORMAT_HTML; 
+    $format = FORMAT_HTML;
 
     // compose message body
     $body  = get_string('lpsubmitted', 'local') . '.<br />';
@@ -213,7 +213,7 @@ function tao_handle_learning_path_submission_event($eventdata) {
     $body .= '"' . $eventdata['reason'] . '"';
 
     // look for any head editors for this course that might already exist
-    $editors = tao_get_headeditors(get_context_instance(CONTEXT_COURSE, $course->id));  
+    $editors = tao_get_headeditors(get_context_instance(CONTEXT_COURSE, $course->id));
 
     if (!empty($editors)) {
         // Notify existing editors of the learning path that it is ready for review
@@ -226,7 +226,7 @@ function tao_handle_learning_path_submission_event($eventdata) {
         }
 
     } else {
-        // Notify ALL editors that the learning path needs an editor 
+        // Notify ALL editors that the learning path needs an editor
 
         $site = get_record('course', 'id', SITEID);
 
@@ -234,7 +234,7 @@ function tao_handle_learning_path_submission_event($eventdata) {
         $targetobject = (object)tao_message_target_get(TM_ALL_HEADEDITORS, $site);
 
         if ($count = tao_message_count_recipients_by_target($targetobject, $site)) {
-            $targetobject->key = TM_ALL_HEADEDITORS; 
+            $targetobject->key = TM_ALL_HEADEDITORS;
 
             $eventdata = array(
                 'body'   => $body,
@@ -243,7 +243,7 @@ function tao_handle_learning_path_submission_event($eventdata) {
                 'course' => $site,
                 'target' => $targetobject,
             );
-            events_trigger('tao_message_role', $eventdata); 
+            events_trigger('tao_message_role', $eventdata);
             echo get_string('messagequeued', 'local');
 
         }
@@ -536,22 +536,22 @@ function tao_get_classifications($count=true, $courseid=null, $status=null, $cat
 function tao_get_courseids_with_classification($id, $secondid=0, $status=null, $category=null) {
     global $CFG;
     $sql = 'SELECT cc.course
-        FROM ' . $CFG->prefix . 'course_classification cc  
+        FROM ' . $CFG->prefix . 'course_classification cc
         JOIN ' . $CFG->prefix . 'course c ON c.id = cc.course '
         . (($secondid) ? ' JOIN ' . $CFG->prefix . 'course_classification cc2 ON cc.course = cc2.course' : '')
         . ' WHERE cc.value = ' . $id
-        . (($secondid) ? ' AND cc2.value = ' . $secondid : '') 
-        . (($category) ? ' AND c.category = ' . $category : '')    
-        . (($status) ? ' AND c.approval_status_id = ' . $status : '');   
+        . (($secondid) ? ' AND cc2.value = ' . $secondid : '')
+        . (($category) ? ' AND c.category = ' . $category : '')
+        . (($status) ? ' AND c.approval_status_id = ' . $status : '');
 
     return get_records_sql($sql);
 }
 
 /**
 * returns all courses the given user has 'authored', which is determined by the LP Author role given at course context
-* 
+*
 * @param int $user
-* 
+*
 * @return array course records
 */
 function tao_get_authored_learning_paths($user) {
@@ -560,9 +560,9 @@ function tao_get_authored_learning_paths($user) {
 
 /**
 * returns all courses the given user is 'editing', which is determined by the Head Editor role given at course context
-* 
+*
 * @param int $user
-* 
+*
 * @return array course records
 */
 function tao_get_editing_learning_paths($user) {
@@ -581,7 +581,7 @@ function tao_get_learning_paths_by_role_of_user($user, $roleshortname) {
     global $CFG;
 
     $sql = "SELECT c.id, c.shortname, c.fullname, c.format, s.displayname " . sql_as() . " status
-             FROM {$CFG->prefix}context x 
+             FROM {$CFG->prefix}context x
              JOIN {$CFG->prefix}role_assignments a ON x.id = a.contextid
              JOIN {$CFG->prefix}role r ON a.roleid = r.id
              JOIN {$CFG->prefix}course c ON c.id = x.instanceid
@@ -651,7 +651,7 @@ function tao_header_image() {
         $coursehdrs = get_records('header_image', 'courseid', $COURSE->id,'sortorder');
         if (!empty($coursehdrs)) {
             foreach ($coursehdrs as $ch) {
-                if(empty($ch->url)) { //if url is empty then all pages with this id must use this image. 
+                if(empty($ch->url)) { //if url is empty then all pages with this id must use this image.
                     return tao_header_image_location($ch->image);
                 } elseif(strpos($me, $ch->url) !== false) {
                     return tao_header_image_location($ch->image);
@@ -1158,7 +1158,7 @@ function tao_local_header_hook() {
     if (optional_param('inpopup')) {
         return true;
     }
-    
+
     $lmin = (empty($THEME->block_l_min_width)) ? 100 : $THEME->block_l_min_width;
     $lmax = (empty($THEME->block_l_max_width)) ? 210 : $THEME->block_l_max_width;
     $rmin = (empty($THEME->block_r_min_width)) ? 100 : $THEME->block_r_min_width;
@@ -1297,13 +1297,24 @@ function tao_print_static_nav($return=false) {
 
     $mytoolslink = '/local/mahara/taoviewtaotools.php';
 
+	if (isloggedin() and !isguest()){ // (nadavkav)
+		   $learningpaths_nk = '<li><a href="' . $CFG->wwwroot . '/local/my/learning.php">' . get_string('myownlearning', 'local') . '</a></li>';
+		   $yesumlemida_nk = '<li><a href="' . $CFG->wwwroot .'/course/category.php?id=7">' . get_string('myteaching', 'local') . '</a></li>';
+	   } else {
+		   $learningpaths_nk = '<li><a href="' . $CFG->wwwroot . '/course/category.php?id=2">' . get_string('alllearning', 'local') . '</a></li>';
+		   $yesumlemida_nk = '';
+	}
+
     $returnstr = '
      <ul id="tao-nav">
        <li><a href="' . $CFG->wwwroot . '">' . get_string('home') . '</a></li>
-       <li><a href="' . $CFG->wwwroot . $myteachinglink.'">' . get_string('myteaching', 'local') . '</a></li>
-       <li><a href="' . $CFG->wwwroot . '/local/my/learning.php">' . get_string('mylearning', 'local') . '</a></li>
+       <!--li><a href="' . $CFG->wwwroot . $myteachinglink.'">' . get_string('myteaching', 'local') . '</a></li-->
+	   '.$learningpaths_nk.'
+	   '.$yesumlemida_nk.'
        <li><a href="' . $CFG->wwwroot . '/local/my/collaboration.php">' . get_string('mycollaboration', 'local') . '</a></li>
-       <li><a href="' . $CFG->wwwroot . $mytoolslink.'">' . get_string('mytools', 'local') . '</a></li>
+       <!--li><a href="' . $CFG->wwwroot . $mytoolslink.'">' . get_string('mytools', 'local') . '</a></li-->
+	   <li><a href="' . $CFG->wwwroot .'/mod/data/view.php?d=1&perpage=50&search=&sort=5&order=ASC&advanced=0&filter=1&f_1=&f_2=&f_4=&u_fn=&u_ln=">' . get_string('mytools', 'local') . '</a></li>
+	   <li><a href="' . $CFG->wwwroot .'/mod/forum/view.php?id=180">פורום</a></li>
     ';
 
     if (has_capability('moodle/local:managemytasks', get_context_instance(CONTEXT_COURSE, SITEID))) {
@@ -1319,6 +1330,7 @@ function tao_print_static_nav($return=false) {
     } else {
         if (!isguestuser()){
             $maharaid = get_field('mnet_host', 'id', 'name', 'localmahara');
+			$maharaid = ''; // disable mahara (nadavkav)
             if (!empty($maharaid)) {
                 $returnstr .=  '<li><a href="'.$CFG->wwwroot.'/auth/mnet/jump.php?hostid='.$maharaid.'">'.get_string('myportfolio', 'local').'</a></li>';
             }
@@ -1340,7 +1352,7 @@ function tao_print_static_nav($return=false) {
 }
 
 /**
-* applies custom capabilities to roles. 
+* applies custom capabilities to roles.
 */
 
 function tao_reassign_capabilities($path='local') {
@@ -1380,9 +1392,9 @@ function tao_reassign_capabilities($path='local') {
 }
 
 /**
-* same as tao_reassign_capabilities except removes existing custom capabilities.  
+* same as tao_reassign_capabilities except removes existing custom capabilities.
 *
-* note: there are some safety checks to ensure only custom roles are affected. 
+* note: there are some safety checks to ensure only custom roles are affected.
 */
 
 function tao_reset_capabilities($path='local') {
@@ -1413,9 +1425,9 @@ function tao_reset_capabilities($path='local') {
         // don't mess with non-custom roles!
         if (!$role->custom == 1) {
             continue;
-        }        
+        }
 
-        // extra safety: whatever we do - don't mess with the admin role!!! 
+        // extra safety: whatever we do - don't mess with the admin role!!!
         if (isset($adminroles[$role->id]) || $shortname == 'admin') {
             continue;
         }
@@ -1426,13 +1438,13 @@ function tao_reset_capabilities($path='local') {
 
     // now reapply the custom capabilities
     return tao_reassign_capabilities($path);
-  
+
 }
 
 /**
-* When called resets all custom roles as per definition set down in /local/roles.php 
+* When called resets all custom roles as per definition set down in /local/roles.php
 *
-* Note that this uses the non-core role.custom field to isolate roles to remove. 
+* Note that this uses the non-core role.custom field to isolate roles to remove.
 *
 * Utilise the $path parameter to allow for localisation (i.e. different roles defintion than core).
 *
@@ -1441,10 +1453,10 @@ function tao_reset_capabilities($path='local') {
 * WARNING: as long as you retain the same shortname existing user role assigments will
 *             be retained.  if you change the shortname they will be lost.
 *
-* KNOWN ISSUE: we rely on shortname being unique, but this is not enforced by the db.  
+* KNOWN ISSUE: we rely on shortname being unique, but this is not enforced by the db.
 *                       this is more a problem with moodle.
 *
-* @param text $path  
+* @param text $path
 *
 */
 
@@ -1478,14 +1490,14 @@ function tao_reset_custom_roles($path='local') {
     }
 
     // get recordset of existing custom roles
-    $sql = "SELECT id, name, shortname, description, sortorder, custom 
+    $sql = "SELECT id, name, shortname, description, sortorder, custom
               FROM {$CFG->prefix}role
               WHERE custom IS NOT NULL";
 
     $roles = get_records_sql($sql);
 
     // remove custom roles that are not in the latest definition
-    foreach ($roles as $role) { 
+    foreach ($roles as $role) {
 
         // check whether this role is in the latest definition
         if (array_key_exists($role->shortname, $customroles)) {
@@ -1538,13 +1550,13 @@ function tao_reset_custom_roles($path='local') {
             $newrole->custom = 1;
 
             $roleid = insert_record('role', $newrole);
- 
+
         }
 
         // remove any previously set legacy roles
         $legacyroles = get_legacy_roles();
         foreach ($legacyroles as $ltype=>$lcap) {
-            unassign_capability($lcap, $roleid); 
+            unassign_capability($lcap, $roleid);
         }
 
         // reset legacy role
@@ -1568,13 +1580,13 @@ function tao_reset_custom_roles($path='local') {
         }
     }
 
-    // reset custom capabilities to keep up with changes 
+    // reset custom capabilities to keep up with changes
     return tao_reset_capabilities();
 }
 
 /**
- * resets the customised front page blocks.  designed to be called from local_postinst 
- * 
+ * resets the customised front page blocks.  designed to be called from local_postinst
+ *
  * @return bool
  */
 function tao_reset_frontpage_blocks() {
@@ -1654,9 +1666,9 @@ function tao_reset_frontpage_blocks() {
 }
 
 /**
- * resets the customised sticky blocks settings.  designed to be called from /local/db/upgrade.php 
- * 
- * @param bool   $remove   dictates whether to remove existing sticky blocks 
+ * resets the customised sticky blocks settings.  designed to be called from /local/db/upgrade.php
+ *
+ * @param bool   $remove   dictates whether to remove existing sticky blocks
  * @param string $path     path to the stickyblocks definition file
  *
  * @return bool
@@ -1702,9 +1714,9 @@ function tao_reset_stickyblocks($remove=false, $path='local') {
 }
 
 /**
- * returns the 'station' pages for the passed learning path 
+ * returns the 'station' pages for the passed learning path
  *
- * @param int $courseid  
+ * @param int $courseid
  *
  * @return array
  */
@@ -1716,19 +1728,19 @@ function tao_get_learning_path_stations ($courseid) {
 }
 
 /**
- * returns the 'station' pages for the passed learning path that the passed user has marked as viewed 
+ * returns the 'station' pages for the passed learning path that the passed user has marked as viewed
  *
  * note: just returns the page_ids in an array
  *
- * @param int $courseid  
- * @param int $userid  
+ * @param int $courseid
+ * @param int $userid
  *
  * @return array
  */
 function tao_get_viewed_learning_path_stations($courseid, $userid) {
     global $CFG;
 
-    $sql = "SELECT format_page_id  
+    $sql = "SELECT format_page_id
               FROM {$CFG->prefix}format_page_user_view v
               JOIN {$CFG->prefix}format_page p on p.id = v.format_page_id
              WHERE p.courseid = $courseid
@@ -1742,12 +1754,12 @@ function tao_get_viewed_learning_path_stations($courseid, $userid) {
     }
 }
 /**
- * checks whether the user has marked the passed learning path as 'theirs' 
+ * checks whether the user has marked the passed learning path as 'theirs'
  *
- *    // this version just checking standard local:ispt capability at course context.  
+ *    // this version just checking standard local:ispt capability at course context.
  *    // hook here is intended for expansion though.
  *
- * @param int $courseid  
+ * @param int $courseid
  *
  * @return bool
  */
@@ -1770,8 +1782,8 @@ function tao_is_my_learning_path($courseid) {
  *
  * put in its own function because there are 2 tables to update and 2 ensure consistant usage
  *
- * @param integer status  
- * @param text $reason   
+ * @param integer status
+ * @param text $reason
  * @param object $course
  * @param object $context
  */
@@ -1808,7 +1820,7 @@ function tao_update_course_status($status, $reason, $course) {
             if(!$function($status, $reason, $course)) {
                 print_error('statuscustomhookerror', 'local');
                 return false;
-            }	
+            }
         } else {
             // move on
         }
@@ -1821,7 +1833,7 @@ function tao_update_course_status($status, $reason, $course) {
     $history->reason = $reason;
     $history->timestamp = time();
     $history->userid = $USER->id;
- 
+
     if (!insert_record('course_status_history', $history)) {
         print_error('statushistoryupdateerror', 'local');
         return false;
@@ -1835,13 +1847,13 @@ function tao_update_course_status($status, $reason, $course) {
  *
  * returns text description of the given course status
  *
- * @param object $course  
+ * @param object $course
  */
 
 function tao_get_course_status_desc($course) {
 
     if (!$course->approval_status_id) {
-        return get_string('nostatusset', 'local'); 
+        return get_string('nostatusset', 'local');
     } else {
         // lookup status of course
         return get_field('course_approval_status', 'description', 'id', $course->approval_status_id);
@@ -1849,9 +1861,9 @@ function tao_get_course_status_desc($course) {
 }
 
 /**
- * returns an array of status's options valid to switch to for the given course 
+ * returns an array of status's options valid to switch to for the given course
  *
- * @param object $course  
+ * @param object $course
  */
 
 function tao_get_course_status_options($course) {
@@ -1865,14 +1877,14 @@ function tao_get_course_status_options($course) {
 
     // get this users course context roles
     $context = get_context_instance(CONTEXT_COURSE, $course->id);
-    $roles = get_user_roles($context, $USER->id, true); 
+    $roles = get_user_roles($context, $USER->id, true);
 
-    $allowstatus = array($currentstatus); // allowed status 
+    $allowstatus = array($currentstatus); // allowed status
 
     // grant status options by role
     // additional conditions based on current status
     //   developer note:  this works but is a bit clunky and may revisit if have time.  although the main idea
-    //                    is that this should be easy to see what's being applied if you ever have to change 
+    //                    is that this should be easy to see what's being applied if you ever have to change
     //                    the rules - not some impenetrable one liner.
     foreach ($roles as $role) {
 
@@ -1909,7 +1921,7 @@ function tao_get_course_status_options($course) {
 
             default:
                 // if anyone else should somehow get here (they shouldn't) they won't be given any options
-                break; 
+                break;
         }
 
     }
@@ -1919,10 +1931,10 @@ function tao_get_course_status_options($course) {
         $statusstr = implode(',', $allowstatus);
 
         $sql = "SELECT id, shortname, displayname, description
-                  FROM {$CFG->prefix}course_approval_status 
-                WHERE id IN ( {$statusstr} ) 
+                  FROM {$CFG->prefix}course_approval_status
+                WHERE id IN ( {$statusstr} )
               ORDER BY id";
- 
+
         if ($status_array = get_records_sql($sql)) {
             return $status_array;
         }
@@ -2008,7 +2020,7 @@ function tao_can_assign_user($user, $course) {
 }
 
 /**
-* looks for users with similar interests to you (based on tagging) 
+* looks for users with similar interests to you (based on tagging)
 *
 * @param object $user user being viewed
 */
@@ -2032,7 +2044,7 @@ function tao_get_similar_users($user, $limit=10) {
 
 }
 /**
-* looks for users with similar interests to this course (based on tagging) 
+* looks for users with similar interests to this course (based on tagging)
 *
 * @param object $courseid course being viewed
 */
@@ -2047,15 +2059,15 @@ function tao_print_similar_users_course($courseid,$groupid) {
               WHERE t.tagid in ( SELECT tagid FROM {$CFG->prefix}tag_instance WHERE itemid = {$courseid} AND (itemtype = 'course' or itemtype='courseclassification') )
                 AND t.itemid = u.id
                 AND (t.itemtype = 'user' or t.itemtype='userclassify')
-                AND not t.itemid = {$USER->id} 
-                AND NOT u.id IN ( SELECT userid 
-                                  FROM {$CFG->prefix}groups_members gm, {$CFG->prefix}groups g 
+                AND not t.itemid = {$USER->id}
+                AND NOT u.id IN ( SELECT userid
+                                  FROM {$CFG->prefix}groups_members gm, {$CFG->prefix}groups g
                                   WHERE g.courseid={$courseid} AND g.id=gm.groupid)
                 AND NOT u.id IN ( SELECT userid
                                   FROM {$CFG->prefix}group_invites
                                   WHERE courseid={$courseid} AND groupid={$groupid} )
              GROUP BY u.id
-             ORDER BY weight desc 
+             ORDER BY weight desc
              LIMIT 10";
     if ($users = get_records_sql($sql)) {
         return $users;
@@ -2065,7 +2077,7 @@ function tao_print_similar_users_course($courseid,$groupid) {
 
 }
 /**
-* gets a list of courses and their linked activities from the Certificate modules inside a course. 
+* gets a list of courses and their linked activities from the Certificate modules inside a course.
 *
 * @param object $courseid courseid to show - if not set, return all courses for this user.
 */
@@ -2132,7 +2144,7 @@ function tao_certificate_get_certification_tasks($userid, $courseid=null, $showr
                 }
             }
         }
-        
+
         $certificates = get_records('certificate', 'course', $course->id);
         if (!empty($certificates)) {
            require_once($CFG->dirroot.'/mod/certificate/lib.php');
@@ -2303,7 +2315,7 @@ function tao_print_friend_box($user, $type='display') {
 
     $html .= '<div class="tao_friend_name"><a href="' . $profilelink . '">' . $fullname . '</a></div><br/>';
 
-    switch ($type) {  
+    switch ($type) {
         case 'display':
             $html .= '<img src="/pix/t/message.gif" alt="" /> <a href="' . $messagepath . '" onclick="' . $messagejs . '">Send Message</a><br/>';
             $html .= '<img src="/pix/t/delete.gif" alt="" /> <a href="' . $removelink . '">Remove</a>';
@@ -2363,9 +2375,9 @@ function tao_print_neighbour_box($user, $return=false) {
 
 }
 
-/** checks whether rafl learning path authoring mode is enabled at config 
+/** checks whether rafl learning path authoring mode is enabled at config
 *
-* @return bool 
+* @return bool
 **/
 
 function tao_rafl_mode_enabled() {
