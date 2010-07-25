@@ -1,4 +1,4 @@
-<?php  //$Id$
+﻿<?php  //$Id$
 
 require_once($CFG->libdir.'/formslib.php');
 
@@ -96,7 +96,7 @@ class course_edit_form extends moodleform {
             $mform->setConstant('shortname', $course->shortname);
         }
 
-        $mform->addElement('text','idnumber', get_string('idnumbercourse'),'maxlength="100"  size="10"');
+        $mform->addElement('hidden','idnumber', get_string('idnumbercourse'),'maxlength="100"  size="10"');
         $mform->setHelpButton('idnumber', array('courseidnumber', get_string('idnumbercourse')), true);
         $mform->setType('idnumber', PARAM_RAW);
         if ($course and !has_capability('moodle/course:changeidnumber', $coursecontext)) {
@@ -106,6 +106,7 @@ class course_edit_form extends moodleform {
 
         $mform->addElement('htmleditor','summary', get_string('summary'), array('rows'=> '10', 'cols'=>'65'));
         $mform->setHelpButton('summary', array('text', get_string('helptext')), true);
+		$mform->setDefault('summary', 'זכויות יוצרים: <br/> ביבליוגרפיה:'); // (nadavkav)
         $mform->setType('summary', PARAM_RAW);
 
         if ($course and !has_capability('moodle/course:changesummary', $coursecontext)) {
@@ -120,42 +121,43 @@ class course_edit_form extends moodleform {
                 $formcourseformats["$courseformat"] = get_string("format$courseformat");
             }
         }
-        $mform->addElement('select', 'format', get_string('format'), $formcourseformats);
+		//$mform->addElement('select', 'format', get_string('format'), $formcourseformats); // (nadavkav)
+        $mform->addElement('hidden', 'format', get_string('format'), $formcourseformats); // (nadavkav)
         $mform->setHelpButton('format', array('courseformats', get_string('courseformats')), true);
         $mform->setDefault('format', $courseconfig->format);
 
         for ($i=1; $i<=52; $i++) {
           $sectionmenu[$i] = "$i";
         }
-        $mform->addElement('select', 'numsections', get_string('numberweeks'), $sectionmenu);
+        $mform->addElement('hidden', 'numsections', get_string('numberweeks'), $sectionmenu);
         $mform->setDefault('numsections', $courseconfig->numsections);
 
-        $mform->addElement('date_selector', 'startdate', get_string('startdate'));
+        $mform->addElement('hidden', 'startdate', get_string('startdate'));
         $mform->setHelpButton('startdate', array('coursestartdate', get_string('startdate')), true);
         $mform->setDefault('startdate', time() + 3600 * 24);
 
         $choices = array();
         $choices['0'] = get_string('hiddensectionscollapsed');
         $choices['1'] = get_string('hiddensectionsinvisible');
-        $mform->addElement('select', 'hiddensections', get_string('hiddensections'), $choices);
+        $mform->addElement('hidden', 'hiddensections', get_string('hiddensections'), $choices);
         $mform->setHelpButton('hiddensections', array('coursehiddensections', get_string('hiddensections')), true);
         $mform->setDefault('hiddensections', $courseconfig->hiddensections);
 
         $options = range(0, 10);
-        $mform->addElement('select', 'newsitems', get_string('newsitemsnumber'), $options);
+        $mform->addElement('hidden', 'newsitems', get_string('newsitemsnumber'), $options);
         $mform->setHelpButton('newsitems', array('coursenewsitems', get_string('newsitemsnumber')), true);
         $mform->setDefault('newsitems', $courseconfig->newsitems);
 
-        $mform->addElement('selectyesno', 'showgrades', get_string('showgrades'));
+        $mform->addElement('hidden', 'showgrades', get_string('showgrades'));
         $mform->setHelpButton('showgrades', array('coursegrades', get_string('grades')), true);
         $mform->setDefault('showgrades', $courseconfig->showgrades);
 
-        $mform->addElement('selectyesno', 'showreports', get_string('showreports'));
+        $mform->addElement('hidden', 'showreports', get_string('showreports'));
         $mform->setHelpButton('showreports', array('coursereports', get_string('activityreport')), true);
         $mform->setDefault('showreports', $courseconfig->showreports);
 
         $choices = get_max_upload_sizes($CFG->maxbytes);
-        $mform->addElement('select', 'maxbytes', get_string('maximumupload'), $choices);
+        $mform->addElement('hidden', 'maxbytes', get_string('maximumupload'), $choices);
         $mform->setHelpButton('maxbytes', array('courseuploadsize', get_string('maximumupload')), true);
         $mform->setDefault('maxbytes', $courseconfig->maxbytes);
 
@@ -163,23 +165,44 @@ class course_edit_form extends moodleform {
             $themes=array();
             $themes[''] = get_string('forceno');
             $themes += get_list_of_themes();
-            $mform->addElement('select', 'theme', get_string('forcetheme'), $themes);
+            $mform->addElement('hidden', 'theme', get_string('forcetheme'), $themes);
+			$mform->setDefault('theme', 'intel');
         }
 
         $meta=array();
         $meta[0] = get_string('no');
         $meta[1] = get_string('yes');
         if ($disable_meta === false) {
-            $mform->addElement('select', 'metacourse', get_string('managemeta'), $meta);
+            $mform->addElement('hidden', 'metacourse', get_string('managemeta'), $meta);
             $mform->setHelpButton('metacourse', array('metacourse', get_string('metacourse')), true);
             $mform->setDefault('metacourse', $courseconfig->metacourse);
         } else {
             // no metacourse element - we do not want to change it anyway!
-            $mform->addElement('static', 'nometacourse', get_string('managemeta'),
+            $mform->addElement('hidden', 'nometacourse', get_string('managemeta'),
                 ((empty($course->metacourse)) ? $meta[0] : $meta[1]) . " - $disable_meta ");
             $mform->setHelpButton('nometacourse', array('metacourse', get_string('metacourse')), true);
         }
 
+		// only LPE(ditor) can change course visibility. default is hidden (nadavkav)
+		if (has_capability('moodle/course:visibility', $coursecontext)) {
+			$choices = array();
+			$choices['0'] = get_string('courseavailablenot');
+			$choices['1'] = get_string('courseavailable');
+			$mform->addElement('select', 'visible', get_string('availability'), $choices);
+			$mform->setHelpButton('visible', array('courseavailability', get_string('availability')), true);
+			$mform->setDefault('visible','0'); // open a new course ("Yesum Lemida") in Hidden status(nadavkav)
+			if ($course and !has_capability('moodle/course:visibility', $coursecontext)) {
+				$mform->hardFreeze('visible');
+				$mform->setConstant('visible', $course->visible);
+			}
+		} else {
+			$choices = array();
+			$choices['0'] = get_string('courseavailablenot');
+			$choices['1'] = get_string('courseavailable');
+			$mform->addElement('hidden', 'visible', get_string('availability'), $choices);
+			$mform->setDefault('visible','0'); // open a new course ("Yesum Lemida") in Hidden status(nadavkav)
+		}
+		
 //--------------------------------------------------------------------------------
         $mform->addElement('header','enrolhdr', get_string('enrolments'));
 
@@ -281,7 +304,7 @@ class course_edit_form extends moodleform {
         $mform->setDefault('expirythreshold', 10 * 86400);
 
 //--------------------------------------------------------------------------------
-        $mform->addElement('header','', get_string('groups', 'group'));
+        $mform->addElement('header','groups', get_string('groups', 'group')); // (nadavkav)
 
         $choices = array();
         $choices[NOGROUPS] = get_string('groupsnone', 'group');
@@ -306,18 +329,18 @@ class course_edit_form extends moodleform {
         }
 
 //--------------------------------------------------------------------------------
-        $mform->addElement('header','', get_string('availability'));
+        $mform->addElement('header','availability', get_string('availability'));
 
-        $choices = array();
-        $choices['0'] = get_string('courseavailablenot');
-        $choices['1'] = get_string('courseavailable');
-        $mform->addElement('select', 'visible', get_string('availability'), $choices);
-        $mform->setHelpButton('visible', array('courseavailability', get_string('availability')), true);
-        $mform->setDefault('visible', 1);
-        if ($course and !has_capability('moodle/course:visibility', $coursecontext)) {
-            $mform->hardFreeze('visible');
-            $mform->setConstant('visible', $course->visible);
-        }
+        // $choices = array();
+        // $choices['0'] = get_string('courseavailablenot');
+        // $choices['1'] = get_string('courseavailable');
+        // $mform->addElement('select', 'visible', get_string('availability'), $choices);
+        // $mform->setHelpButton('visible', array('courseavailability', get_string('availability')), true);
+        // $mform->setDefault('visible',0); // open a new course ("Yesum Lemida") in Hidden status(nadavkav)
+        // if ($course and !has_capability('moodle/course:visibility', $coursecontext)) {
+            // $mform->hardFreeze('visible');
+            // $mform->setConstant('visible', $course->visible);
+        // }
 
         $mform->addElement('passwordunmask', 'enrolpassword', get_string('enrolmentkey'), 'size="25"');
         $mform->setHelpButton('enrolpassword', array('enrolmentkey', get_string('enrolmentkey')), true);
@@ -335,9 +358,11 @@ class course_edit_form extends moodleform {
         $choices['0'] = get_string('guestsno');
         $choices['1'] = get_string('guestsyes');
         $choices['2'] = get_string('guestskey');
-        $mform->addElement('select', 'guest', get_string('opentoguests'), $choices);
+        //$mform->addElement('select', 'guest', get_string('opentoguests'), $choices); 
+		$mform->addElement('hidden', 'guest', get_string('opentoguests'), $choices); // (nadavkav)
         $mform->setHelpButton('guest', array('guestaccess', get_string('opentoguests')), true);
-        $mform->setDefault('guest', 0);
+        //$mform->setDefault('guest', 0); 
+		$mform->setDefault('guest', 1); // (nadavkav)
 
         // If we are creating a course, its enrol method isn't yet chosen, BUT the site has a default enrol method which we can use here
         $enrol_object = $CFG;
@@ -364,7 +389,7 @@ class course_edit_form extends moodleform {
         }
 
 //--------------------------------------------------------------------------------
-        $mform->addElement('header','', get_string('language'));
+        $mform->addElement('header','language', get_string('language')); //(nadavkav)
 
         $languages=array();
         $languages[''] = get_string('forceno');
