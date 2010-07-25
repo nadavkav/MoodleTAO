@@ -311,6 +311,12 @@
     /// Print heading.
         print_heading_with_help($title, 'assignroles');
 
+      // Continue to Course Button // to help teachers see what to do next (nadavkav)
+       // echo "<br/>";
+       // echo "<div class='continuebutton'>";
+       // print_single_button($CFG->wwwroot.'/course/view.php', array('id' => $courseid), get_string('continuetocourse'));
+       // echo "</div>";
+		
     if ($roleid) {
     /// Show UI for assigning a particular role to users.
 
@@ -459,7 +465,11 @@
             }
             $table->data[] = $row;
         }
-        print_table($table);
+        
+		$context = get_context_instance(CONTEXT_SYSTEM, 1);
+		if (has_capability('moodle/leagacy:admin', $context )) { 
+			print_table($table); // not need to change roles in course (nadavkav)
+		}
 
 
        //Continue to Course Button
