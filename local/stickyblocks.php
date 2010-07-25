@@ -21,12 +21,12 @@ function get_custom_stickyblocks() {
     $pinnedblock->blockid = $id;
     $blocks[] = $pinnedblock;
 
-    $pinnedblock = new_stickyblock_def();
-    $id = get_field('block', 'id', 'name', 'tao_certification_path');
-    $pinnedblock->pagetype ='format_learning';
-    $pinnedblock->weight = '1';
-    $pinnedblock->blockid = $id;
-    $blocks[] = $pinnedblock;
+    // $pinnedblock = new_stickyblock_def();
+    // $id = get_field('block', 'id', 'name', 'tao_certification_path');
+    // $pinnedblock->pagetype ='format_learning';
+    // $pinnedblock->weight = '1';
+    // $pinnedblock->blockid = $id;
+    // $blocks[] = $pinnedblock;
     
     $pinnedblock = new_stickyblock_def();
     $id = get_field('block', 'id', 'name', 'tao_team_groups');
