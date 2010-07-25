@@ -1,4 +1,4 @@
-<?php //$Id$
+﻿<?php //$Id$
 
 // generates a menu list of child pages ("stations") for a learning path course
 
@@ -54,28 +54,31 @@ class block_tao_learning_path_summary extends block_base {
             if (in_array($page->id, $viewed) ) {
                 $icon = "tick";
             } else {
-                $icon = "caret_single";
+                $icon = "caret_single_rtl"; // (nadavkav)
             }
 
-            $stations .= '<p><a href="'.$CFG->wwwroot.'/course/view.php?id='.$courseid.'&page='.$page->id.'" class="library"><img border="0" align="left" src="' . $CFG->wwwroot . '/theme/intel/pix/path/' . $icon . '.gif"/><span class="stations">'.format_string($page->nameone).'</span></a></p>';
+            $stations .= '<p><img border="0" align="right" src="' . $CFG->wwwroot . '/theme/intel/pix/path/' . $icon . '.gif"/><a href="';
+			$stations .= $CFG->wwwroot.'/course/view.php?id='.$courseid.'&page='.$page->id.'" class="library"><span class="stations">';
+			$stations .= format_string($page->nameone).'</span></a></p>'; // (nadavkav)
         }
 
         $html = '<h2>' . get_string('learningstations', 'block_tao_learning_path_summary') . '</h2>';
 
         $html .= '
-<table cellspacing="0" cellpadding="0" border="0"> <tbody>
+<table cellspacing="0" cellpadding="0" border="0" width="100%"> <tbody> <!-- (nadavkav)-->
   <tr>
     <td width="10"> <br />
     </td>
     <td width="100%">
       <p style="text-align: center;">
-        <table cellspacing="0" cellpadding="0" border="0" id="lp-stations"> <tbody>
+        <table cellspacing="0" cellpadding="0" border="0" id="lp-stations" width="100%"> <tbody> <!-- (nadavkav)-->
           <tr>
-            <td class="lp-stations-image" valign="top"> <img border="0" src="'.$CFG->wwwroot.'/theme/intel/pix/path/stufe01.gif" /><br />
-            </td>
-            <td class="lp-stations-list" valign="top">' .
+		  <td class="lp-stations-list" valign="top">' .
                $stations .
             '</td>
+            <td class="lp-stations-image" valign="top"> <img border="0" align="left" src="'.$CFG->wwwroot.'/theme/intel/pix/path/stufe01.gif" /><br />
+            </td>
+            
           </tr> </tbody>
         </table> </p>
     </td>
